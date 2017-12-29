@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CSS 기초</title>
+<!-- css을 지정하기 위해서 style 요소 안에 기술 -->
+<style>
+/*여기는 CSS영역*/
+
+    div {
+        /*너비*/
+        width:100px;
+        /*높이*/
+        height: 100px;
+        /*뒷배경색*/
+        background-color:#F44336;
+        /*글자색*/
+        color: white;
+        /*요소간의 간격*/
+        margin:20px;
+        /*둥근보더*/
+        border-radius: 20px;
+        /*폰트크기*/
+        font-size:30px;
+        /*폰트두께*/
+        font-weight: bold;
+        /* 글자정렬 가운데 */
+        text-align: center;
+        /*수직가운데 정렬*/
+        line-height: 100px;
+        /*손가락 모양커서*/
+        cursor: pointer;
+
+        transition: .2s ease;
+    }
+
+    /*마우스 오버했을때*/
+    div:hover {
+        background-color: deepskyblue;
+        /*박스그림자*/
+        box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24),
+        0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    }
+
+
+</style>
+</head>
+<body>
+ <!--div는 division의 줄임말로 영역을 나눔 -->
+<div>BOX1</div>
+<div>BOX2</div>
+</body>
+</html>
