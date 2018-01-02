@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>NBA 서부 순위</title>
+    <style>
+        tfoot tr td {
+
+        }
+    </style>
+</head>
+<body>
+<h4>팀순위</h4>
+<!-- 테이블을 의미에 맞게 마크업하기 위해서는
+thead, tbody, tfoot 요소를 이용합니다. -->
+
+<!-- summary 속성 : 테이블을 요약 (대략 200글자요약)-->
+<table border="1" summary="nba 순위">
+    <!-- 테이블의 제목 caption 요소
+    (fieldset 의 legend 역할)-->
+    <caption>NBA 서부 팀 순위</caption>
+    <thead>
+    <tr>
+        <!-- th : table headline(표제목)-->
+        <th>순위</th>
+        <th>팀</th>
+        <th>승</th>
+        <th>패</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>1</td>
+        <th>골든스테이트</th>
+        <td>29</td>
+        <td>8</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <th>휴스턴</th>
+        <td>26</td>
+        <td>9</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <th>샌안토니오</th>
+        <td>25</td>
+        <td>12</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <th>미네소타</th>
+        <td>24</td>
+        <td>14</td>
+    </tr>
+    </tbody>
+    <tfoot>
+    <tr>
+        <td colspan="4">자료제공 : NBA</td>
+    </tr>
+    </tfoot>
+
+</table>
+</body>
+</html>

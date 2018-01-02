@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>테이블 합치기</title>
+    <style>
+        table {
+            border: 1px solid #444444;
+        }
+    </style>
+</head>
+<body>
+<h1>테이블에서 합치기</h1>
+<h2>수평으로 합치기</h2>
+<table border="1">
+    <tr>
+        <!-- 3개의 칼럼을 담당해야하기 때문에 colspan 속성을 이용-->
+        <td colspan="3">1</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>6</td>
+        <td>7</td>
+    </tr>
+</table>
+<hr/>
+<h2>수직으로 합치기</h2>
+<table border="1">
+    <tr>
+        <!-- 3개의 행(row)을 담당해야하기 때문에 rowspan 속성을 이용-->
+        <td rowspan="3">1</td>
+        <td>2</td>
+        <td>3</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>5</td>
+    </tr>
+    <tr>
+
+        <td>6</td>
+        <td>7</td>
+    </tr>
+</table>
+</body>
+</html>

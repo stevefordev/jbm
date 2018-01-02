@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>폰트 어썸의 사용</title>
+    <!--외부 css를 불러올때는 link요소 사용
+        - rel 속성 : 관계(relation)
+        - href 속성 : hyperlink reference
+    -->
+    <link rel="stylesheet" href="css/font-awesome.min.css"/>
+    <style>
+        /*클랙스 선택자 : '.'*/
+        .fa-facebook-official {
+            color: #3b5998;
+        }
+        #youtube {
+            color:red;
+        }
+    </style>
+</head>
+<body>
+<!-- 우리가 웹서비스를 제작할 때 다양한 아이콘을 사용합니다.
+그 때 마다 이미지로 만들어 사용할 수 없고, 만들어도 스마트폰등
+다양한 환경에서 사용하기 위해서는 아이콘폰트를 이용하는 것이 좋습니다.
+
+폰트어썸 사용법
+1. css폴더 / fonts 폴더를 가져다놓기
+2. link요소로 css 를 링크하기
+3. i 요소를 이용해서 폰트어썸 사용
+-->
+<h1 id="facebook"><i class="fa fa-facebook-official"></i> 페이스북</h1>
+<h1 id="youtube"><i class="fa fa-youtube-play"></i> 유투브</h1>
+
+<button><i class="fa fa-arrow-left"></i> 이전</button>
+<button><i class="fa fa-arrow-right"></i> 이전</button>
+</body>
+</html>

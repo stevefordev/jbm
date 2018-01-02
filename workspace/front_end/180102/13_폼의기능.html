@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>폼의 기능</title>
+</head>
+<body>
+<!--
+    label 요소 : input, select, textarea 등의 이름표
+    input 요소의 id 속성과 label 요소의 for 속성 연결
+
+    파라미터가 넘어가는 방식은
+    1. GET :
+    - 주소에 파라미터가 넘어감 (쿼리스트링)
+    - 장점 : 주소를 복사해서 보내도 똑같은 페이지를 볼 수 있음
+    - 단점 : 파라미터의 크기 한계 / 보안??
+    2. POST :
+    - 파라미터가 숨겨져 있음
+    - 단점 : 주소를 복사해서 보내도 다름니다.
+    - 장점 : 파일 업로드 / 글쓰기 크기 제한이 없음
+
+    (나중, 나중에 PUT, DELETE)
+-->
+<h1>로그인</h1>
+<form action="/login.do" method="post">
+    <fieldset>
+        <legend>로그인폼</legend>
+        <label for="email">이메일</label>
+        <input id="email"
+               name="email"
+               placeholder="이메일 입력"/>
+        <label for="pwd">비밀번호</label>
+        <input type="password"
+               name="pwd"
+                id="pwd" placeholder="비밀번호 입력"/>
+        <button>로그인</button>
+    </fieldset>
+</form>
+</body>
+</html>
