@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery기초</title>
+    <style>
+
+        img {
+            /* display를 none으로 하면 숨겨짐 */
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+<p>
+<button id="btn">눌러!</button>
+</p>
+<img src="img/bridge.jpg" />
+
+<!-- 1) jquery를 불러옴 -->
+<script src="js/jquery.js"></script>
+<!-- 2) 우리가 코딩 작성할 script요소  -->
+<script>
+
+    //jquery는 $만 기억하세요.
+
+
+    //id가 btn인 버튼요소에 클릭
+    $("#btn").click(function () {
+
+        //img를 보여줌(show())
+        //스으윽 나타나는 fadeIn(시간:밀리세컨)
+        $("img").fadeIn(1000);
+
+    });
+
+    //img를 클릭했을때 숨김
+    $("img").click(function () {
+        //숨김 hide
+        //스으윽 사라지는 fadeOut(시간:밀리세컨)
+        $("img").fadeOut(1000);
+    });
+
+
+</script>
+</body>
+</html>

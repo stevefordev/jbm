@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>박스모델</title>
+    <style>
+        body {
+            /*브라우저가 가진 CSS 제거*/
+            margin:0;
+        }
+
+        #box {
+            /*
+            width,height의 기본값 : auto
+
+            width(너비)의 auto는 부모의 width값
+
+            height(높이)의 auto는 자식높이의 합
+
+            */
+
+            width:100px;
+            height:100px;
+            /* 요소 끝 선*/
+            border:50px solid #424242;
+            /*마진은 요소와 요소간의 간격*/
+            margin: 50px 50px 50px 50px;
+            /*패딩은 콘텐츠(width/height)와 보더사이 */
+            padding: 50px 50px 50px 50px;
+            background-color: #00BCD4;
+        }
+
+        #test {
+            height: 100px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<!--
+    박스모델은 하나의 요소가 크기를 가지는 속성들입니다.
+
+    width,height,
+    border-top,border-right,border-bottom,border-left,
+    padding-top,padding-right,padding-bottom,padding-left,
+    margin-top,margin-right,margin-bottom,margin-left 합친것
+    (박스모델이 모여 있는 것을 시각정형모델)
+
+ -->
+    <div id="box">abc</div>
+    <div id="test"></div>
+</body>
+</html>

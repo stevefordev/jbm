@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS의 선택자</title>
+    <style>
+        /*
+            CSS의 선택자
+            1) 요소선택자 : 요소이름
+            2) 아이디선택자 : #아이디명
+            3) 클래스선택자 : .클래스명
+            4) 자손선택자 : ' '(한칸 띄움)
+            5) 자식선택자 : '>'
+
+        */
+        #red {
+            color:red;
+        }
+        #blue {
+            color:blue;
+        }
+        #green {
+            color:green;
+        }
+
+        .box {
+            background: silver;
+            width:100px;
+            height:100px;
+            margin:10px;
+            /*border:5px solid black;*/
+        }
+
+        .shadow {
+            box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24),
+                        0 17px 50px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        /*아이디가 animalList인ul요소의
+         자식li들을 선택*/
+        ul#animalList>li {
+            color:red;
+        }
+
+        ol>li {
+            color:blue;
+        }
+
+        ol>li>em {
+            background: red;
+        }
+
+    </style>
+</head>
+<body>
+    <!--
+        id는 HTML 안에 한개만 사용가능
+        class
+         - 여러번 사용가능(중복)
+         - 한 요소에 여러개를 중첩 사용가능
+     -->
+    <h1 class="shadow">CSS의 선택자</h1>
+    <div id="red" class="box">빨강</div>
+    <div id="blue" class="box shadow">파랑</div>
+    <div id="green" class="box shadow">녹색</div>
+    <hr/>
+    <ul id="animalList">
+        <li>강아지</li>
+        <li>고양이</li>
+        <li>개미핥기</li>
+    </ul>
+    <ol>
+        <li>서울 <em>3도</em></li>
+        <li>경기 <em>3도</em></li>
+        <li>인천천 <em>3도</em></li>
+   </ol>
+</body>
+</html>

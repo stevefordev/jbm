@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>요소의 분류</title>
+    <style>
+        body {
+            height:10000px;
+        }
+        div {
+            /* 블록레벨은 크기를 지정 가능 */
+            width:200px;
+            height:200px;
+            background: red;
+            /* 블록레벨을 인라인으로 */
+            display: inline;
+        }
+        span {
+            /* 인라인레벨은 크기 지정 불가
+               (인라인레벨은 글자크기가 자신의 크기)
+             */
+            width:200px;
+            height:200px;
+            background: blue;
+
+            /*
+            인라인레벨인데 크기를 지정하고 싶으면
+            display속성으로 블록레벨로 변경 가능
+            */
+            display: block;
+
+        }
+
+        img {
+            /*
+            인라인이지만 대체되는 요소이기 때문에
+            크기 지정 가능
+            */
+            width:200px;
+            height:200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>요소의 분류</h1>
+    <h2>대체되는 요소 / 대체되지 않는 요소</h2>
+    <h3>대체되는 요소</h3>
+    <!--
+    요소를 마크업하면
+    무언가 다른 모양으로 대체되는 요소들로
+    img, input, select, textarea, table 등등
+
+     -->
+    <img src="img/profile.jpg"/>
+    <input />
+    <textarea>후후</textarea>
+    <h3>대체되지 않는 요소</h3>
+    <!-- 글자를 쓰면 그 글자(컨텐츠)가 나오는 요소들
+       로 h1~h6, ul, li, dt, dd, div, p, span, em, strong....
+     -->
+    <p>글자글자</p>
+    <div>글자글자</div>
+    <a href="">글자글자</a>
+    <em>글자글자</em>
+    <ul>
+        <li>글자글자</li>
+    </ul>
+    <hr />
+    <h2>블록레벨요소과 인라인레벨요소</h2>
+    <!-- 컨테이너와 컨텐츠로 분류가능 -->
+    <h3>블록레벨</h3>
+    <h4>난 블록</h4>
+    <ol>
+        <li>블록</li>
+        <li>블록</li>
+    </ol>
+    <dl>
+        <dt>블록</dt>
+        <dd>블록</dd>
+    </dl>
+    <p>블록</p>
+    <div>블록</div>
+    <!--
+        블록레벨
+
+        - 컨테이너(그릇)를 담당
+        - 레이아웃을 담당
+        - 크기(width / height)를 지정가능
+        - 줄바꿈이 일어남
+        - h1,h2,h3,h4,h5,h6,ol,ul,dl,li,dd,dt,p,br,hr
+        - 가장 대표적인 블록레벨 : div(division)
+
+     -->
+    <h3>인라인레벨</h3>
+    <span>인라인</span>
+    <!--
+     인라인레벨
+      - 컨텐츠(글자)를 담당
+      - 줄바꿈이 일어나지 않음
+      - 크기(width, height)를 지정하지 못함
+        (단, 대체되는 요소들은 예외)
+      - a, em, strong, input, select, textarea, img 등
+      - 대표적인 inline요소는 : span
+
+     -->
+    <img src="img/music.jpg"/>
+    <input />
+    <select></select>
+    <textarea></textarea>
+    <a href="">난인라인</a>
+    <em>나도 인라인</em>
+    <strong>나도</strong>
+    <i>나도 인라인</i>
+
+
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>여러가지 입력요소</title>
+</head>
+<body>
+<h1>여러가지 입력요소들</h1>
+<form action="join.do" method="get">
+<fieldset>
+    <legend>회원가입폼</legend>
+    <h2>아이디입력</h2>
+    <input name="id" placeholder="아이디 입력"/>
+    <h2>비밀번호 입력</h2>
+    <input type="password" name="pwd" placeholder="비번입력"/>
+    <!--
+        여러개의 항목중 단 한개만 선택가능한 input타입은
+        radio(버튼)
+     -->
+    <h2>성별 선택</h2>
+
+    <!--
+        radio는 똑같은 name속성을 씁니다.
+
+        value속성을 다르게
+     -->
+
+    <input name="gender" value="F" checked
+           id="female" type="radio"/>
+    <label for="female">여성</label>
+
+    <label>
+    <input name="gender" value="M"
+           type="radio"/>
+    남성
+    </label>
+    <h2>취미 선택</h2>
+    <!-- 여러개 중복선택이 가능한 input타입은
+     checkbox입니다.
+     -->
+    <label>
+        <input type="checkbox"
+               name="hobby" value="game" />
+        게 임
+    </label>
+
+    <label>
+        <input type="checkbox"
+               name="hobby" value="sleep" />
+        잠자기
+    </label>
+    <input type="checkbox" id="reading"
+           name="hobby" value="reading" />
+    <label for="reading">독서</label>
+
+    <h2>생일 선택</h2>
+    <!-- 여러가지 옵션중에 선택하는 요소 : select
+     자식요소로는 option요소
+     -->
+    <select name="year">
+        <option>2018</option>
+        <option>2017</option>
+        <option>2016</option>
+        <option>2015</option>
+        <option>2014</option>
+        <option>2013</option>
+        <option>2012</option>
+        <option>2011</option>
+        <option>2010</option>
+        <option>2009</option>
+        <option>2008</option>
+        <option>2007</option>
+        <option>2006</option>
+        <option selected>2005</option>
+    </select>년
+    <h2>프로필 입력</h2>
+    <!--
+    유저가 여러줄 입력할 때 사용하는 요소 : textarea
+
+     -->
+    <textarea name="profile"
+              cols="100" rows="5"></textarea>
+    <h2>사진 등록</h2>
+    <!-- 파일을 업로드하기 위해서는
+     input type=file 요소를 사용
+     -->
+    <input type="file" name="userImage"/>
+
+    <button>회원가입</button>
+</fieldset>
+</form>
+<hr/>
+<h1>HTML5에서 추가된 input type들</h1>
+<!--
+크로스브라우징(모든 브라우저에서 작동가능)이슈로
+거의 사용하지 않음(모바일웹에서는 사용해도 좋음)
+-->
+<input type="date" />
+<input type="color" />
+<input type="range" />
+
+
+</body>
+</html>
+

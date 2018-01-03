@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>JBM : 전체글</title>
+    <link rel="icon" href="img/favicon_96x96.png" />
+    <style>
+        body {
+            height:2592px;
+            background-image: url(img/band_bg.png);
+            background-position: center;
+        }
+
+        #popup {
+
+            width:100%;
+            height:100%;
+            background-color:rgba(0,0,0,.7);
+            background-image: url(img/popup.png);
+            background-repeat: no-repeat;
+            background-position: center;
+
+            /* 브라우저에 고정되게 하는 속성 */
+            position: fixed;
+            left:0px;
+            top:0px;
+
+            /*처음에는 보이지 않게*/
+            display: none;
+
+        }
+    </style>
+</head>
+<body>
+    <button>팝업 보기</button>
+    <div id="popup"></div>
+
+<!-- 1) jquery불러오기 -->
+<script src="js/jquery.js"></script>
+<!-- 2) 우리가 작성할 script요소 -->
+<script>
+
+    //button을 클릭하면 popup이 나타남
+    $("button").click(function () {
+        $("#popup").show();
+    });
+
+    //popup을 클릭하면 popup이 사라짐
+    $("#popup").click(function () {
+        $("#popup").hide();
+    });
+
+</script>
+</body>
+</html>

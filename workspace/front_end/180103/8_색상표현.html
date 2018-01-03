@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>색상과 투명도</title>
+    <style>
+        /* 중복되는 CSS를 class로 */
+        .box {
+            /*너비*/
+            width:100px;
+            /*높이*/
+            height:100px;
+            /*폰트크기*/
+            font-size:40px;
+            /*글자색*/
+            color:#fff;
+            /*글자 가운데 정렬*/
+            text-align: center;
+            /*글자두께 두껍게*/
+            font-weight: bold;
+            /*
+            라인높이와 높이를 똑같이 주면
+            수직 가운데같은 효과가 납니다.
+            */
+            line-height: 100px;
+        }
+        #red {
+            background: rgb(255,0,0);
+        }
+        #blue {
+            margin-top:-80px;
+            margin-left:50px;
+            background: rgba(0,0,255,0.5);
+            /*background: rgb(0,0,255);*/
+            /* 3층으로 올림 */
+            position: relative;
+            /* 불투명도 : opacity(0~1) */
+            /*opacity: 0.5;*/
+        }
+
+
+    </style>
+</head>
+<body>
+    <!--
+        색상
+        1) 빛의 3요소(red, green, blue) : 모니터
+        2) 색의 3요소(cyan, magenta, yellow) : 프린터
+
+
+        색상표현
+        1) 키워드(blue,red,black,white...)
+        https://en.wikipedia.org/wiki/Web_colors
+        2) #16진수 6자리 (0,1,2,3,4,5,6,7,8,9,a,b,c,d,e,f)
+            첫글자2글자 : red
+            두번째 2글자 : green
+            세번째 2글자 : blue
+
+        3) #16진수 3자리
+
+        4) rgb함수형 : rgb(0~255,0~255,0~255)
+                       rgb(0~100%,0~100%,0~100%)
+
+        5) rgba 함수형 : rgba(0~255,0~255,0~255,0~1)
+                         rgba(0~100%,0~100%,0~100%,0~1)
+
+     -->
+    <div id="red" class="box">RED</div>
+    <div id="blue" class="box">BLUE</div>
+
+</body>
+</html>

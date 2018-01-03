@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>background속성들</title>
+    <style>
+        #box {
+            width:600px;
+            height:600px;
+            border:1px solid #424242;
+            /*뒷배경색*/
+            background-color:#03A9F4;
+            /*뒷배경이미지*/
+            background-image: url(img/music.jpg);
+            /*뒷배경 반복*/
+            background-repeat: no-repeat;
+            /*뒷배경 위치지정
+                x축 y축 순으로
+
+                top, right, bottom, left, center 키워드
+
+            */
+            background-position:100px 200px;
+
+            /*뒷배경크기
+            퍼센트, px,
+            (contain, cover)
+            */
+            background-size: 200px 100px;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+</body>
+</html>

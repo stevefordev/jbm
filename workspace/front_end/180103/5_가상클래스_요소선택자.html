@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>가상 클래스 / 요소 선택자</title>
+    <style>
+    /*
+        가상클래스 선택자 : ':'
+        - hover : 마우스오버시
+        - active : 마우스 클릭시
+
+        가상요소 선택자 : '::'
+     */
+
+    h1 {
+        width:300px;
+        height:80px;
+        border:1px solid #000;
+        text-align: center;
+        /*값의 변화를 부드럽게 처리*/
+        transition: 300ms cubic-bezier(.55,-0.02,.58,1.75);
+    }
+
+      h1:active {
+
+          width:600px;
+          height:300px;
+          color:red;
+          box-shadow: 0 16px 28px 0 rgba(0, 0, 0, 0.22),
+                      0 25px 55px 0 rgba(0, 0, 0, 0.21);
+      }
+
+
+      /* 다녀오지 않은 링크
+      (브라우저가 가진 기본CSS는 파랑) */
+        /*a:link {*/
+            /*color:chartreuse;*/
+        /*}*/
+        /*다녀온 링크
+        (브라우저가 가진 기본CSS는 보라색)
+        */
+        /*a:visited {*/
+            /*color:red;*/
+        /*}*/
+
+        a {
+            color:#424242;
+            /* 글자꾸미기(윗,가운데,아래라인)  */
+            /*text-decoration: line-through underline overline;*/
+            text-decoration: none;
+        }
+
+        a:hover {
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        a:active {
+            color:red;
+        }
+
+        #box {
+            width:400px;
+            height:200px;
+            border:2px solid #424242;
+            text-align: center;
+        }
+
+        /*
+
+            가상요소는 가상으로 인라인레벨요소를
+            마크업에 포함시킵니다.
+            구조나 데이터가 아닌 꾸미기를 위한
+            요소일때 사용합니다.
+
+            가상요소선택자 : '::'
+
+            - before : 요소의 첫번째 자식으로
+            - after : 요소의 마지막 자식으로
+
+        */
+
+        #box::before {
+            /*content는 필수*/
+            content: "A";
+            background: red;
+        }
+        #box::after {
+            content:"B";
+            background: blue;
+        }
+
+    </style>
+</head>
+<body>
+
+<!--
+    브라우저가 가진 기본 CSS
+
+    처음에 HTML이 만들어졌을때는 CSS가 없었습니다.
+    그리고, 단지 논문수준의 표현만 가능했습니다.
+
+    그래서, h1~h6는 글자크기가 있고 글자가 두껍고,
+    em은 이텔릭체,
+    a요소는 다녀온 링크 : 보라색, 안다녀온 링크 : 파란색
+    strong은 볼드체 지정
+
+    이런 기본 CSS가 있었습니다.
+
+    현재는 전부 리셋시키고, 개발자가 다시 재지정합니다.
+
+ -->
+    <h1>주요포털 링크</h1>
+    <a href="http://naveㅇ.com">네이버</a>
+    <a href="http://daum.net">다음</a>
+    <a href="http://nate.com">네이트</a>
+
+    <hr />
+
+    <div id="box">안녕하세요?</div>
+</body>
+</html>
