@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>웹폰트의 필요성</title>
+    <style>
+        #rix {
+            /*폰트는 클라이언트 컴퓨터에 설치된 폰트를 지정하면 안됩니다.
+
+            그래서 모든 컴퓨터에서 같은 폰트를
+            보기 위해서는 웹폰트를 사용해야 합니다.
+            (서버에서 다운받아집니다.)
+
+            웹폰트의 종류
+            1. 구글 API 등 다른서버에서
+            2. 우리서버에 직접
+            3
+            */
+            font-family: 'Rix개복박두 B', Serif;
+        }
+
+        #shin {
+            font-family: 'J신영복_TT';
+        }
+    </style>
+</head>
+<body>
+<h1 id="rix">이 문장은 개봉박두체입니다!</h1>
+<h1 id="shin">이 문장은 신영복체입니다!</h1>
+</body>
+</html>

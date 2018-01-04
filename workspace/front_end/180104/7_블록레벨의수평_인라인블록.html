@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>블록 레벨의 수평방법 인라인 블록</title>
+    <style>
+        /*
+            블록레벨의 수평정렬은
+            1. float 지정
+            2. display:inline-block 지정
+
+            인라인블록의 유의점
+            1. 엔터를 쳤을대 엔터값이 한 글자 떨어짐
+            (해결책은 주석으로 처리)
+            2. 두 줄이상일 경우 요소간의 간격이 벌어짐
+            (두 줄이상일 경우 float 을 활용합니다.
+            */
+        .box {
+            width: 100px;
+            height: 100px;
+            /*float:left;*/
+            display: inline-block;
+        }
+
+        #red {
+            background: red
+        }
+
+        #blue {
+            background: blue
+        }
+
+        #green {
+            background: green
+        }
+        #parent {
+            width: 300px;
+            border: 5px solid #424242;
+            height:100px;
+
+        }
+    </style>
+</head>
+<body>
+<div id="parent">
+    <!--inline-block 은 글자입니다. 그래서 엔터값이 한칸 띄워집니다.
+    -->
+    <div id="red" class="box"></div><!--
+    --><div id="blue" class="box"></div><!--
+    --><div id="green" class="box"></div>
+</div>
+<script>
+
+</script>
+</body>
+</html>

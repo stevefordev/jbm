@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #carBox {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            /*height: 225px;*/
+            /*overflow 속성은 자신(부모)의 크기를 알아야
+            적용할 수 있기때문에 float 된 자식요소들의 높이도 다 계산합니다.
+            그래서 적용됨*/
+            overflow: hidden;
+            width: 300px;
+            border: 5px solid #424242;
+        }
+
+        #carBox .car {
+            width: 100px;
+            height: 75px;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+<ul id="carBox">
+    <li class="car">
+        <img src="img/c1.jpg" width="100"/>
+    </li>
+    <li class="car">
+        <img src="img/c2.jpg" width="100"/>
+    </li>
+    <li class="car">
+        <img src="img/c3.jpg" width="100"/>
+    </li>
+    <li class="car">
+        <img src="img/c1.jpg" width="100"/>
+    </li>
+    <li class="car">
+        <img src="img/c2.jpg" width="100"/>
+    </li>
+    <li class="car">
+        <img src="img/c3.jpg" width="100"/>
+    </li>
+
+    <li class="car">
+        <img src="img/c1.jpg" width="100"/>
+    </li>
+    <li class="car">
+        <img src="img/c2.jpg" width="100"/>
+    </li>
+    <li class="car">
+        <img src="img/c3.jpg" width="100"/>
+    </li>
+
+</ul>
+<script>
+
+</script>
+</body>
+</html>

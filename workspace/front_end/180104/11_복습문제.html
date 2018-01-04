@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        #menu {
+            width: 588px;
+            box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            /*박스모델의 너비의 절반크기를 왼쪽으로 이동*/
+            margin-left:-300px;
+            /*박스모델의 높이 절반으로 위쪽이동*/
+            margin-top: -75px;
+            -webkit-box-shadow: 0px 0px 13px 2px rgba(0,0,0,0.68);
+            -moz-box-shadow: 0px 0px 13px 2px rgba(0,0,0,0.68);
+            box-shadow: 0px 0px 13px 2px rgba(0,0,0,0.68);
+        }
+
+        /*다음의 스크린아웃*/
+        .screen_out {
+            overflow: hidden;
+            position: absolute;
+            width: 0;
+            height: 0;
+            line-height: 0;
+            text-indent: -9999px;
+        }
+
+        #menu ul {
+            /*브라우저가 가진 기본 css*/
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        #menu li {
+            width: 127px;
+            height: 150px;
+            float: left;
+            border: 10px solid transparent;
+        }
+
+        #menu li:hover {
+            border: 10px solid black;
+            box-shadow: 0 27px 24px 0 rgba(0, 0, 0, 0.2),
+            0 40px 77px 0 rgba(0, 0, 0, 0.23);
+        }
+
+        #menu a {
+            width: 127px;
+            height: 150px;
+            background: deepskyblue;
+            color: #fff;
+            /*a요소는 인라인레벨*/
+            /*크기를 지정하기위해서는 */
+            /*블록레벨로 변경*/
+            display: block;
+            font-size: 22px;
+            font-weight: 700;
+            text-decoration: none;
+            line-height: 60px;
+            text-align: center;
+            transition: .3s ease-out;
+            text-indent: -99999px;
+            overflow: hidden;
+        }
+        #menu .mj a {
+            background-image: url("img/footer_face01.gif");
+        }
+
+        #menu .apc a {
+            background-image: url("img/footer_face02.gif");
+        }
+
+        #menu .neo a {
+            background-image: url("img/footer_face03.gif");
+        }
+
+        #menu .ryan a {
+            background-image: url("img/footer_face04.gif");
+        }
+    </style>
+</head>
+<body>
+<div id="menu">
+    <!-- 웹접근성때문에 필요합니다.
+    하지만 눈으로 볼때는 필요없습니다. -->
+    <h2 class="screen_out">카카오 메뉴</h2>
+    <ul>
+        <li class="mj"><a href="#">무지</a></li>
+        <li class="apc"><a href="#">어피치</a></li>
+        <li class="neo"><a href="#">네오</a></li>
+        <li class="ryan"><a href="#">라이언</a></li>
+    </ul>
+</div>
+
+<script>
+
+</script>
+</body>
+</html>

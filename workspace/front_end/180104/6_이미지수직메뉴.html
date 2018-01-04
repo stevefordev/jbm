@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>이미지 수직 메뉴</title>
+    <style>
+        /*image sprite
+        is 기법
+        */
+        /*브라우저가 가진 css제거 */
+        body {
+            margin: 0;
+        }
+
+        #menu {
+            width: 300px;
+            height: 400px;
+            background: red;
+
+
+        }
+
+        /*다음의 스크린아웃*/
+        .screen_out {
+            overflow: hidden;
+            position: absolute;
+            width: 0;
+            height: 0;
+            line-height: 0;
+            text-indent: -9999px;
+        }
+
+        #menu ul {
+            background: blue;
+            /*브라우저가 가진 기본 css*/
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        #menu li {
+            width: 300px;
+            height: 100px;
+            background: green;
+        }
+
+        #menu a {
+            width: 300px;
+            height: 100px;
+            background: orange;
+            display: block;
+            transition: .2s ease-out;
+            /*
+            IR기법(이미지 대치기법)
+            - 웹접근성을 위해서 글자가 있지만
+            디자인을 위해서 이미지로 대치하는 방법
+            - 뒷배경이미지를 지정하고
+            - 글자를 숨기면됩니다. */
+            text-indent: -99999px;
+            overflow: hidden;
+        }
+        #menu a:hover {
+            background-position: 0 -100px;
+        }
+
+        #menu a:active {
+            background-position: 0 -200px;
+        }
+
+        #menu .mail a {
+            background-image: url("img/mail_a.gif");
+        }
+        #menu .cafe a {
+            background-image: url("img/cafe_a.gif");
+        }
+        #menu .blog a {
+            background-image: url("img/blog_a.gif");
+        }
+        #menu .kin a {
+            background-image: url("img/kin_a.gif");
+        }
+    </style>
+</head>
+<body>
+<div id="menu">
+    <!-- 웹접근성때문에 필요합니다.
+    하지만 눈으로 볼때는 필요없습니다. -->
+    <h2 class="screen_out">주요 서비스</h2>
+    <ul>
+        <li class="mail"><a href="">메일</a></li>
+        <li class="cafe"><a href="">카페</a></li>
+        <li class="blog"><a href="">블로그</a></li>
+        <li class="kin"><a href="">지식in</a></li>
+    </ul>
+</div>
+
+<script>
+
+</script>
+</body>
+</html>
