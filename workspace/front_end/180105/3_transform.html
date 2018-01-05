@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>transform</title>
+    <style>
+        /*
+        인라인(구조)의 가운데 정렬은 부모에
+        text-align을 center로 주면된다.
+
+        블록레벨의 수평가운데 정렬은 margin값을 auto로 지정
+        (정확히는 margin-left:auto, margin-right:auto)
+
+        */
+
+        #box {
+            width: 800px;
+            height: 600px;
+            border: 1px solid #424242;
+            /*부모의 width값에서 자신의 width값을 빼간 값을 나누기 2해서
+             margin-left와 margin-right가 나눠가집니다
+
+             margint-bottom과 margin-top은
+             auto 일때 값이 0
+             width,height 동작이 다릅니다.
+             */
+
+            /*
+            margin-left: auto;
+            margin-bottom: auto;
+            */
+            margin: auto;
+        }
+
+        #box div {
+            width: 100px;
+            height: 100px;
+            transition: 5s ease-out;
+        }
+
+        /*transform속성의 값
+        1. translate : 운반
+        2. rotate : 회전
+        3. scale : 비율
+        */
+        #translate {
+            background: red;
+        }
+
+        #box:hover #translate {
+            transform: translate(200px, 300px);
+        }
+
+        #rotate {
+            background: blue;
+        }
+
+        #box:hover #rotate {
+            transform: rotate(360deg);
+        }
+
+        #scale {
+            background: green;
+        }
+
+        #box:hover #scale {
+            transform: scale(2);
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <div id="translate"></div>
+    <div id="rotate"></div>
+    <div id="scale"></div>
+</div>
+<script>
+
+</script>
+</body>
+</html>

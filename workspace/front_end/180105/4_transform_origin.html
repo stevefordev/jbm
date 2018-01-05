@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>transform origin</title>
+    <style>
+        body {
+            background: lightblue;
+            /*인라인 수평정렬 : 부모에 text-align
+            블록 수평정렬 : margin:auto
+            */
+
+            text-align: center;
+        }
+
+        #ghost {
+            transition: 10s ease-out;
+            /*transform-origin 은
+            변형의 시작점을 지정하는 속성
+            기본값은 50% 50% */
+            transform-origin: 50% 0%;
+
+        }
+        #ghost:hover {
+            transform: rotate(360deg);
+
+        }
+        #car {
+            transition: 1s ease;
+            width: 400px;
+            transform-origin: 50% 100%;
+        }
+
+        #car:active{
+            /*x, y축으로 돌면
+            원근법이 필요합니다.
+            */
+            transform : perspective(100px) rotateX(20deg);
+        }
+    </style>
+</head>
+<body>
+<img id="ghost" src="img/frame.png"/>
+<hr/>
+<img id="car" src="img/c3.jpg"/>
+<script>
+
+</script>
+</body>
+</html>

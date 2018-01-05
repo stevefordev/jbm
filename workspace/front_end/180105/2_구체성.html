@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>구체성</title>
+    <style>
+        /*
+        구체성이란?
+        두개이상의 선택자에서
+        한개의 요소를 선택하고
+        같은 속성에 다른 값을 지정할 경우
+        과연 브라우저는 어던 속성값을 적용할지
+        알아내는 성질입니다.
+
+        숫자 4개(갯수)
+        첫번재 숫자
+           0       0        0        0
+        (인라인) (id)  (클랙스)  (요소)
+        */
+
+        /*0 0 0 1*/
+        h1 {
+            color: red;
+        }
+        /*0 0 0 1*/
+        h1 {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+<!-- style="color:orange" : 이게 인라인-->
+<h1 id="h1" class="h1">나는 무슨색?</h1>
+<script>
+
+</script>
+</body>
+</html>
