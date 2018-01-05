@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <title>ex6</title>
+    <link rel="icon" href="img/kakao_favicon.ico"/>
+    <style>
+        .screen_out {
+            overflow: hidden;
+            position: absolute;
+            width: 0;
+            height: 0;
+            line-height: 0;
+            text-indent: -9999px;
+        }
+
+        #wrap {
+            width: 960px;
+            border: 1px solid black;
+            box-shadow: 4px 4px 1px black, 3px 3px 1px black, 2px 2px 1px black, 1px 1px 1px black;
+        }
+
+        #header {
+            padding-left: 20px;
+
+        }
+
+        #gnb ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        #gnb li {
+            width: 120px;
+            height: 116px;
+            float: left;
+        }
+
+        #gnb li a {
+            display: block;
+            width: 120px;
+            height: 116px;
+            text-decoration: none;
+            background-image: url("img/ko_img_gnb_150615.png");
+            text-indent: -99999px;
+            overflow: hidden;
+        }
+
+        #gnb li:hover {
+            background: #FDD835;
+        }
+
+        #gnb li:nth-child(1) a {
+            background-position: 0px 232px;
+        }
+
+        #gnb li:nth-child(1) a:hover {
+            background-position: 0px 0px;
+        }
+
+        #gnb li:nth-child(2) a {
+            background-position: -120px 232px;
+        }
+
+        #gnb li:nth-child(2) a:hover {
+            background-position: -120px 0px;
+        }
+
+        #gnb li:nth-child(3) a {
+            background-position: -240px 232px;
+        }
+
+        #gnb li:nth-child(3) a:hover {
+            background-position: -240px 0px;
+        }
+
+        #gnb li:nth-child(4) a {
+            background-position: -960px 232px;
+        }
+
+        #gnb li:nth-child(4) a:hover {
+            background-position: -960px 0px;
+        }
+
+        #gnb li:nth-child(5) a {
+            background-position: -480px 232px;
+        }
+
+        #gnb li:nth-child(5) a:hover {
+            background-position: -480px 0px;
+        }
+
+        #gnb li:nth-child(6) a {
+            background-position: -600px 232px;
+        }
+
+        #gnb li:nth-child(6) a:hover {
+            background-position: -600px 0px;
+        }
+
+        #gnb li:nth-child(7) a {
+            background-position: -720px 232px;
+        }
+
+        #gnb li:nth-child(7) a:hover {
+            background-position: -720px 0px;
+        }
+
+        #gnb li:nth-child(8) a {
+            background-position: -840px 232px;
+        }
+
+        #gnb li:nth-child(8) a:hover {
+            background-position: -840px 0px;
+        }
+
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <div id="header">
+        <h1><a href="">
+            <img src="img/kakao.png" alt="kakao"/>
+        </a></h1>
+    </div><!--//#header-->
+    <div id="gnb">
+        <h2 class="screen_out">주요서비스</h2>
+        <ul>
+            <li class="talk"><a href="">카카오톡</a></li>
+            <li class="story"><a href="">카카오스토리</a></li>
+            <li class="taxi"><a href="">카카오택시</a></li>
+            <li class="tv"><a href="">카카오티비</a></li>
+            <li class="zap"><a href="">Zap</a></li>
+            <li class="group"><a href="">카카오그룹</a></li>
+            <li class="topic"><a href="">카카오토픽</a></li>
+            <li class="music"><a href="">카카오뮤직</a></li>
+        </ul>
+    </div>
+</div><!--//#wrap-->
+</body>
+</html>
+
+
+

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <title>ex5</title>
+    <link rel="stylesheet" href="css/notosanskr.css">
+    <style>
+        body {
+        }
+
+        #menu {
+            width: 200px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5),
+            0 10px 10px rgba(0, 0, 0, 0.4);
+            padding: 20px;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            margin-left: -120px;
+            margin-top: -122px;
+        }
+
+        #menu ul {
+            padding: 0px;
+            margin: 0px;
+            width: 200px;
+            list-style: none;
+        }
+
+        #menu li {
+            margin: 6px;
+
+        }
+
+        #menu li a {
+            display: block;
+            width: 100px;
+            height: 27px;
+            font-size: 16px;
+            padding-left: 30px;
+            text-decoration: none;
+        }
+
+        #menu li:nth-child(1) a {
+            background: url("img/gnb_menu_icon_01.png");
+            background-position: 0 -480px;
+            background-repeat: no-repeat;
+            color: #FF6278;
+        }
+
+        #menu li:nth-child(2) a {
+            background: url("img/gnb_menu_icon_02.png");
+            background-position: 0 -80px;
+            background-repeat: no-repeat;
+            color: #1BC0A0;
+        }
+
+        #menu li:nth-child(3) a {
+            background: url("img/gnb_menu_icon_03.png");
+
+            background-repeat: no-repeat;
+            color: #828595;
+        }
+
+        #menu li:nth-child(4) a {
+            background: url("img/gnb_menu_icon_04.png");
+            background-position: 0 -160px;
+            background-repeat: no-repeat;
+            color: #9876F1;
+        }
+
+        #menu li:nth-child(5) a {
+            background: url("img/gnb_menu_icon_05.png");
+            background-position: 0 -200px;
+            background-repeat: no-repeat;
+            color: #F87BC3;
+        }
+
+        #menu li:nth-child(6) a {
+            background: url("img/gnb_menu_icon_06.png");
+            background-position: 0 -240px;
+            background-repeat: no-repeat;
+            color: #FF6278;
+        }
+
+        body #menu li:hover a {
+            font-weight: bold;
+            color: #42C4FA;
+            background-position: 0 -520px;
+        }
+
+        .screen_out {
+            overflow: hidden;
+            position: absolute;
+            width: 0;
+            height: 0;
+            line-height: 0;
+            text-indent: -9999px;
+        }
+    </style>
+</head>
+<body>
+<div id="menu">
+    <h1 class="screen_out">밴드 메뉴</h1>
+    <ul>
+        <li><a href="">게시판</a></li>
+        <li><a href="">사진첩</a></li>
+        <li><a href="">채팅방</a></li>
+        <li><a href="">캘린더</a></li>
+        <li><a href="">멤버</a></li>
+        <li><a href="">설정</a></li>
+    </ul>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

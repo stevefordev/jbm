@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <title>ex4</title>
+    <link rel="stylesheet" href="css/notosanskr.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        #btn {
+            width: 230px;
+            height: 50px;
+            position: fixed;
+            left: 50%;
+            margin-left: -115px;
+            border: 1px solid black;
+            transition: .3s ease-out;
+            background: #03A9F4;
+            line-height: 50px;
+            color: #ffffff;
+            border-radius: 30px;
+        }
+
+        #btn:hover {
+            background: #E91E63;
+            box-shadow: 0 4px 20px black;
+        }
+
+        #btn:active {
+            background: #FFC107;
+            transform: scale(0.8);
+        }
+
+    </style>
+</head>
+<body>
+<div id="main">
+    <h1>둥근보더와 그림자를 이용해볼까요?</h1>
+    <div id="btn">
+        <i class="fa fa-hand-spock-o"></i><span> &ltI'm button&gt</span>
+    </div>
+</div>
+</body>
+</html>

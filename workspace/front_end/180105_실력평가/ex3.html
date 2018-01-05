@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <title>ex3</title>
+    <link rel="icon" href="img/daum_movie.ico"/>
+    <link rel="stylesheet" href="css/notosanskr.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        img {
+            width: 100px;
+        }
+
+        table, th, td {
+            border: 1px solid #444444;
+        }
+
+        table td:nth-child(3){
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<h1>영화사이트</h1>
+<h2>영화검색</h2>
+<!-- ***** 영화 검색폼-->
+<div>
+    <form target="_blank" action="http://movie.daum.net/search/main" method="get">
+        <fieldset>
+            <legend>영화 검색폼</legend>
+            <span>검색</span>
+            <input type="text" name="searchText" placeholder="검색할 영화이름"/>
+            <button><i class="fa fa-search"></i>검색</button>
+        </fieldset>
+    </form>
+</div>
+<hr/>
+<h2>일일 박스오피스</h2>
+<!-- ***** 일일 박스오피스-->
+<div>
+    <table>
+        <thead>
+        <tr>
+            <th>순위</th>
+            <th>포스터</th>
+            <th>영화명</th>
+            <th>관색수</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>1</td>
+            <td><img src="poster/p1.jpg"/></td>
+            <td>신과함께-죄와벌</td>
+            <td>10,183,695</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td><img src="poster/p2.jpg"/></td>
+            <td>1987</td>
+            <td>3,029,618</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td><img src="poster/p3.jpg"/></td>
+            <td>쥬만지:새로운 세계</td>
+            <td>235,032</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td><img src="poster/p4.jpg"/></td>
+            <td>페르디난드</td>
+            <td>108,766</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td><img src="poster/p5.jpg"/></td>
+            <td>강철비</td>
+            <td>4,230,945</td>
+        </tr>
+        <tr>
+            <td colspan="4"><a href="http://www.kobis.or.kr/kobis/business/main/main.do">영화진흥위원회 영화관 입장권 통합전산망 제공</a></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
