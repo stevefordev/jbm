@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>absulute 기본</title>
+    <style>
+        #box {
+            width: 600px;
+            height: 400px;
+            background: silver;
+            margin: 100px auto;
+            /*포지셔닝 컨텍스트를 지정*/
+            position: relative;/*fixed, absolute*/
+        }
+        /*position 속성은 특정요소가 어디를 기준으로
+        left, top, right, bottom 등으로 움직일 수 있게 만드는 속성
+
+        1. fixed : 브라우저 기준
+        2. absolute : 포지셔닝컨텍스트(기본 html) 기준
+        3. relative : 원래 그 자리
+        4. static : 안움직임(!!) 기본값
+        */
+
+        img {
+            /*포지셔닝 컨텍스트 기준*/
+            position: absolute;
+            right: -100px;
+            top: 0px;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <img src="img/001.gif" alt="라이언" width="100"/>
+</div>
+<script>
+
+</script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>복습문제 1번</title>
+    <link rel="stylesheet" href="css/notosanskr.css">
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+
+        #carBox {
+            width: 1024px;
+            height: 768px;
+            border: 10px solid mediumpurple;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            margin-left: -522px;
+            margin-top: -394px;
+        }
+
+        #carBox h1 {
+            position: absolute;
+            left: -30px;
+            top: 20px;
+            width: 780px;
+            height: 100px;
+            background-color: mediumpurple;
+            color: white;
+            line-height: 100px;
+            padding-left: 20px;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4), 0 10px 50px rgba(0, 0, 0, 0.6);
+        }
+
+        #carBox h1::after {
+            content: "";
+            width: 0;
+            height: 0;
+            border-top: 20px solid #4b0089;
+            border-left: 20px solid transparent;
+            position: absolute;
+            left: 0;
+            bottom: -20px;
+        }
+    </style>
+</head>
+<body>
+<div id="carBox">
+    <h1>Mercedes-Benz AMG Project ONE</h1>
+    <img src="img/AMG_Project_ONE.jpg" alt="Mercedes-Benz AMG Project ONE"/>
+</div>
+<script>
+
+</script>
+</body>
+</html>

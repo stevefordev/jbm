@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>가운데 정렬</title>
+    <style>
+        /*
+        상속받는 속성들
+        - text, font 관련
+
+        상속받지 않는 속성들
+        - background 관련, 박스모델델
+       */
+        #box {
+            width: 400px;
+            height: 300px;
+            border: 1px solid #424242;
+            text-align: center;
+            /*
+            인라인레벨의 가운데 정렬은
+            부모 혹은 조상에 text-align:center;
+            */
+
+        }
+        #inline {
+            background: lightpink;
+        }
+        #block {
+            width: 100px;
+            /*블록레벨의 수평 가운데 정렬은
+            margin-left, right 값을 auto로
+            */
+            margin: auto;
+            background: lightblue;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <span id="inline">인라인</span>
+    <div id="block">블록</div>
+</div>
+
+<script>
+
+</script>
+</body>
+</html>

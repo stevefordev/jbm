@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>애플메뉴</title>
+    <link rel="icon" href="img/apple_favicon.ico"/>
+    <style>
+        body {
+            margin: 0;
+        }
+        .screen_out {
+            overflow: hidden;
+            position: absolute;
+            width: 0;
+            height: 0;
+            line-height: 0;
+            text-indent: -9999px;
+        }
+        #gnb {
+            width: 982px;
+            height: 36px;
+            margin: auto;
+            background: url("img/globalnavbg.png");
+        }
+
+        #gnb ul {
+            /* 브라우저가 가진 기본 CSS
+            margin padding list-style
+             */
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+
+        }
+
+        #gnb li {
+            width: 103px;
+            height: 36px;
+            float: left;
+        }
+        /*0 1 0 2*/
+        #gnb li>a {
+            width: 103px;
+            height: 36px;
+            text-decoration: none;
+            background: url("img/globalnavbg.png");
+            display: block;
+            /*IR 기법*/
+            text-indent: -9999px;
+            overflow: hidden;
+            transition: .2s ease-in-out;
+        }
+        /*0 0 1 1*/
+        #gnb .home a {
+            background-position: 0 0;
+        }
+        #gnb .store a {
+            background-position: -103px 0;
+        }
+        #gnb .mac a {
+            background-position: -206px 0;
+        }
+        #gnb .ipod a {
+            background-position: -309px 0;
+        }
+        #gnb .iphone a {
+            background-position: -412px 0;
+        }
+        #gnb .ipad a {
+            background-position: -515px 0;
+        }
+        #gnb .itunes a {
+            background-position: -618px 0;
+        }
+        #gnb .support a {
+            background-position: -721px 0;
+        }
+
+        #gnb .home a:hover {
+            background-position: 0 -38px;
+        }
+        #gnb .store a:hover {
+            background-position: -103px -38px;
+        }
+        #gnb .mac a:hover {
+            background-position: -206px -38px;
+        }
+        #gnb .ipod a:hover {
+            background-position: -309px -38px;
+        }
+        #gnb .iphone a:hover {
+            background-position: -412px -38px;
+        }
+        #gnb .ipad a:hover {
+            background-position: -515px -38px;
+        }
+        #gnb .itunes a:hover {
+            background-position: -618px -38px;
+        }
+        #gnb .support a:hover {
+            background-position: -721px -38px;
+        }
+
+        #gnb .home a:active {
+            background-position: 0 -76px;
+        }
+        #gnb .store a:active {
+            background-position: -103px -76px;
+        }
+        #gnb .mac a:active {
+            background-position: -206px -76px;
+        }
+        #gnb .ipod a:active {
+            background-position: -309px -76px;
+        }
+        #gnb .iphone a:active {
+            background-position: -412px -76px;
+        }
+        #gnb .ipad a:active {
+            background-position: -515px -76px;
+        }
+        #gnb .itunes a:active {
+            background-position: -618px -76px;
+        }
+        #gnb .support a:active {
+            background-position: -721px -76px;
+        }
+
+
+    </style>
+</head>
+<body>
+<div id="gnb">
+    <h2 class="screen_out">주요 서비스</h2>
+    <ul>
+        <li class="home"><a href="" title="홈">Home</a></li>
+        <li class="store"><a href="">Store</a></li>
+        <li class="mac"><a href="">Mac</a></li>
+        <li class="ipod"><a href="">iPod</a></li>
+        <li class="iphone"><a href="">iPhone</a></li>
+        <li class="ipad"><a href="">iPad</a></li>
+        <li class="itunes"><a href="">iTunes</a></li>
+        <li class="support"><a href="">Support</a></li>
+    </ul>
+</div>
+<script>
+
+</script>
+</body>
+</html>

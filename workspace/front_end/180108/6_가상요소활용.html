@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>가상요소 활용</title>
+    <style>
+        .chat {
+            width: 300px;
+            height: 100px;
+            background: #FFCA28;
+            position: relative;
+            box-shadow: 0 6px 10px rgba(0,0,0,0.4), 0 10px 50px rgba(0,0,0,0.6);
+            border-radius: 10px 0px 10px 10px;
+        }
+        /* 채팅박스에 화살표는 디자인적인 요소입니다.
+        그런데 HTML의 요소를 활용하면
+        구조/표현의 분리에 어긋납니다.
+
+        그래서 디자인적인 요소들은 가상요소를 호라용합니다.
+
+        */
+        .chat::after {
+            /*가상요소는 content 가 무조건 있어야함*/
+            content: "";
+            width: 0px;
+            height: 0px;
+            /*position: absolute; 블록레벨이 인라인 레벨로 바뀜*/
+            position: absolute;
+            right: -30px;
+            border-top: 20px solid #FFCA28;
+            border-right: 30px solid transparent;
+
+
+        }
+    </style>
+</head>
+<body>
+<div class="chat">
+
+</div>
+<!--
+1. 가상요소 사용법
+2. border 를 이용해서 삼각형
+3. 그 삼각형을 저기(원하는 곳)에 가져다 놓기
+-->
+<script>
+
+</script>
+</body>
+</html>

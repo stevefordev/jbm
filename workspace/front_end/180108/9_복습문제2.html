@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .screen_out {
+            overflow: hidden;
+            position: absolute;
+            width: 0;
+            height: 0;
+            line-height: 0;
+            text-indent: -9999px;
+            color : #f00;
+        }
+
+        #menu {
+            margin: auto;
+            border: 1px solid black;
+            width: 180px;
+
+        }
+        #menu h1 {
+            margin: 0;
+        }
+        #logo {
+            width: 180px;
+            height: 51px;
+        }
+
+        #logo a {
+            background: url("img/tit_blacklogo_160906.png");
+            background-size: cover;
+            height: 51px;
+        }
+
+        a {
+            display: block;
+            text-decoration: none;
+            text-indent: -9999px;
+            overflow: hidden;
+            width: 140px;
+            height: 40px;
+            margin: auto;
+        }
+
+        #menu ul {
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+        }
+
+        #menu li {
+            width: 180px;
+            height: 50px;
+            padding-top: 20px;
+        }
+
+        #menu li a {
+            background: url("img/txt_gnb.png");
+            background-repeat: no-repeat;
+        }
+
+        #menu .donation a {
+
+        }
+        #menu .donation a:hover {
+            background-position: 0px -48px;
+        }
+        #menu .ride a {
+            background-position: -216px 0px;
+        }
+        #menu .ride a:hover{
+            background-position: -216px -48px;
+        }
+        #menu .magazine a {
+            background-position: -432px 0px;
+        }
+        #menu .magazine a:hover {
+            background-position: -432px -48px;
+        }
+        #menu .more a {
+            background-position: -614px 0px;
+        }
+        #menu .more a:hover {
+            background-position: -614px -48px;
+
+        }
+
+    </style>
+</head>
+<body>
+<div id="menu">
+    <h1 id="logo"><a href="">가치같이</a></h1>
+    <h2 class="screen_out">가치같이 메인메뉴</h2>
+    <ul>
+        <li class="donation"><a href="">같이기부</a></li>
+        <li class="ride"><a href="">같이타요</a></li>
+        <li class="magazine"><a href="">매거진</a></li>
+        <li class="more"><a href="">더보기</a></li>
+    </ul>
+</div>
+
+<script>
+
+</script>
+</body>
+</html>

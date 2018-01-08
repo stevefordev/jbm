@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>복습문제3</title>
+    <style>
+        body {
+            margin: 0;
+            background: url("img/wmp_bg.png");
+            height: 14975px;
+            width: 2036px;
+        }
+
+        #btnBox {
+            width: 75px;
+            height: 75px;
+            position: fixed;
+            right: 30px;
+            bottom: 30px;
+        }
+
+        #btnBox a {
+            display: block;
+            text-indent: -9999px;
+            overflow: hidden;
+            background: url("img/btn_quick_updown_v3.png");
+            background-repeat: no-repeat;
+            width: 75px;
+            height: 38px;
+        }
+
+        #btnBox .up:hover{
+            background-position: 0 -80px;
+        }
+
+        #btnBox .down {
+            background-position: 0 -38px;
+        }
+
+        #btnBox .down:hover {
+            background-position: 0 -118px;
+        }
+    </style>
+</head>
+<body>
+<div id="btnBox">
+    <a href="#" class="btn up">맨위로</a>
+    <a href="#" class="btn down">맨아래로</a>
+</div>
+<script>
+
+</script>
+</body>
+</html>
