@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery 의 시작</title>
+    <style>
+
+    </style>
+
+</head>
+<body>
+    <!-- jqeury는 javascript의 라이브러리로,
+         순수 javasciprt로 작성하는 것보다
+         훨씬 쉽고 편리하게 사용이 가능합니다.
+         (현재는 표준 처럼 사용함)-->
+
+    <h1>안녕하세요?</h1>
+    <button id="btn">눌러보세요!</button>
+
+    <!-- jquery를 import-->
+    <script src="js/jquery.js"></script>
+    <script>
+        /*
+            jquery 는 $() : (jquery함수)만 기억하셔도 됩니다.
+          $(CSS 선택자)
+         1. 버튼요소를 선택합니다.
+         2. click 이벤트를 감지하는 리스너를 붙입니다.
+         3. h1 요소를 선택합니다.
+         4. h1요소를 선택하고 글자를 'Hello'로 변경
+          */
+        var isTrue = true;
+        $("#btn").css("color", "red");
+        $("#btn").click(function () {
+                if (isTrue) {
+                    $("#btn").css("color", "black");
+                    $("h1").css("color","#00bfff");
+                    $("h1").text("Hello!")
+                    isTrue = false;
+                } else {
+                    $("#btn").css("color", "red");
+                    $("h1").css("color","green");
+                    $("h1").text("Hello!!!!")
+                    isTrue = true;
+                }
+        });//click() end
+
+    </script>
+</body>
+</html>

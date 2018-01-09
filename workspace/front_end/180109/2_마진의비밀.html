@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>마진의 비밀</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <style>
+        ul {
+            background: deeppink;
+            width: 200px;
+            padding: 1px;
+            /*
+            부모와 자식의 마진겹침현상
+            - 해결책 : 패딩, 보더를 이용해서 막음
+                        overflow:hidden
+            */
+        }
+
+        li {
+            width:  200px;
+            height: 60px;
+            /*마진켭침현상이란 블록레벨끼리
+            위요소의 margin-bottom과 아래요소의 margin-top이 겹치는 현상
+
+            inline level은 겹칩현상이 발생하지 않는다(float:left)
+            */
+            margin: 20px 0;
+
+            background: deepskyblue;
+        }
+
+    </style>
+</head>
+<body>
+<ul>
+    <li>리스트1</li>
+    <li>리스트2</li>
+    <li>리스트3</li>
+    <li>리스트4</li>
+</ul>
+
+<script>
+
+</script>
+</body>
+</html>

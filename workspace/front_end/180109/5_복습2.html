@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <style>
+        #menu {
+            margin: auto;
+            border: 1px solid black;
+            width: 180px;
+        }
+        #logo {
+            width: 121px;
+            height: 51px;
+            background: red;
+            margin: 10px auto;
+        }
+
+        #logo a {
+            width: 121px;
+            height: 51px;
+            background: blue;
+            display: block;
+            background: url("img/tit_blacklogo_160906.png");
+            text-indent: -9999px;
+            overflow: hidden;
+            transition: .2s ease;
+        }
+
+        #logo a:hover{
+
+        }
+
+        #menu li {
+            width: 180px;
+            height: 70px;
+            position: relative;
+        }
+
+        #menu li>a {
+            width: 140px;
+            height: 40px;
+            background: url("img/txt_gnb.png");
+            background-repeat: no-repeat;
+            display: block;
+            position: absolute;
+            left: 20px;
+            top: 15px;
+            text-indent: -9999px;
+            overflow: hidden;
+        }
+
+        #menu li:nth-child(1) a {
+            background-position: 0 0;
+        }
+
+        #menu li:nth-child(2) a {
+            background-position: -216px 0;
+        }
+
+        #menu li:nth-child(3) a {
+            background-position: -432px 0;
+        }
+        #menu li:nth-child(4) a {
+            background-position: -614px 0;
+        }
+
+        #menu li:nth-child(1) a:hover {
+            background-position: 0 -48px;
+        }
+
+        #menu li:nth-child(2) a:hover {
+            background-position: -216px -48px;
+        }
+
+        #menu li:nth-child(3) a:hover {
+            background-position: -432px -48px;
+        }
+        #menu li:nth-child(4) a:hover {
+            background-position: -614px -48px;
+        }
+    </style>
+</head>
+<body>
+<div id="menu">
+    <h1 id="logo"><a href="">가치같이</a></h1>
+    <h2 class="screen_out">가치같이 메인메뉴</h2>
+    <ul>
+        <li class="donation"><a href="">같이기부</a></li>
+        <li class="ride"><a href="">같이타요</a></li>
+        <li class="magazine"><a href="">매거진</a></li>
+        <li class="more"><a href="">더보기</a></li>
+    </ul>
+</div>
+
+<script>
+
+</script>
+</body>
+</html>

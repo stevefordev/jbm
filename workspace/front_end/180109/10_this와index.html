@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>this와 index</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <button>버튼1</button>
+    <button>버튼2</button>
+    <button>버튼3</button>
+
+    <script src="js/jquery.js"></script>
+    <script>
+        //1. 버튼 3개에 click 이벤트 리스너 처리
+        $("button").click(function () {
+            //유저가 클릭한 그 요소를 나타내는 키워드는
+            // this : 자바스크립트 순수 객체
+
+            $(this).css("color", "red");
+
+            //해당 버튼의 index 값
+            var index = $(this).index();
+            console.log(index + "번째 버튼");
+        })
+    </script>
+</body>
+</html>
