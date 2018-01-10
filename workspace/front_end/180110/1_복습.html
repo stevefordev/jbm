@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>복습</title>
+    <style>
+
+    </style>
+</head>
+<body>
+<p>
+    <button>버튼</button>
+    <button>버튼</button>
+    <button>버튼</button>
+    <button>버튼</button>
+</p>
+<p>당신이 누른 버튼은? <strong>?</strong>번째 버튼</p>
+
+<script src="js/jquery.js"></script>
+<script>
+    /*
+    함수안에서 그 요소를 나타내는 키워드는 'this' 입니다
+
+    this는 순수 자바스크립트객체
+
+    jquery요소객체는 index를 가지고 있습니다.
+    index()메서드를 호출하면 그 index값을 얻을 수 있습니다.
+    * */
+
+    /*
+    * 개발에서는 숫자 0부터 시작한다
+    * getter를 호출했을대 변수로 받아라!!
+    * */
+
+    //1. 버튼을 선택하여 click 이벤트를 처리
+    $("button").click(function () {
+        console.log(this);
+
+        // 2. 그 요소를 jquery 객체로 만들고
+        // 해당인덱스(숫자)를 언어온 후
+        // index라는 변수를 선언하여 그 값을 대입(초기화)
+        var index = $(this).index();
+        console.log(index);
+        // 3. strong 요소를 선택한 후
+        // 글자로 index값을 출력(setter)
+        $("strong").text(index + 1);
+    });
+</script>
+</body>
+</html>

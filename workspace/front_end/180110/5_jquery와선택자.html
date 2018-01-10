@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery와선택자</title>
+    <style>
+
+    </style>
+</head>
+<body>
+<button>버튼</button>
+<ul>
+    <li>리스트</li>
+    <li>리스트</li>
+    <li>리스트</li>
+    <li>리스트</li>
+    <li>리스트</li>
+    <li>리스트</li>
+    <li>리스트</li>
+    <li>리스트</li>
+    <li>리스트</li>
+    <li>리스트</li>
+    <li>리스트</li>
+</ul>
+
+
+<script src="js/jquery.js"></script>
+<script>
+    // 이벤트 : click
+    // 이벤트 타켓 : button 요소
+    // 이벤트리스터 : 눈에 안보임
+    // 이벤트핸들러 : 함수
+    $("button").click(function () {
+        console.log("test");
+        //css 선택자 : nth-child
+        // jquery 선택자 : eq()
+
+        //css선택자 : first-child
+        $("ul li:first-child").css("background", "#123155");
+        //jquery 선택자 : first
+        $("ul li:first").css("background", "#123155");
+
+        $("ul li").eq(1).css("background", "#424242");
+
+        $("ul li").eq(4).css("background", "#420042");
+        $("ul li").eq(7).css("background", "#424200");
+
+        $("ul li:last-child").css("background", "lightblue").css("color", "blue");
+
+        // 4번째 리스트에 글자는 green
+        $("ul li:nth-child(4)").css("color", "green");
+        $("ul li:eq(3)").css("background", "lightgreen");
+
+    });//button click() end
+</script>
+</body>
+</html>

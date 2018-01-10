@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>css메서드</title>
+    <style>
+        #box {
+            width: 400px;
+            height: 300px;
+            background: turquoise;
+        }
+
+    </style>
+</head>
+<body>
+<p>
+    <button>색상입력</button>
+    <button>width얻기</button>
+    <button>여러개 한번에 변경</button>
+</p>
+<div id="box"></div>
+
+<script src="js/jquery.js"></script>
+<script>
+    /*
+    * css메서드의 사용법
+    * 1. css("속성명", "속성값") : setter(1개 속성값을 세팅)
+    * 2. css("속성명") : 1개의 속성값을 얻어오는 getter(변수로 받기)
+    * 3. css("객체") : 여러개의 속성값을 세팅하는 setter
+    * */
+
+    //1. 첫번째 버튼을 클릭하면
+    $("button:eq(0)").click(function () {
+        //2. #box의 뒷배경색이 deeppink 로 변경
+        $("#box").css("background", "deeppink");
+    }); // 1번째 button click() end
+
+    // 3. 두번째 버튼을 클릭했을때
+    $("button").eq(1).click(function () {
+        //4. #box의 height 값을 얻어와서
+        // 변수 height에 대입
+        var height = $("#box").css("height");
+        console.log("height : " + height);
+    }); // 2번째 button click() end
+
+    // 3. 세번째 버튼을 클릭했을때
+    $("button").eq(2).click(function () {
+
+        // #box 의 width도 600px
+        // height 도 400px
+        // 뒷배경색도 #673AB7
+        // 보더도 "10px dotted #424242"
+        // method chain
+        /*
+        $("#box").css("width", "600px")
+            .css("height", "400px")
+            .css("background", "#673AB7")
+            .css("border", "10px dotted #424242");
+            */
+        var changeCSS = {"width": "600px", "height": "400px", "background": "#673AB7", "border": "10px dotted #424242"}
+
+        $("#box").css(changeCSS);
+    });
+</script>
+</body>
+</html>

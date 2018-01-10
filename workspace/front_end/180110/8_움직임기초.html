@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>움직임 기초</title>
+    <style>
+        img {
+            position: relative;
+            /*기본값을 주어야 transition 동작*/
+            left: 0px;
+            transition: .2s ease;
+
+        }
+    </style>
+</head>
+<body>
+<p>
+    <button id="moveBtn">움직여!!</button>
+</p>
+<img src="img/dog.jpg" alt="강아지 사진">
+
+
+<script src="js/jquery.js"></script>
+<script>
+    $("#moveBtn").click(function () {
+        console.log("sss");
+        //$("img").css({"transform": "translate(100px, 0px)"});
+        var left = parseInt($("img").css("left")) + 50;
+        console.log(left);
+        $("img").css({"position": "relative", "left": left});
+
+    })
+
+</script>
+</body>
+</html>

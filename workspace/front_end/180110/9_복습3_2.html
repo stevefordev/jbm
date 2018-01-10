@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <title>복습</title>
+    <link rel="stylesheet" href="css/reset.css"/>
+    <link rel="stylesheet" href="css/notosanskr.css"/>
+    <style>
+        body {
+            font: 100 14px 'Noto Sans KR', sans-serif;
+            background: #78909C;
+        }
+
+        #wrap {
+            width: 1200px;
+            padding: 20px;
+            background: #fff;
+            margin: auto;
+        }
+
+        #wrap h1 {
+            text-align: center;
+            margin: 20px;
+            font-size: 42px;
+            font-weight: 900;
+        }
+
+        #nav {
+            text-align: center;
+            width: 1200px;
+            height: 110px;
+        }
+
+        #nav li {
+            display: inline-block;
+            width: 160px;
+            height: 100px;
+            border: 4px solid transparent;
+            opacity: 0.5;
+        }
+
+        #nav li:nth-child(1) a {
+            background: url("img/c1.jpg");
+        }
+
+        #nav li:nth-child(2) a {
+            background: url("img/c2.jpg");
+        }
+
+        #nav li:nth-child(3) a {
+            background: url("img/c3.jpg");
+        }
+
+        #nav li:nth-child(4) a {
+            background: url("img/c4.jpg");
+        }
+
+        #nav li:nth-child(5) a {
+            background: url("img/c5.jpg");
+        }
+
+        #nav li:nth-child(6) a {
+            background: url("img/c6.jpg");
+        }
+
+        #wrap #nav li a {
+            display: block;
+            width: 160px;
+            height: 100px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            text-indent: -99999px;
+
+
+        }
+
+        #carBox {
+            width: 800px;
+            height: 600px;
+            position: relative;
+            margin: 40px auto auto auto;
+            overflow: hidden;
+            border: 10px solid #424242;
+        }
+
+        #carList {
+            width: 800px;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            transition: .3s ease-in-out;
+        }
+
+        #carList img {
+            width: 800px;
+            height: 600px;
+        }
+
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <h1>멋진 자동차들</h1>
+    <ul id="nav">
+        <li><a href="#">페라리 포르토피노</a></li><!--
+                -->
+        <li><a href="#">맥라렌 720s</a></li><!--
+                 -->
+        <li><a href="#">제네시스 G70</a></li><!--
+                 -->
+        <li><a href="#">애스턴 마틴 DB11</a></li><!--
+                 -->
+        <li><a href="#">포르쉐 911</a></li><!--
+                 -->
+        <li><a href="#">롤스로이스 팬텀</a></li>
+    </ul>
+    <div id="carBox">
+        <div id="carList">
+            <img src="img/c1.jpg" width="1024"/>
+            <img src="img/c2.jpg" width="1024"/>
+            <img src="img/c3.jpg" width="1024"/>
+            <img src="img/c4.jpg" width="1024"/>
+            <img src="img/c5.jpg" width="1024"/>
+            <img src="img/c6.jpg" width="1024"/>
+        </div>
+    </div>
+</div>
+<script src="js/jquery.js"></script>
+<script>
+    var topv = 0;
+    $("#nav li").click(function () {
+        console.log(this);
+        var index = $(this).index();
+        topv = index * -605;
+        $("#carList").css({"position": "relative", "top": topv});
+    });
+
+    $("#nav li").hover(function () {
+        console.log(this);
+        var index = $(this).index();
+        $(this).css({"border": "4px solid #424242",
+            "box-shadow": "0px 20px 20px rgba(0, 0, 0, 0.8)",
+            "opacity": 1});
+
+    }, function () {
+        $(this).css({"border": "4px solid transparent",
+            "box-shadow": "none",
+        "opacity": 0.5});
+    });
+
+</script>
+</body>
+</html>

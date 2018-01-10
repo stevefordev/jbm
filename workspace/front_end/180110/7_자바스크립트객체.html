@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>자바스크립트 객체</title>
+    <style>
+
+    </style>
+</head>
+<body>
+<h1 id="hello">안녕하세요?</h1>
+
+
+<script src="js/jquery.js"></script>
+<script>
+/*
+* 객체란 속성(attribute)들의 묶음
+*
+* 객체의 생성 : new Object(); / {}
+* console.log(new Object());
+* console.log({});
+* */
+
+//객체를 생성하고 persion변수에 대입
+
+//속성명은 반드시 문자열형이므로,
+//'', "" 생략가능합니다.
+//background-color라면 "" 생략불가
+var person = {"name" : "조권", "height" : 175, "weight" : 55};
+console.log(person);
+console.log(person.name);
+console.log(person.height);
+console.log(person.weight);
+
+//객체안의 속성접근법 '.'
+
+var changeCSS = { "width" : "600px", "height" : "400px","background" : "#673AB7", "border" : "10px dotted #424242" }
+$("h1").click(function () {
+    $("h1").css(changeCSS);
+})
+
+</script>
+</body>
+</html>

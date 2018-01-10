@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>실습</title>
+    <style>
+        #box {
+            width: 800px;
+            height: 768px;
+            border: 1px solid #424242;
+            background-image: url(img/c9.jpg);
+        }
+    </style>
+</head>
+<body>
+<p>
+    <button>버튼1</button>
+    <button>버튼2</button>
+    <button>버튼3</button>
+    <button>버튼4</button>
+</p>
+<div id="box">
+</div>
+
+<script src="js/jquery.js"></script>
+<script>
+    $("button").click(function () {
+        //우리가 클릭한 그 버튼요소의
+        //index숫자를 얻어온 후 변수 idx 대입
+
+        // id가 box인 div요소를 선택하고
+        // css의 background-image속성의 값을
+        // url(img/c.jpg)로 변경
+        var index = $(this).index() + 1;
+        $("#box").css("background-image", "url('img/c" + index + ".jpg')");
+    });
+
+</script>
+</body>
+</html>

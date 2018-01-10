@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <title>자동차 뷰어</title>
+    <link rel="stylesheet" href="css/notosanskr.css"/>
+    <link rel="stylesheet" href="css/reset.css"/>
+    <style>
+        #wrap {
+            width: 900px;
+            margin: auto;
+            border: 1px solid #000;
+            position: relative;
+        }
+
+        #wrap > h1 {
+            text-align: center;
+            font: bold 30px "Noto Sans KR", sans-serif;
+        }
+
+        #imgBox {
+            background: url("img/no_image.jpg");
+            width: 800px;
+            height: 600px;
+            margin: auto;
+            margin-bottom: 200px;
+            transition: .5s ease-in-out;
+            background-size: cover;
+        }
+
+        #imgList {
+            bottom: 20px;
+            position: absolute;
+        }
+
+        #imgList li {
+            margin-left: 17px;
+            width: 160px;
+            background: black;
+            float: left;
+        }
+
+        #imgList li img {
+            width: 160px;
+        }
+
+    </style>
+
+</head>
+<body>
+<div id="wrap">
+    <h1>멋진 자동차들</h1>
+    <ul id="imgList">
+        <li>
+            <img src="img/c1.jpg" alt="Ferrari Portofino"/>
+        </li>
+        <li>
+            <img src="img/c2.jpg" alt="McLaren 720S"/>
+        </li>
+        <li>
+            <img src="img/c3.jpg" alt="Genesis G70"/>
+        </li>
+        <li>
+            <img src="img/c4.jpg" alt="Aston Martin DB11"/>
+        </li>
+        <li>
+            <img src="img/c5.jpg" alt="Porsche 911 Carrera T"/>
+        </li>
+    </ul>
+    <div id="imgBox">
+    </div>
+
+</div>
+
+<script src="js/jquery.js"></script>
+<script>
+    $("img").hover(function () {
+        var scr = $(this).attr("src");
+        console.log(scr);
+        $("#imgBox").css({"background" : "url(" + scr + ")", "background-size" : "contain"});
+    }, function () {
+        $("#imgBox").css({"background-image" : "url(img/no_image.jpg)", "background-size" : "contain"});
+    })
+
+</script>
+</body>
+</html>

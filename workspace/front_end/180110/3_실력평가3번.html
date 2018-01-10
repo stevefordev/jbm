@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>실력평가 3번</title>
+    <link rel="icon" href="img/daum_movie.ico"/>
+    <style>
+        img {
+            width: 100px;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #444444;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+<h1>영화사이트</h1>
+<h2>영화검색</h2>
+<form target="_blank" action="http://movie.daum.net/search/main" method="get">
+    <fieldset>
+        <legend>영화 검색폼</legend>
+        <label for="search">검색</label>
+        <input id="search" type="text" name="searchText" placeholder="검색할 영화이름"/>
+        <button><i class="fa fa-search"></i>검색</button>
+    </fieldset>
+</form>
+<h2>일일 박스오피스</h2>
+<table summary="1월 4일의 한국영화 박스오피스">
+    <caption>1월 4일 박스오피스</caption>
+    <thead>
+    <tr>
+        <th>순위</th>
+        <th>포스터</th>
+        <th>영화명</th>
+        <th>관색수</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>1</td>
+        <td><img src="poster/p1.jpg" alt="신과함께 영화 포스터"/></td>
+        <th>신과함께-죄와벌</th>
+        <td>10,183,695</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td><img src="poster/p2.jpg" alt="1987 영화 포스터"/></td>
+        <th>1987</th>
+        <td>3,029,618</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td><img src="poster/p3.jpg" alt="쥬만지 영화 포스터"/></td>
+        <th>쥬만지:새로운 세계</th>
+        <td>235,032</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td><img src="poster/p4.jpg" alt="페르디난드 영화 포스터"/></td>
+        <th>페르디난드</th>
+        <td>108,766</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td><img src="poster/p5.jpg" alt="강철비 영화 포스터"/></td>
+        <th>강철비</th>
+        <td>4,230,945</td>
+    </tr>
+    </tbody>
+    <tfoot>
+    <tr>
+        <td colspan="4"><a href="http://www.kobis.or.kr/kobis/business/main/main.do">영화진흥위원회 영화관 입장권 통합전산망 제공</a></td>
+    </tr>
+    </tfoot>
+</table>
+
+<script src="js/jquery.js"></script>
+<script>
+
+</script>
+</body>
+</html>

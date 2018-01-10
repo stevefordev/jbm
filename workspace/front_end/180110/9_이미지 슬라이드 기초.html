@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>이미지 슬라이드 기초</title>
+    <style>
+        #box {
+            width: 480px;
+            height: 500px;
+            border: 5px solid #424242;
+            position: relative;
+            margin: auto;
+        }
+        #friends  {
+            width: 2880px;
+            height: 500px;
+            left: 0px;
+            transition: .3s ease-in-out;
+            position: absolute;
+        }
+        #friends img {
+            float: left;
+        }
+    </style>
+</head>
+<body>
+<p>
+    <button id="moveBtn">움직여!!</button>
+</p>
+<div id="box">
+    <div id="friends">
+        <img src="img/apeach.png"/>
+        <img src="img/frodo.png"/>
+        <img src="img/jayg.png"/>
+        <img src="img/muji.png"/>
+        <img src="img/neo.png"/>
+        <img src="img/tube.png"/>
+    </div><!--//#friends -->
+</div><!--//#box -->
+
+
+<script src="js/jquery.js"></script>
+<script>
+    var left = 0;
+    $("#moveBtn").click(function () {
+
+        //$("img").css({"transform": "translate(100px, 0px)"});
+        //var left = parseInt($("img").css("width"));
+        console.log(left);
+        left = left - 480;
+        $("#friends").css({"position": "relative", "left": left});
+
+    });//click() end
+</script>
+</body>
+</html>

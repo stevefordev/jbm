@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>실습</title>
+    <style>
+        #box {
+            width: 800px;
+            height: 768px;
+            border: 1px solid #424242;
+        }
+    </style>
+</head>
+<body>
+<p>
+    <button>버튼1</button>
+    <button>버튼2</button>
+    <button>버튼3</button>
+    <button>버튼4</button>
+</p>
+<div id="box">
+    <img src="img/c9.jpg" alt="car"/>
+</div>
+
+<script src="js/jquery.js"></script>
+<script>
+    $("button").click(function () {
+        var index = $(this).index();
+        $("#box img").attr("src", "img/c" + (index + 1) + ".jpg");
+    });
+</script>
+</body>
+</html>

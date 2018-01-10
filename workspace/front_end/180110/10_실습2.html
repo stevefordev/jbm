@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>실습2</title>
+    <style>
+        #box {
+            width: 400px;
+            height: 300px;
+            border: 4px solid #424242;
+        }
+
+        button:nth-child(1) {
+            background: red;
+        }
+        button:nth-child(2) {
+            background: green;
+        }
+        button:nth-child(3) {
+            background: blue;
+        }
+    </style>
+</head>
+<body>
+<p>
+    <button>RED</button>
+    <button>GREEN</button>
+    <button>BLUE</button>
+</p>
+<div id="box"></div>
+
+<script src="js/jquery.js"></script>
+<script>
+    $("button").click(function () {
+        var background = $(this).css("background-color");
+        console.log("background :",background);
+        $("#box").css("background-color", background);
+    });
+</script>
+</body>
+</html>
