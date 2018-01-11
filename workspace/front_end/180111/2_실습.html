@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <title>자동차 뷰어</title>
+    <link rel="stylesheet" href="css/notosanskr.css"/>
+    <style>
+        #wrap {
+            width: 900px;
+            margin: auto;
+            border: 1px solid #000;
+        }
+
+        #wrap > h1 {
+            text-align: center;
+            font: bold 30px "Noto Sans KR", sans-serif;
+        }
+
+        #imgBox {
+            background: black;
+            text-align: center;
+        }
+
+        #imgBox img {
+        }
+
+        #imgList {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            overflow: hidden;
+
+            /*자식이 float 일때 부모는 height 값이 0입니다.
+            (이유는 float 이 뜨기 때문에)
+
+            그래서 해결책은
+            1. height 값을 고정
+            2. overflow 값을 주면됨
+            */
+
+        }
+
+        #imgList li {
+            width: 170px;
+            height: 130px;
+            float: left;
+            margin-left: 8.33px;
+        }
+
+        #imgList img {
+            border: 5px solid transparent;
+            opacity: 0.3;
+            transition: .3s ease-in-out;
+        }
+
+        #imgList img:hover {
+            opacity: 1;
+            border-color: #424242;
+        }
+
+    </style>
+
+</head>
+<body>
+<div id="wrap">
+    <h1>멋진 자동차들</h1>
+    <div id="imgBox">
+        <img src="img/no_image.jpg" width="800"
+             alt="아래의 자동차이미지에 마우스를 가져가 보세요."
+             title="아래의 자동차이미지에 마우스를 가져가 보세요."/>
+    </div>
+    <ul id="imgList">
+        <li>
+            <img src="img/c1.jpg" alt="Ferrari Portofino" width="160"/>
+        </li>
+        <li>
+            <img src="img/c2.jpg" alt="McLaren 720S" width="160"/>
+        </li>
+        <li>
+            <img src="img/c3.jpg" alt="Genesis G70" width="160"/>
+        </li>
+        <li>
+            <img src="img/c4.jpg" alt="Aston Martin DB11" width="160"/>
+        </li>
+        <li>
+            <img src="img/c5.jpg" alt="Porsche 911 Carrera T" width="160"/>
+        </li>
+    </ul>
+
+</div>
+
+<script src="js/jquery.js"></script>
+<script>
+    $("#imgList img").mouseover(function () {
+
+        /*
+        * 우리가 마우스오버한 그 요소를 선택하여 jquery 객체를 만들고
+        * 그 객체에서 src속성의 값을 얻어오고
+        * 그 값을 img 에 대입
+        * */
+
+        console.log($(this).attr("src"));
+        var newImage = {
+            src : $(this).attr("src"),
+            alt : $(this).attr("alt"),
+            title : $(this).attr("alt")
+        }
+        $("#imgBox img").attr(newImage);
+
+    }).mouseleave(function () {
+        //$("#imgBox img").attr("src", "img/no_image.jpg");
+    })
+</script>
+
+</body>
+</html>

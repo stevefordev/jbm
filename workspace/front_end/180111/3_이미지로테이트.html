@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>이미지 로테이트</title>
+    <link rel="stylesheet" href="css/font-awesome.min.css"/>
+    <style>
+        #wrap {
+            width: 700px;
+            height: 502px;
+            padding: 20px;
+            box-shadow: 0 0 30px #424242;
+            margin: 20px auto;
+            position: relative;
+        }
+
+        #imgBox {
+            width: 480px;
+            height: 500px;
+            border: 1px solid black;
+            margin: auto;
+            position: relative;
+
+        }
+
+        .btn {
+            width: 60px;
+            height: 60px;
+            font-size: 40px;
+            border-radius: 100px;
+            border: none;
+            cursor: pointer;
+            transition: .1s ease-out;
+
+            /*positioning context 기준으로 움직인다*/
+            position: absolute;
+
+            /* 부모의 (height + padding - btn_height) / 2 */
+            top: 241px;
+            /*
+            버튼이나 링크는 웹접근성(키보드로만 접근가능)
+            때문에 outline 이 생깁니다 (브라우저기능)
+            지우고 싶으면 outline: none 로 지정
+            */
+            outline: none;
+        }
+
+        #prevBtn {
+            left: 20px;
+        }
+
+        #nextBtn {
+            right: 20px;
+        }
+
+        .btn:hover {
+            background: deepskyblue;
+            box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.2), 0 25px 45px 0 rgba(0, 0, 0, 0.22);
+        }
+
+        #friends {
+            width: 1480px;
+            height: 1480px;
+            position: absolute;
+            left: -500px;
+            transition: .5s ease-in;
+        }
+
+        #friends img {
+            position: absolute;
+            /* (부모의 width - 나의 width) / 2 */
+            left: 500px;
+            top: 0;
+            transform-origin: 50% 740px;
+
+        }
+
+        #friends img:nth-child(2) {
+            transform: rotate(72deg);
+        }
+
+        #friends img:nth-child(3) {
+            transform: rotate(144deg);
+        }
+
+        #friends img:nth-child(4) {
+            transform: rotate(216deg);
+        }
+
+        #friends img:nth-child(5) {
+            transform: rotate(288deg);
+        }
+
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <div id="imgBox">
+        <div id="friends">
+            <img src="img/tube.png">
+            <img src="img/neo.png">
+            <img src="img/jayg.png">
+            <img src="img/apeach.png">
+            <img src="img/muzi.png">
+        </div>
+
+    </div><!-- #imgBox-->
+    <button id="prevBtn" class="btn"><i class="fa fa-rotate-left"></i></button>
+    <button id="nextBtn" class="btn"><i class="fa fa-arrow-right"></i></button>
+</div>
+
+
+<script src="js/jquery.js"></script>
+<script>
+    var deg = 0;
+    $("#nextBtn").click(function () {
+        deg += 72;
+        var css = {
+            transform: "rotate(" + deg + "deg)"
+        }
+        $("#friends").css(css);
+    });
+
+    $("#prevBtn").click(function () {
+        deg -= 72;
+        var css = {
+            transform: "rotate(" + deg + "deg)"
+        }
+        $("#friends").css(css);
+    });
+
+</script>
+</body>
+</html>

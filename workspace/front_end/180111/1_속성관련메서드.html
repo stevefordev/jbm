@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>속성 관련 메소드</title>
+    <style>
+
+    </style>
+</head>
+<body>
+<p>
+    <button>이미지 변경</button>
+    <button>title 얻어오기</button>
+    <button>여러개 변경</button>
+</p>
+<!-- title 속성(전역 속성)은 어느 요소에서도 사용가능
+alt 속성은 img 요소에서만 사용가능
+-->
+<img src="img/Audi.jpg" alt="아우디 A8" title="아우디 사진 입니다"/>
+
+<script src="js/jquery.js"></script>
+<script>
+    /*
+    * HTML 의 속성(attribute)관련 메서드 : attr
+    *
+    * 1. attr(명,값) : 1 개의 값을 세팅해주는 세터
+    * 2. attr(명) : 1 개의 속성값을 얻어오는 게터
+    * 3. attr(객체) : 여러개의 속성을 동시에 세팅해주는 세터
+    * */
+
+    //1번째 버튼을 선택하여 jquery 객체를 만들고
+    //클릭을 감지하는 이벤트 리스너를 붙여서 이벤트를 처리
+    $("button").eq(0).click(function () {
+        //alert("sdf");
+        // 2. img요소를 선택하여 jquery 객체로 만들고
+        // src속성값을 'img/BMW.jpg'로 변경
+        $("img").attr("src", "img/BMW.jpg");
+
+    })// first button click event end
+
+    // 3. 2번째 버튼을 선택하여 jquery 객체로 만들고
+    // 클릭 이벤트 처리
+    $("button").eq(1).click(function () {
+        // 4. img 요소를 선택하여 jquery객체를 만들고
+        // 그 객체에서 title 속성값을 얻어온 후 변수 title에 대입
+        var title = $("img").attr("title");
+
+        // 5. 확인버튼 한개가 있는 다이얼로그창에 title의 값을 출력
+        alert("Title : " + title);
+    }) // second button click event end
+
+    // 6. 3번째 버튼 클릭 이벤트 처리
+    $("button").last().click(function () {
+        // 7. img요소의 src를 img/Mercedes-Benz.jpg로
+        // width 800, alt 벤츠, title 벤츠
+        $("img").attr({
+            "src": "img/Mercedes-Benz.jpg",
+            "width": 400,
+            "alt": "벤츠",
+            "title": "벤츠 사진"
+        });
+    }); // third button click event end
+
+
+</script>
+</body>
+</html>

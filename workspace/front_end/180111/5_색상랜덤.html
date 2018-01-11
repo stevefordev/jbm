@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>색상 랜덤</title>
+    <link rel="stylesheet" href="css/font-awesome.min.css"/>
+    <style>
+        html {
+            height: 100%;
+        }
+
+        body {
+            border: 1px solid #424242;
+            /*
+             원래 모든 요소는 자신의 width, height(컨텐츠)와 padding,
+            border 까지만 색상이 들어갑니다.
+
+            하지만 body 요소는 자신의 크기와 상관없이
+            스크린 크기만큼 뒷배경이 들어갑니다
+            (그렇다고 하여 box-model 이 커진건 절대로 !! 아님니다)
+            */
+            background: yellow;
+
+            margin: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-family: 'Noto Sans KR', sans-serif;
+            font-weight: 900;
+            font-size: 60px;
+            /*font: 900 60px 'Noto Sans KR', sans-serif */
+            text-align: center;
+            color: #fff;
+            text-shadow: 2px 2px 2px #424242;
+            background: chartreuse;
+
+        }
+    </style>
+</head>
+<body>
+<h1>나는 무슨색?</h1>
+
+
+<script src="js/jquery.js"></script>
+<script>
+    $("body").click(function () {
+
+        $("h1").css("color", getRandomColor());
+        $("body").css("background", getRandomColor());
+
+    })
+
+    function getRandomColor() {
+        var r = Math.floor(Math.random() * 256);
+        var g = Math.floor(Math.random() * 256);
+        var b = Math.floor(Math.random() * 256);
+        var color = "rgb(" + r + "," + g + "," + b + ")";
+        console.log("color:" + color);
+        return color;
+    }
+</script>
+</body>
+</html>

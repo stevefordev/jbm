@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>이벤트 객체의 활용</title>
+    <style>
+        html {
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            cursor: crosshair;
+        }
+
+        img {
+            position: fixed;
+            left: 0;
+            top: 0;
+            transition: .3s ease-out;
+
+        }
+    </style>
+</head>
+<body>
+<img src="img/k7.png" width="200">
+
+
+<script src="js/jquery.js"></script>
+<script>
+    $("body").click(function (e) {
+        //e : event 객체
+        // e 안에 x, y좌표 ......
+        var x = e.clientX;
+        var y = e.clientY;
+        $("img").css({top: y-100, left: x-100})
+
+    })
+
+</script>
+</body>
+</html>
