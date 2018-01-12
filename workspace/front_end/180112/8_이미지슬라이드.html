@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>이미지슬라이드</title>
+    <style>
+        #box {
+            width: 480px;
+            height: 500px;
+            border: 5px solid #424242;
+            position: relative;
+            margin: auto;
+        }
+
+        #friends {
+            width: 2880px;
+            height: 500px;
+            left: 0px;
+            transition: .3s ease-in-out;
+            position: absolute;
+        }
+
+        #friends img {
+            float: left;
+        }
+    </style>
+</head>
+<body>
+<p>
+    <button id="apeach">어피치</button>
+    <button id="frodo">프로도</button>
+    <button id="jayg">제이지</button>
+    <button id="muzi">무지</button>
+    <button id="neo">네오</button>
+    <button id="tube">튜브</button>
+</p>
+<div id="box">
+    <div id="friends">
+        <img src="img/apeach.png"/>
+        <img src="img/frodo.png"/>
+        <img src="img/jayg.png"/>
+        <img src="img/muzi.png"/>
+        <img src="img/neo.png"/>
+        <img src="img/tube.png"/>
+    </div><!--//#friends -->
+</div><!--//#box -->
+
+
+<script src="js/jquery.js"></script>
+<script>
+    $("button").mouseover(function () {
+        var idx = $(this).index();
+        left = -(idx * 480);
+        $("#friends").css({"position": "relative", "left": left});
+
+    });
+</script>
+</body>
+</html>

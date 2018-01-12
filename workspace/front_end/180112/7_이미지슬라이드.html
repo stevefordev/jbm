@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>이미지슬라이드</title>
+    <style>
+        #box {
+            width: 480px;
+            height: 500px;
+            border: 5px solid #424242;
+            position: relative;
+            margin: auto;
+        }
+
+        #friends {
+            width: 2880px;
+            height: 500px;
+            left: 0px;
+            transition: .3s ease-in-out;
+            position: absolute;
+        }
+
+        #friends img {
+            float: left;
+        }
+    </style>
+</head>
+<body>
+<p>
+    <button id="prevBtn">&lt;-</button>
+    <button id="nextBtn">-&gt;</button>
+</p>
+<div id="box">
+    <div id="friends">
+        <img src="img/apeach.png"/>
+        <img src="img/frodo.png"/>
+        <img src="img/jayg.png"/>
+        <img src="img/muzi.png"/>
+        <img src="img/neo.png"/>
+        <img src="img/tube.png"/>
+    </div><!--//#friends -->
+</div><!--//#box -->
+
+
+<script src="js/jquery.js"></script>
+<script>
+    var left = 0;
+    $("#nextBtn").click(function () {
+        console.log(left);
+        left -= 480;
+
+        console.log(left);
+
+        if (left === -2880) {
+            left = 0;
+        }
+        $("#friends").css({"position": "relative", "left": left});
+    })
+
+    $("#prevBtn").click(function () {
+        console.log(left);
+        left += 480;
+
+        if (left === 480) {
+            left = -2400;
+        }
+        $("#friends").css({"position": "relative", "left": left});
+    })
+</script>
+</body>
+</html>

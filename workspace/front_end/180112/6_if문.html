@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+</head>
+<body>
+<img src="img/k3.png">
+<p>
+    <button>어피치</button>
+    <button>튜브</button>
+    <button>네오</button>
+    <button>라이언</button>
+    <button>제이지</button>
+</p>
+
+<script src="js/jquery.js"></script>
+<script>
+    /**
+     * 1. text(데이터) : 글자 넣을때 setter
+     * 2. texxt() : 글자 얻어오는 getter
+     */
+    $("button").click(function () {
+        var txt = $(this).text();
+
+        /**
+         * 분기문은 특정상황에서
+         * 나눠서 처리하는 문장입니다.
+         * if(조건식) {
+         *
+         * } else {
+         *
+         * }
+         */
+
+        // '==' 항등연산자
+        if (txt === "제이지") {
+            alert("참이에요");
+        } else {
+            alert("거짓이에요");
+        }
+    });
+</script>
+</body>
+</html>

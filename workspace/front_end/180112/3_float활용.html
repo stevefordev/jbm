@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>float 활용</title>
+    <style>
+        #parent {
+            width: 300px;
+            border: 1px solid red;
+
+        }
+        .cube {
+            width: 98px;
+            height: 98px;
+            float: left;
+            border: 1px solid blue;
+        }
+
+        #cyan {
+            background: cyan;
+
+        }
+
+        #magenta {
+            background: magenta;
+
+        }
+
+        #yellow {
+            background: yellow;
+
+        }
+
+        #black {
+            width: 300px;
+            height: 100px;
+            background: black;
+            clear: both;
+        }
+
+        /**
+        float 은
+        1. 2층
+        2. 공간 없음
+        3. 블록레벨의 수평정렬
+
+        float의 해결책
+        1. 자식들이 전부 float 일때 overflow:hidden
+        2. 자식들이 전부 float 일때 height 고정
+        3. 자식중 일부가 float 일때는 그 다음 자식요소에 clear:both로 지정
+        (그 요소가 블록 레벨이어야 한다)
+         */
+    </style>
+</head>
+<body>
+<div id="parent">
+    <div id="cyan" class="cube"></div>
+    <div id="magenta" class="cube"></div>
+    <div id="yellow" class="cube"></div>
+    <div id="black"></div>
+    <div></div>
+</div>
+
+
+<script src="js/jquery.js"></script>
+<script>
+
+</script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>실습문제</title>
+    <style>
+        html {
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            cursor: crosshair;
+        }
+
+        #circle {
+            width: 100px;
+            height: 100px;
+            left: -100px;
+            top: -100px;
+            transition: .1s ease-out;
+            background: black;
+            border-radius: 50%;
+            position: fixed;
+            box-shadow: 12px 12px 15px 0 rgba(0, 0, 0, 1),0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+        }
+
+    </style>
+</head>
+<body>
+<div id="circle"></div>
+
+
+<script src="js/jquery.js"></script>
+<script>
+
+    var $circle = $("#circle");
+    /**
+     *
+     */
+    $("body").mousemove(function (event) {
+        //event : event 객체
+        console.log(event);
+
+        // 30 ~ 200
+        var r = Math.floor((Math.random() * 171) + 30);
+        var x = event.clientX - (r / 2);
+        var y = event.clientY - (r / 2);
+
+        var css = {
+            left: x,
+            top: y,
+            width: r,
+            height: r,
+            background: getRandomColor()
+        }
+        $circle.css(css);
+        $(this).css("background", getRandomColor());
+    });
+    function getRandomNum(start, size) {
+        return Math.floor(Math.random() * size + start);
+    }
+
+    function getRandomColor() {
+        var r = getRandomNum(0, 256);
+        var g = getRandomNum(0, 256);
+        var b = getRandomNum(0, 256);
+        var color = "rgb(" + r + "," + g + "," + b + ")";
+        console.log("color:" + color);
+        return color;
+    }
+</script>
+</body>
+</html>
