@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <title>ex7</title>
+    <link rel="stylesheet" href="css/reset.css"/>
+    <link rel="stylesheet" href="css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="css/notosanskr.css"/>
+    <style>
+        #wrap {
+            font-family: "Noto Sans KR", sans-serif;
+            width: 800px;
+            margin: 20px auto;
+            box-shadow: 0 16px 28px 0 rgba(0, 0, 0, 0.22), 0 25px 55px 0 rgba(0, 0, 0, 0.21);
+            padding: 40px 0;
+            border: 6px solid #616161;
+            text-align: center;
+            position: relative;
+            height: 370px;
+
+        }
+
+        #wrap h1 {
+            font-size: 40px;
+            font-weight: 900;
+            color: #795548;
+
+        }
+
+        #imgBox {
+            width: 260px;
+            height: 300px;
+            position: relative;
+            left: 270px;
+            overflow: hidden;
+        }
+
+        #imgs {
+            width: 1600px;
+            position: absolute;
+            left: 30px;
+            top: 50px;
+            transition: .3s ease-out;
+
+        }
+
+        #imgs img {
+            width: 200px;
+            float: left;
+        }
+
+        #nameBox {
+            position: absolute;
+            width: 548px;
+            left: 180px;
+        }
+
+        #nameBox ul li {
+            float: left;
+            margin-right: 10px;
+        }
+
+        button {
+            border: 0;
+            padding: 10px;
+            background: yellow;
+            outline: none;
+        }
+
+        button:hover {
+            color: #fff;
+            background: saddlebrown;
+            box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+            transition: .2s ease;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <h1>이름 맞추기</h1>
+    <div id="imgBox">
+        <div id="imgs">
+            <img src="img/k1.png"/>
+            <img src="img/k2.png"/>
+            <img src="img/k3.png"/>
+            <img src="img/k4.png"/>
+            <img src="img/k5.png"/>
+            <img src="img/k6.png"/>
+            <img src="img/k7.png"/>
+        </div><!--//#imgs -->
+    </div><!--//#imgBox -->
+    <div id="nameBox">
+        <h2 class="screen_out">카카오프렌즈 이름들</h2>
+        <ul>
+            <li>
+                <button>무지</button>
+            </li>
+            <li>
+                <button>어피치</button>
+            </li>
+            <li>
+                <button>제이지</button>
+            </li>
+            <li>
+                <button>프로도</button>
+            </li>
+            <li>
+                <button>네오</button>
+            </li>
+            <li>
+                <button>튜브</button>
+            </li>
+            <li>
+                <button>라이언</button>
+            </li>
+        </ul>
+    </div><!--//#nameBox -->
+</div><!--//#wrap -->
+
+<script src="js/jquery.js"></script>
+<script>
+    //이전 선택된 idx 를 거르기위한 기준 변수(전역)
+    var gPrevIdex = -1;
+
+    // 초기 이미지도 랜덤으로 선택하기 위함
+    $("#imgs").css("left", getRandomLeftPosition(-1));
+
+    // 각 버튼을 클릭했을때 동작 실행
+    $("ul li").click(function () {
+        // 클릭한 버튼의 index
+        var idx = $(this).index();
+
+        // 클릭한 버튼에 해당하는 케릭터의 절대 위치
+        // 200 이미지 크기
+        // 30 #imgs 박스의 초기 left 값
+        var comparePosition = (idx * -200) + 30;
+
+        // 현재 imgs 의 left 값을 가져온다
+        var positionLeft = parseInt($("#imgs").position().left);
+
+        // 현재 imgs 의 left 값과 클릭 한 버튼에 해당 하는 캐릭터의 left 값을 비교하여
+        // 정답인지 오류인지 판단한다.
+        if (comparePosition == positionLeft) {
+            alert("정답입니다.~~~");
+            $("#imgs").css("left", getRandomLeftPosition(idx));
+        } else {
+            alert("오답입니다. ㅠ_ㅠ");
+        }
+
+        gPrevIdex = idx;
+        console.log(positionLeft);
+        console.log(comparePosition);
+    })
+
+    /**
+     * * 랜덤으로 허용범위 (#imgs width, width 가 200인 이미지 가 가로정렬로 7장 있는 경우)
+     * left 포지션을 가져온다
+     * left 포지션은 기본적으로 +30px 에 위치해있다
+     *
+     * @param prevIdx 방금전 선택된 이미지는 중복 제거 하기 위해서
+     * @returns {number}
+     */
+    function getRandomLeftPosition(prevIdx) {
+        console.log("prevIdx:" +prevIdx);
+        var randomNum = getRandomNum(prevIdx);
+
+        var newPosition = (randomNum * -200) + 30;
+        console.log("v:" + newPosition);
+        return newPosition;
+    }
+
+    /**
+     * 재귀함수
+     * 조건 (이전 값과 비교하여 다를경우에만 참) 에 맞을 때까지 자기자신을
+     * 계속 호추한다
+     *
+     * 7 가지 이미지를 랜덤으로 선택하기위해 해당 숫자를 랜덤하게 호출한다
+     * 단, 바로전에 호출된 값은 제외 토록 한다
+     * @param prevIdx
+     * @returns {number}
+     */
+    function getRandomNum(prevIdx) {
+        var newNum = Math.floor(Math.random() * 7);
+        console.log("newNum:" + newNum);
+        if (prevIdx == newNum) {
+            return getRandomNum(prevIdx);
+        } else {
+            return newNum;
+        }
+    }
+</script>
+</body>
+</html>

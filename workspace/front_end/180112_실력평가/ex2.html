@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <title>2단 레이아웃 제작</title>
+    <link rel="stylesheet" href="css/apple.css"/>
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <style>
+
+        body {
+            margin: 0;
+            font: 600 40px 'SF Pro Display', 'SF Pro KR', sans-serif;
+            color: #333;
+            text-align: center;
+
+        }
+
+        #wrap {
+            margin: auto;
+            border: 2px dotted black;
+            width: 1000px;
+            height: 700px;
+            position: relative;
+        }
+
+        #header, #footer {
+            width: 1000px;
+            height: 98px;
+            line-height: 100px;
+        }
+
+        #header {
+            border-bottom: 2px dotted black;
+        }
+
+        body #footer {
+            border-top: 2px dotted black;
+            clear: both;
+            font:300 20px 'SF Pro KR',sans-serif;
+            line-height: 100px;
+        }
+
+        #content {
+            width: 698px;
+            height: 500px;
+            line-height: 500px;
+            float: left;
+            border-right: 2px dotted black;
+        }
+
+        #sidebar {
+            width: 300px;
+            height: 250px;
+            float: left;
+            line-height: 250px;
+        }
+
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <div id="header"><i class="fa fa-hand-lizard-o"></i> 필구의 웹서비스</div>
+    <div id="content"><i class="fa fa-hand-spock-o"></i> 콘텐트 영역</div>
+    <div id="sidebar"><i class="fa fa-hand-scissors-o"></i> 사이드바</div>
+    <div id="footer">&copy; 2017 jbm.com</div>
+</div>
+</body>
+</html>
+
+
+
+
+

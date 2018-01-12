@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>ex1</title>
+    <link rel="stylesheet" href="css/reset.css"/>
+    <style>
+        @font-face {
+            font-family: 'thomson';
+            font-style: normal;
+            font-weight: 100;
+            src: url(fonts/ThompsonModernSemibold.woff) format('woff');
+        }
+
+        body {
+            font-family: 'thomson', sans-serif;
+            letter-spacing: -1.25px;
+            margin: 0;
+        }
+
+        #nav {
+            width: 200px;
+            padding: 30px;
+            background: #949494;
+            margin: auto;
+            border-radius: 0 0 20px 0;
+            box-shadow: 1px 1px 1px black,
+            2px 2px 1px black, 3px 3px 1px black, 4px 4px 1px black,
+            5px 5px 1px black, 6px 6px 1px black, 7px 7px 1px black,
+            8px 8px 1px black, 9px 9px 1px black, 10px 10px 1px black;
+            position: relative;
+        }
+
+        /*
+        왼쪽아래 박스 쉐도우 마감
+        */
+        #nav::before {
+            content: "";
+            width: 0;
+            height: 0;
+            left: 0px;
+            bottom: -10px;
+            border-top: 10px solid black;
+            border-left: 10px solid #fff;
+            position: absolute;
+        }
+
+        /*
+        오른쪽 위 박스 쉐도우 마감
+        */
+        #nav::after {
+            content: "";
+            width: 0;
+            height: 0;
+            right: -10px;
+            top: 0px;
+            border-bottom: 10px solid black;
+            border-right: 10px solid #fff;
+            position: absolute;
+        }
+
+        #nav li {
+        }
+
+        #nav li a {
+            font-size: 50px;
+            letter-spacing: -1.25px;
+            text-decoration: none;
+            color: #fff;
+            transition: .3s ease-out;
+
+            /*마우스 오버시에 컬러가 슬라이드
+            처럼 채워지는 것을 해보았는데
+            익스플로러 9에서는 동작 하지 않는 것을
+            확인 하였습니다.*/
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-image: linear-gradient(
+            to right,
+            #41B6E6,
+            #41B6E6 50%,
+            #fff 50%);
+            background-size: 200% 100%;
+            background-position: 100%;
+
+        }
+
+        /* 각 리스트 마우스 오버시에 a 링크의  텍스트 색상 변경*/
+        #nav li:hover a {
+            transition: all 0.3s cubic-bezier(0.000, 0.000, 0.230, 1);
+            background-position: 0%;
+        }
+
+
+    </style>
+</head>
+<body>
+<div id="nav">
+    <h2 class="screen_out">Main Service</h2>
+    <ul>
+        <li class="home"><a href="">Home</a></li>
+        <li class="work"><a href="">Work</a></li>
+        <li class="vision"><a href="">Vision</a></li>
+        <li class="news"><a href="">News</a></li>
+        <li class="careers"><a href="">Careers</a></li>
+    </ul>
+</div>
+
+</body>
+</html>
