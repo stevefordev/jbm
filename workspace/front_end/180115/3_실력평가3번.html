@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>ex3</title>
+    <link rel="stylesheet" href="css/reset.css"/>
+    <link rel="stylesheet" href="css/apple.css"/>
+    <style>
+        body {
+            font-family: 'SF Pro KR', sans-serif;
+            text-align: center;
+            font-weight: 600;
+
+            /*상단에 공간을 주기 위해서*/
+            margin: 50px;
+        }
+
+        #txt {
+            font: 600 40px 'SF Pro KR', sans-serif;
+            transition: .3s ease-out;
+            width: 600px;
+            margin: auto;
+        }
+
+        #btn {
+            /*
+            대체되는 요소들(input, select, textarea, button...)은
+            font-family 상속이 안됩니다.
+            */
+            margin-top: 20px;
+            /*글자수에 따라서 width , height 는 부적절 할 수 있다*/
+            /*width: 100px;
+            height: 50px;*/
+            padding: 12px 20px;
+            background: lightblue;
+            font-size: 20px;
+            color: #fff;
+            font: 600 25px 'SF Pro KR', sans-serif;
+            border: none;
+            outline: none;
+            transition: .3s ease-out;
+            cursor: pointer;
+        }
+
+        #btn:hover {
+            background: #80a0ab;
+            box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        #btn:active {
+            background: #00ACC1;
+            transform: scale(.8);
+        }
+
+    </style>
+</head>
+
+<body>
+<h1 id="txt">버튼을 눌러보세요.</h1>
+<button id="btn">난 버튼</button>
+
+<script src="js/jquery.js"></script>
+<script>
+    /*
+    * id 가 btn 인 버튼을 클릭 할 때
+    * */
+    $("#btn").click(function () {
+        $("#txt").css({
+            "transform": "scale(1.5)",
+            "color": getRandomColor(),
+            "text-shadow": "0px 0px 10px black"
+        });
+    }); //#btn click() end
+
+    /**
+     * 입력받은 시작 값과 총 숫자 갯수 중에서 랜덤하게
+     * 선택하려 회신 준다
+     *
+     * @param start 시작 숫자
+     * @param size 숫자 갯수
+     * @returns {number}
+     */
+    function getRandomNum(start, size) {
+        return Math.floor(Math.random() * size) + start;
+    }
+
+    /**
+     * 랜덥하게 컬러 한가지 색상을 리턴 준다
+     * @returns {string} ex ) rgb( 0,0,0)"
+     */
+    function getRandomColor() {
+        var r = getRandomNum(0, 256);
+        var g = getRandomNum(0, 256);
+        var b = getRandomNum(0, 256);
+        var color = "rgb(" + r + "," + g + "," + b + ")";
+        console.log("color:" + color);
+        return color;
+    }
+
+</script>
+</body>
+</html>

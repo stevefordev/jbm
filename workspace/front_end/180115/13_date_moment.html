@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>date moment</title>
+    <style>
+    </style>
+</head>
+<body>
+<h1>????년 ?월 ?일 ??:??:??</h1>
+
+<script src="js/jquery.js"></script>
+<script>
+
+    /*
+    * 수학관련 객체 : Math
+    * 날짜(년월일시분초) : Date*/
+
+    // 지금 현재시간을 가지고 있는 객체가 만들어지고
+    //now 라는 변수에 대입
+
+    function getNowDate() {
+        var now = new Date();
+
+        var year = now.getFullYear();
+
+        //월(0월 부터 시작한다)
+        var month = now.getMonth() + 1;
+        //일
+        var date = now.getDate()
+        //시
+        var hour = now.getHours();
+        //분
+        var min = now.getMinutes();
+        //초
+        var sec = now.getSeconds();
+
+        if (sec < 10) {
+            sec = "0" + sec;
+        }
+
+        var msec = now.getMilliseconds();
+
+        return year + "년 " + month + "월 " +
+            date + "일 " + hour + ":" +
+            min + ":" + sec + ":" + msec;
+    }
+
+    setInterval(function () {
+        $("h1").text(getNowDate);
+    }, 10);
+
+
+</script>
+</body>
+</html>

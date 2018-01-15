@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>애니메이션 복습</title>
+    <style>
+        img:nth-child(1) {
+            /* 시간 가속도 횟수 */
+            animation: move 2s ease infinite alternate;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        #img {
+            /* 시간 가속도 횟수 */
+            animation: moveico 1s steps(10) infinite;
+            background: url("img/ico3.png");
+            position: absolute;
+            width: 240px;
+            height: 120px;
+            left: 0;
+            top: 300px;
+            border-radius: 50%;
+        }
+
+        /*
+        각 프레임당의 움직임
+        */
+        @keyframes moveico {
+            0% {
+                background-position: 0 0
+            }
+
+            100% {
+                background-position: -240px 0
+
+            }
+        }
+
+        @keyframes move {
+            0% {
+                left: 0
+            }
+            50% {
+                left: 200px;
+            }
+            75% {
+                top:100px;
+            }
+            100% {
+                left: 600px
+            }
+        }
+    </style>
+</head>
+<body>
+<img src="img/ico3.png"/>
+<div id="img"></div>
+</body>
+
+<script src="js/jquery.js"></script>
+<script>
+</script>
+</html>

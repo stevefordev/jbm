@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>글자관련메서드</title>
+    <style>
+        div {
+            background: lightblue;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+<p>
+    <input/>
+    <select>
+        <option value="a">가</option>
+        <option>나</option>
+        <option>다</option>
+    </select>
+    <button>입력</button>
+    <button>얻기</button>
+</p>
+<div>가나다라</div>
+
+<script src="js/jquery.js"></script>
+<script>
+    /*
+    * 요소에서 글자를 입력 : text(문자열)
+    * 요소에서 글자를 얻어오는 getter : text()
+    *
+    * select, input, textarea 등은 글자가 아니라
+    * value 값(파라미터의 value값)
+    *
+    * 이 값을 세팅하거나 얻어오는 메서드는 val()
+    *
+    * 1. 값을 setter : val (문자열)
+    * 2. 값을 getter : val()
+    * */
+
+    $("select").change(function () {
+        // select 요소에서 값을 얻어온 후 value 변수에 대입하고
+        // div의 글자를 세팅
+        var value = $(this).val();
+        $("div").text(value);
+    });
+
+    $("button").eq(0).click(function () {
+        //$("input").val("sdfsdfffff")
+        $("div").text(
+            $("input").val()
+        )
+    });
+
+    // 1. 얻기 버튼을 클릭했을때
+    $("button").eq(1).click(function () {
+        // 2. div 요소에서 글자를 얻어온 후
+        // 변수 txt에 대입
+        var txt = $("div").text()
+        alert(txt);
+    });
+
+</script>
+</body>
+</html>

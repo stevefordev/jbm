@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<h1>6초후 유투브로 이동</h1>
+<img src="img/lg.curved-bar-spinner.gif"/>
+
+<script src="js/jquery.js"></script>
+<script>
+    /*
+    * javascript 의 타이머관련 함수
+    *
+    * 1. setTimeout(함수, 시간(1000분의 1초))
+    *   시간후에 딱 한번 함수 호출
+    * 2. setInterval(함수, 시간(1000분의 1초))
+    *   시간마다 함수 계속 호출
+    *
+    * */
+
+    setTimeout(function () {
+        //주소창에 주소를 변경
+        location.href = "http://youtube.com";
+
+    }, 36000);
+</script>
+</body>
+</html>

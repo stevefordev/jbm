@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+
+        }
+        #red {
+            background: darkred;
+            position: relative;
+            left: 200px;
+            bottom: -20px;
+            /*
+                포지션  absolute, relative, fixed 는
+                전부 3층
+
+                공간의 차지여부
+
+                1. absolute, fixed 는 차지하지 않음
+                2. relative 는 차지함
+
+                top, right, bottom, left 값 지정시
+                어디를 기준으로 ??
+
+                1. absolute : 포지셔닝컨텍스트 기준
+                2. fixed :  브라우저 기준
+                3. relative : 자신의 위치를 기준
+            */
+        }
+
+        #green {
+            background: darkgreen;
+        }
+
+        #blue {
+            background: darkblue;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <div id="red"></div>
+    <div id="green">글자</div>
+    <div id="blue"></div>
+</div>
+
+<script src="js/jquery.js"></script>
+<script>
+</script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>ex1</title>
+    <link rel="stylesheet" href="css/reset.css"/>
+    <style>
+        @font-face {
+            font-family: 'thomson';
+            font-style: normal;
+            font-weight: 100;
+            src: url(fonts/ThompsonModernSemibold.woff) format('woff');
+        }
+
+        body {
+            font-family: 'thomson', sans-serif;
+            letter-spacing: -1.25px;
+            margin: 0;
+        }
+
+        #nav {
+            width: 200px;
+            padding: 30px;
+            background: #949494;
+            margin: auto;
+            border-radius: 0 0 30px 0;
+            box-shadow: 20px 20px 0px black;
+            position: relative;
+        }
+
+        /*
+        왼쪽아래 박스 쉐도우 마감
+        */
+        #nav::before {
+            content: "";
+            width: 0;
+            height: 0;
+            left: 0px;
+            bottom: -20px;
+            border-top: 20px solid black;
+            border-left: 20px solid #fff;
+            position: absolute;
+        }
+
+        /*
+        오른쪽 위 박스 쉐도우 마감
+        */
+        #nav::after {
+            content: "";
+            width: 0;
+            height: 0;
+            right: -20px;
+            top: 0px;
+            border-bottom: 20px solid black;
+            border-right: 20px solid #fff;
+            position: absolute;
+        }
+
+        #nav li {
+        }
+
+        /*
+        상속과 브라우저가 가진 기본 CSS
+        중에 브라우저가 가진 기본 CSS 가 앞섭니다.
+        */
+        #nav a {
+            display: block;
+            font-size: 50px;
+            text-decoration: none;
+            color: #ffffff;
+        }
+
+        /* 각 리스트 마우스 오버시에 a 링크의  텍스트 색상 변경*/
+        #nav li:hover a {
+        }
+
+        #nav a::before {
+            color: #41B6E6;
+            position: absolute;
+            width: 0px;
+            background: #949494;
+            overflow: hidden;
+            transition: 1s ease;
+        }
+
+        #nav .home a::before {
+            content: "Home";
+        }
+
+        #nav .work a::before {
+            content: "Work";
+        }
+
+        #nav .vision a::before {
+            content: "Vision";
+        }
+
+        #nav .news a::before {
+            content: "News";
+        }
+
+        #nav .careers a::before {
+            content: "Careers";
+        }
+
+        #nav a:hover::before {
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+<div id="nav">
+    <h2 class="screen_out">Main Service</h2>
+    <ul>
+        <li class="home"><a href="">Home</a></li>
+        <li class="work"><a href="">Work</a></li>
+        <li class="vision"><a href="">Vision</a></li>
+        <li class="news"><a href="">News</a></li>
+        <li class="careers"><a href="">Careers</a></li>
+    </ul>
+</div>
+
+</body>
+</html>

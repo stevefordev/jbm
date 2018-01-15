@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>z-index</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+        }
+
+        #red {
+            background: #E91E63;
+            z-index: 3;
+        }
+
+        #green {
+            background: #4CAF50;
+            left: 50px;
+            top: 50px;
+            z-index: 2;
+        }
+
+        #blue {
+            background: #03A9F4;
+            left: 100px;
+            top: 100px;
+            z-index: 1;
+        }
+        /*
+        겹쳤을때 누가 위인가??
+
+        1. 만약 층수가 다르다면 높은 층수가 위
+        2. 같은 층수라면 마크업상 아래쪽에 있는 요소가 위
+        3. 3층끼리는 z-index로 위/ 아래 변경
+        */
+    </style>
+</head>
+<body>
+<div id="red"></div>
+<div id="green"></div>
+<div id="blue"></div>
+</body>
+</html>

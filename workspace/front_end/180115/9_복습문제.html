@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>복습문제</title>
+    <style>
+        #colorBox {
+            margin-top: 40px;
+            width: 400px;
+            height: 400px;
+            border: 2px solid #424242;
+
+        }
+
+        button {
+            background: lightblue;
+            border: 0ch;
+            padding: 20px 40px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <button>red</button>
+    <button>green</button>
+    <button>blue</button>
+    <button>YELLOW</button>
+</div>
+<div id="colorBox">
+
+</div>
+
+<script src="js/jquery.js"></script>
+<script>
+    $("button").click(function () {
+
+        //우리가 클릭한 그 버튼의 글자를 얻어오고
+        // id 가 box 인 div 요소의 뒷배경색으로 세팅
+        $("#colorBox").css("background", $(this).text());
+    })
+</script>
+</body>
+</html>
