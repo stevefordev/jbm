@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>클래스관련 메서드</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background: #29B6F6;
+        }
+
+        .on {
+            background: #E91E63;
+            border-radius: 50px;
+        }
+    </style>
+</head>
+<body>
+<p>
+    <button>붙였다 떼기</button>
+</p>
+<div class="box"></div>
+
+<script src="js/jquery.js"></script>
+<script>
+    /*
+    * css()
+    * text()
+    * val()
+    * attr()
+    *
+    * 클래스관련 메서드
+    * addClass(클래스명) :  클래스를 더함
+    * removeClass(클래스명) : 클래스를 제거
+    * toggleClass(글래스명) : 클래스를 더하고 제거 토글
+    * hasClass(글래스명) : 클래스를 가지고 있는지 확인
+    * */
+    $("button").click(function () {
+        //$("div").toggleClass("on");
+
+        var flag = $(".box").hasClass("on")
+
+        if (flag) {
+            // on 를 가지고 있을때
+            // on을 제거
+            $('.box').removeClass("on");
+        } else {
+            $('.box').addClass("on");
+        }
+    });
+</script>
+</body>
+</html>

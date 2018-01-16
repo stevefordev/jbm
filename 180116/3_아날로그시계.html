@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>아날로그 시계</title>
+    <style>
+        body {
+
+            text-align: center;
+        }
+
+        span {
+            font-size: 40px;
+            font-weight: bolder;
+        }
+
+        #wrap {
+            border: 10px solid black;
+            width: 600px;
+            height: 600px;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            margin-left: -250px;
+            margin-top: -250px;
+            text-align: center;
+        }
+
+        #frame {
+            margin: auto;
+            width: 500px;
+            height: 500px;
+            background: url("img/Clock-face.png");
+            background-size: cover;
+            border: 10px solid black;
+            border-radius: 50%;
+            position: relative;
+        }
+
+        #hour {
+            background: url("img/hour_hand.png");
+            background-size: cover;
+
+        }
+
+        #min {
+            background: url("img/minute_hand.png");
+            background-size: cover;
+        }
+
+        #sec {
+            background: url("img/second_hand.png");
+            background-size: cover;
+        }
+
+        .hand {
+            width: 500px;
+            height: 500px;
+            /* 박스모델에 포함되지 않는 라인*/
+            outline: 1px solid red;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+        }
+    </style>
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+</head>
+<body>
+<div id="wrap">
+    <span><i class="fa fa-clock-o"></i>아날로그 시계</span>
+    <div id="frame">
+        <div id="hour" class="hand"></div>
+        <div id="min" class="hand"></div>
+        <div id="sec" class="hand"></div>
+    </div>
+</div>
+
+<script src="js/moment-with-locales.js"></script>
+<script src="js/jquery.js"></script>
+<script>
+    function getNowDate() {
+        var now = new Date();
+
+        var year = now.getFullYear();
+
+        //월(0월 부터 시작한다)
+        var month = now.getMonth() + 1;
+        //일
+        var date = now.getDate()
+        //시
+        var hour = now.getHours();
+        //분
+        var min = now.getMinutes();
+        //초
+        var sec = now.getSeconds();
+
+        var msec = now.getMilliseconds();
+        console.log(hour + ":" + min + ":" + sec);
+
+        var clockHour = (hour * 30) + min / 5;
+        console.log(clockHour);
+        $("#hour").css("transform", "rotate(" + ((hour * 30) + min / 2) + "deg)")
+        $("#min").css("transform", "rotate(" + ((min * 6) + sec / 6) + "deg)")
+        $("#sec").css("transform", "rotate(" + (sec * 6) + "deg)")
+    }
+
+    getNowDate();
+
+    function displayTime() {
+        // 현재시간을 가진 객체를 얻어옴
+        var now = moment();
+
+        // 시간
+        // var hour = now.get("h");
+        var hour = now.hour();
+
+        // 분
+        var min = now.minutes();
+
+        // 초
+        var sec = now.second();
+
+        // 각도로 변환환
+        // 초각도
+        var sDeg = 360 / 60 * sec;
+        var mDeg = 360 / 60 * min + .1 * 60;
+        var hDeg = 360 / 12 * hour + (360 / 12 / 60) * min;
+
+        //#hour, #min, #sec 를 돌림
+        $("#sec").css("transform", "rotate(" + sDeg + "deg)");
+        $("#min").css("transform", "rotate(" + mDeg + "deg)");
+        $("#hour").css("transform", "rotate(" + hDeg + "deg)");
+    }
+
+    displayTime();
+    setInterval(function () {
+        displayTime();
+    }, 1000);
+</script>
+</body>
+</html>

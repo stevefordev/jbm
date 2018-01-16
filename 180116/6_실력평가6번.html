@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <title>ex6</title>
+    <link rel="stylesheet" href="css/reset.css"/>
+    <link rel="stylesheet" href="css/font-awesome.min.css"/>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #wrap {
+            width: 700px;
+            height: 700px;
+            box-shadow: 0 16px 28px 0 rgba(0, 0, 0, 0.22), 0 25px 55px 0 rgba(0, 0, 0, 0.21);
+            margin: 50px auto 0 auto;
+            position: relative;
+            border: 2px solid #aaa;
+
+        }
+
+        button {
+            width: 50px;
+            height: 50px;
+            font: bold 30px arial, sans-serif;
+            border: 0;
+            color: #fff;
+            cursor: pointer;
+            background: #BBDEFB;
+            text-shadow: 1px 1px 1px #424242;
+        }
+
+        button:hover {
+            background: #29B6F6;
+            box-shadow: 0 16px 28px 0 rgba(0, 0, 0, 0.22),
+            0 25px 55px 0 rgba(0, 0, 0, 0.21);
+        }
+
+        button:active {
+            background: #0277BD;
+        }
+
+        .ir {
+            position: absolute;
+            text-indent: -9999px;
+            overflow: hidden;
+        }
+
+        #mazeBox {
+            width: 600px;
+            height: 600px;
+            border: 1px solid #424242;
+            background: url("img/maze.png");
+            background-size: contain;
+            position: relative;
+        }
+
+        #character {
+            width: 36px;
+            height: 36px;
+            left: 0px;
+            top: 0px;
+            transition: .5s ease;
+            position: absolute;
+        }
+
+        ul li {
+            position: absolute;
+        }
+
+        ul li:nth-child(1) {
+            left: 275px;
+            top: -50px;
+        }
+
+        ul li:nth-child(2) {
+            left: 600px;
+            top: 275px;
+        }
+
+        ul li:nth-child(3) {
+            left: 275px;
+            top: 600px;
+        }
+
+        ul li:nth-child(4) {
+            left: -50px;
+            top: 275px;
+        }
+
+        #wrap div {
+            position: absolute;
+            left: 50px;
+            top: 50px;
+        }
+
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <div>
+        <h1 class="screen_out">버튼 목록</h1>
+        <ul>
+            <li class="top">
+                <button><i class="fa fa-arrow-up"></i><span class="ir">위로</span></button>
+            </li>
+            <li class="right">
+                <button><i class="fa fa-arrow-right"></i><span class="ir">오른쪽으로</span></button>
+            </li>
+            <li class="bottom">
+                <button><i class="fa fa-arrow-down"></i><span class="ir">아래로</span></button>
+            </li>
+            <li class="left">
+                <button><i class="fa fa-arrow-left"></i><span class="ir">왼쪽으로</span></button>
+            </li>
+        </ul>
+    </div>
+    <div id="mazeBox">
+        <img id="character" src="img/mario.png" width="100" alt="슈퍼마리오"/>
+    </div><!-- //mazeBox -->
+</div><!-- //wrap -->
+
+<script src="js/jquery.js"></script>
+<script>
+
+    var nleft = 0,
+        ntop = 0,
+        move = 30,
+        $character = $("#character");
+
+    $(document).keyup(function (e) {
+        /*
+        * 주요 키코드
+        *  1. 엔터
+        *  2. 0 : 48
+        *  3 왼쪽 : 37
+        *  4. 위 : 38
+        *  5. 오른쪽 39
+        *  6. 아래쪽 40
+        *  **/
+        console.log(e.keyCode);
+
+        if (e.keyCode == 38) {
+            //위로 이동
+            if (ntop > 0) {
+                ntop -= move;
+            }
+        } else if (e.keyCode == 39) {
+            //오른쪽 이동
+            if (nleft < 570) {
+                nleft += move;
+            }
+        } else if (e.keyCode == 40) {
+            // 밑으로 이동
+            if (ntop < 570) {
+                ntop += move;
+            }
+        } else if (e.keyCode == 37) {
+            if (nleft > 0) {
+                nleft -= move;
+            }
+            // 왼쪽으로 이동
+        } else {
+            nleft = 0;
+            ntop = 0;
+        }
+        console.log(ntop, nleft);
+
+        $character.css({
+            "top": ntop,
+            "left": nleft
+        });
+    });
+</script>
+</body>
+</html>
