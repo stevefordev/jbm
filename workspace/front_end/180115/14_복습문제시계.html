@@ -100,7 +100,10 @@
 
         var msec = now.getMilliseconds();
         console.log(hour + ":" + min + ":" + sec);
-        $("#hour").css("transform", "rotate(" + ((hour * 10) + min / 10) + "deg)")
+
+        var clockHour = (hour * 30) + min / 5;
+        console.log(clockHour);
+        $("#hour").css("transform", "rotate(" + ((hour * 30) + min / 2 ) + "deg)")
         $("#min").css("transform", "rotate(" + ((min * 6) + sec / 6) + "deg)")
         $("#sec").css("transform", "rotate(" + (sec * 6) + "deg)")
 
