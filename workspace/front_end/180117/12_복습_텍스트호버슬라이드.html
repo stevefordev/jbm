@@ -7,7 +7,6 @@
         div {
             width: 500px;
             height: 800px;
-            background: #00C853;
             margin: auto;
         }
 
@@ -20,6 +19,54 @@
         li {
             background: blue;
             height: 200px;
+            color: white;
+            font-size: 50px;
+            font-weight: bold;
+            line-height: 200px;
+            padding-left: 20px;
+        }
+
+        li::before {
+            width: 0px;
+            height: 200px;
+            background: blue;
+            color: red;
+            position: fixed;
+            overflow: hidden;
+            transition: .5s ease;
+        }
+
+        li:nth-child(1)::before {
+            content: "가나다";
+        }
+
+
+        li:nth-child(1):hover::before {
+            width: 200px;
+        }
+
+        li:nth-child(2)::before {
+            content: "라마바";
+        }
+
+        li:nth-child(2):hover::before {
+            width: 200px;
+        }
+
+        li:nth-child(3)::before {
+            content: "사아자";
+        }
+
+        li:nth-child(3):hover::before {
+            width: 200px;
+        }
+
+        li:nth-child(4)::before {
+            content: "차카타";
+        }
+
+        li:nth-child(4):hover::before {
+            width: 200px;
         }
     </style>
 </head>
