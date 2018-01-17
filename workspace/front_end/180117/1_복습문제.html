@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>old 밴드</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <style>
+        html {
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+            background-image: url("img/bg_intro_1_1.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 100%;
+        }
+
+        h1 {
+            width: 474px;
+            height: 175px;
+            background-image: url("img/intro_band.png");
+        }
+
+        p {
+            width: 405px;
+            height: 45px;
+            background-image: url("img/intro_1_1.png");
+            margin: auto;
+        }
+
+        #introTxt {
+            width: 474px;
+            background: green;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            margin: -140px 0 0 -257px;
+            cursor: pointer;
+            transition: .3s ease;
+            padding: 20px;
+        }
+
+        #introTxt:hover {
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .ir {
+            text-indent: -9999px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+<div id="introTxt">
+    <h1 class="ir">BAND</h1>
+    <p class="ir">글로벌 NO.1 모임앱</p>
+</div>
+
+<script src="js/jquery.js"></script>
+<script>
+    $("#introTxt").click(function () {
+        //1~5까지 랜덤한 정수를 발생 시킴
+        var num = Math.floor(Math.random() * 5) + 1;
+        $("body").css("background-image", "url(img/bg_intro_1_" + num + ".jpg)")
+    })
+</script>
+</body>
+</html>

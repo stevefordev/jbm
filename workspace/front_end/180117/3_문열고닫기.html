@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <title>문을 여시오!</title>
+    <link rel="stylesheet" href="css/reset.css"/>
+    <link rel="stylesheet" href="css/notosanskr.css"/>
+    <link rel="stylesheet" href="css/font-awesome.min.css"/>
+    <style>
+        #wrap {
+            width: 700px;
+            height: 700px;
+            box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2),
+            0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            margin: -350px 0 0 -350px;
+            font-family: 'Noto Sans KR', sans-serif;
+            text-align: center;
+        }
+
+        #wrap h1 {
+            font-size: 50px;
+            font-weight: 900;
+            margin: 30px;
+            color: #FFC107;
+        }
+
+        #executeBtn {
+            width: 200px;
+            height: 60px;
+            font: 700 24px 'Noto Sans KR', sans-serif;
+            cursor: pointer;
+            background: #4CAF50;
+            border: none;
+            color: #fff;
+        }
+
+        #executeBtn:hover {
+            background: #00C853;
+        }
+
+        #box {
+            width: 500px;
+            height: 500px;
+            background: url(img/ryan.png);
+            background-size: cover;
+            margin: 15px auto;
+            position: relative;
+            box-shadow: 0 0 1px #424242;
+        }
+
+        .door {
+            width: 250px;
+            height: 500px;
+            position: absolute;
+            top: 0;
+            background: green;
+            font-size: 300px;
+            line-height: 450px;
+            color: #fff;
+            text-shadow: 0 0 10px #000;
+            transition: .3s ease;
+        }
+
+        #man {
+            background: #E91E63;
+            left: 0;
+            transform-origin: 0 50%;
+        }
+
+        #woman {
+            background: #2196F3;
+            right: 0;
+            transform-origin: 100% 50%;
+        }
+
+        #box.open #man {
+            transform: perspective(500px) rotateY(-130deg);
+        }
+
+        #box.open #woman {
+            transform: perspective(500px) rotateY(130deg);
+        }
+
+
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <h1>문을 여시오!</h1>
+    <div id="box">
+        <div id="man" class="door"><i class="fa fa-male"></i></div>
+        <div id="woman" class="door"><i class="fa fa-female"></i></div>
+    </div><!--//box-->
+    <button id="executeBtn">열고 닫기</button>
+</div><!--//wrap-->
+
+<script src="js/jquery.js"></script>
+<script>
+    $("#executeBtn").click(function () {
+        $("#box").toggleClass("open");
+    });// #executeBtn click() end
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>인스타그램</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <style>
+        .icon {
+            display: inline-block;
+            width: 19px;
+            height: 19px;
+            background: url(img/insta.png);
+            background-position: -405px -158px;
+            color: #fff;
+        }
+
+        .card {
+            width: 320px;
+            height: 320px;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            margin-left: -160px;
+            margin-top: -160px;
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+        .card:hover .over {
+            opacity: 1;
+            top: 0;
+        }
+
+        img {
+             /*트랜지션 시작 딜레이시간*/
+            transition-delay: .1s;
+            /*트랜지션 적용 시간*/
+            transition-duration: .3s;
+            /*트랜지션 적용 할 css 속성 (all)*/
+            transition-property: all;
+            /*트랜지션 가속도(ease, linear)*/
+            transition-timing-function: ease;
+
+            //transition: all .2s ease .3s;
+        }
+
+        .card:hover img {
+            transform: scale(4);
+        }
+
+        .over {
+            width: 320px;
+            height: 320px;
+            background: rgba(0, 0, 0, 0.5);
+            position: absolute;
+            top: -320px;
+            left: 0px;
+            opacity: 0;
+            transition: .5s ease;
+        }
+
+        .over ul {
+            list-style: none;
+            color: #fff;
+            font: bold 16px Arial, sans-serif;
+            text-align: center;
+            line-height: 320px;
+        }
+
+        .over ul li {
+            display: inline;
+            margin: 0 20px;
+        }
+
+        i, span {
+            vertical-align: middle;
+        }
+
+        .comment {
+            background-position: -405px -137px;
+        }
+
+        .love {
+            background-position: -405px -158px;
+        }
+
+        /*
+        인라인 레벨 요소들끼리 수직 middle 정렬
+        시키려면 vertical-align 을 middle 로
+        */
+    </style>
+</head>
+<body>
+<div class="card">
+    <img class="img" src="img/dog.jpg"/>
+    <div class="over">
+        <ul>
+            <li><i class="love icon"></i> <span>122개</span></li>
+            <li><i class="comment icon"></i> <span>453개</span></li>
+        </ul>
+    </div>
+</div>
+<script src="js/jquery.js"></script>
+<script>
+</script>
+</body>
+</html>

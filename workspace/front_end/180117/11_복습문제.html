@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>복습문제</title>
+    <style>
+        body {
+            width: 100%;
+            height: 1080px;
+        }
+
+        .circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 40px;
+            background: #E91E63;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+
+<script src="js/jquery.js"></script>
+<script>
+
+    $("html").mousemove(function (e) {
+
+        $("<div>").addClass("circle").css({
+            background: getRandomColor(),
+            left: e.clientX - 20,
+            top: e.clientY - 20
+        }).appendTo("body");
+    });
+
+    /**
+     * 입력받은 시작 값과 총 숫자 갯수 중에서 랜덤하게
+     * 선택하려 회신 준다
+     *
+     * @param start 시작 숫자
+     * @param size 숫자 갯수
+     * @returns {number}
+     */
+    function getRandomNum(start, size) {
+        return Math.floor(Math.random() * size) + start;
+    }
+
+    /**
+     * 랜덥하게 컬러 한가지 색상을 리턴 준다
+     * @returns {string} ex ) rgb( 0,0,0)"
+     */
+    function getRandomColor() {
+        var r = getRandomNum(0, 256);
+        var g = getRandomNum(0, 256);
+        var b = getRandomNum(0, 256);
+        var color = "rgb(" + r + "," + g + "," + b + ")";
+        console.log("color:" + color);
+        return color;
+    }
+
+</script>
+</body>
+</html>

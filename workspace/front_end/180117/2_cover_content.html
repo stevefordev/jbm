@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>cover content</title>
+    <style>
+        div {
+            width: 250px;
+            height: 250px;
+            border: 1px solid #424242;
+            float: left;
+            /*float:left 마진 겹침 현상이 없다.*/
+            margin: 5px;
+            background: url("img/20170901_ribbonryan_Rbanner_W.gif");
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        #one {
+            background-size: 100% 100%;
+        }
+
+        #cover {
+            background-size: cover;
+        }
+
+        #contain {
+            background-size: contain;
+        }
+    </style>
+</head>
+<body>
+<div id="cover"></div>
+<div id="contain"></div>
+<div id="one"></div>
+
+<script src="js/jquery.js"></script>
+<script>
+</script>
+</body>
+</html>

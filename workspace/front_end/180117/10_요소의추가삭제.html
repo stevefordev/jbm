@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>요소의 추가 삭제</title>
+    <style>
+        ul {
+            width: 200px;
+            margin: 0;
+            padding: 20px;
+            list-style: none;
+            background: blue;
+            overflow: hidden;
+
+        }
+
+        li {
+            width: 160px;
+            height: 60px;
+            margin: 20px;
+            background: #E91E63;
+            text-align: center;
+            line-height: 60px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<p>
+    <input id="name"/>
+    <button id="insertBtn">입력</button>
+    <button id="removeBtn">전체 삭제</button>
+</p>
+<ul>
+    <li>개미핥기</li>
+</ul>
+
+<script src="js/jquery.js"></script>
+<script>
+    // #insertBtn을 클릭했을때
+    $("#insertBtn").click(function () {
+
+        //input요소의 값을 얻어온 후 변수 name에 대입
+        var name = $("#name").val()
+
+        //li요소를 생성한 후 name의 값을 글자로 대입한 후
+        // ul에 마지막 자식으로 붙임.
+        $("<li>").text(name)
+            .appendTo("ul");
+
+        //유저의 편리를 위해서 input의 값을 비우고 포커스 맞추기
+        $("#name").val("").focus();
+    });
+
+    // #removeBtn을 클릭했을때
+    $("#removeBtn").click(function () {
+       $("ul").empty();
+    });
+</script>
+</body>
+</html>
