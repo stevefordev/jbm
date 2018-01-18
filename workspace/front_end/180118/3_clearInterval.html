@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>clear Interval</title>
+    <style>
+    </style>
+</head>
+<body>
+<h1>???</h1>
+<button id="startBtn">시작</button>
+<button id="stopBtn">멈춤</button>
+
+<script src="js/jquery.js"></script>
+<script>
+    var num = 0;
+    var id = 0;
+    $("#startBtn").click(function () {
+        // 더이상 클릭하지 못하게 disabled 속성을 추가
+        // 비활성화
+        $(this).attr("disabled", "disabled");
+        //$(this).attr("disabled", true);
+        id = setInterval(function () {
+
+            $("h1").text(num++);
+
+        }, 10)
+    });//#startBtn click() end
+
+    $("#stopBtn").click(function () {
+        $("#startBtn").removeAttr("disabled");
+
+        //num 을 0으로 초기화
+        num = 0;
+        clearInterval(id);
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>복습문제</title>
+    <style>
+        html {
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+            height: 100%;
+            cursor: crosshair;
+        }
+
+        .circle {
+            width: 50px;
+            height: 50px;
+            border-radius: 25px;
+            background: #00bfff;
+            position: fixed;
+        }
+    </style>
+</head>
+<body>
+
+<!--자주쓰는 공통 javascript 함수 묶음
+    ex) random color, random number
+-->
+<script src="js/utils.js"></script>
+<script src="js/jquery.js"></script>
+<script>
+    $("body").click(function (e) {
+
+        $("<div>").addClass("circle").css({
+            background: utils.getRandomColor,
+            left: e.clientX - 25,
+            top: e.clientY - 25
+        }).prependTo("body");
+    });
+
+
+</script>
+</body>
+</html>
