@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <title>이름입력</title>
+    <link rel="stylesheet" href="css/reset.css"/>
+    <link rel="stylesheet" href="css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="css/notosanskr.css"/>
+    <style>
+
+        body {
+            margin: 0;
+            font-family: "Noto Sans KR", serif;
+        }
+
+        #wrap {
+            width: 1000px;
+            margin: auto;
+        }
+
+        #wrap > h1 {
+            font-size: 48px;
+            font-weight: bold;
+            color: #525252;
+            text-align: center;
+        }
+
+        #inputBox {
+            margin: 10px;
+            text-align: center;
+        }
+
+        #name {
+            font: 30px "Noto Sans KR", serif;
+            width: 200px;
+            padding: 15px;
+            border: 2px solid #666;
+            margin-right: 10px;
+        }
+
+        #name:focus {
+            border-color: #03A9F4;
+        }
+
+        #inputBox button {
+            font: 30px "Noto Sans KR", serif;
+            padding: 17px;
+            border: none;
+            background: #03A9F4;
+            cursor: pointer;
+            color: #fff;
+            transition: .2s ease;
+        }
+
+        #inputBox button:hover {
+            background: #424242;
+            color: #fff;
+        }
+
+        #inputBox button:active {
+            transform: perspective(400px) translateZ(-50px);
+        }
+
+        #nameBox {
+            width: 1000px;
+            height: 200px;
+            background: #80D8FF;
+            text-align: center;
+            font-size: 30px;
+            line-height: 200px;
+            box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        #nameBox em {
+            font-weight: 900;
+            color: #fff;
+            font-size: 100px;
+            text-shadow: 1px 1px #333;
+        }
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <h1>이름을 알고 싶어요!</h1>
+    <div id="inputBox">
+        <label for="name" class="screen_out">이름</label>
+        <input type="text"
+               placeholder="이름 입력"
+               title="이름입력란"
+               id="name"/>
+        <button id="inputBtn"><i class="fa fa-paint-brush"></i> 이름 입력</button>
+    </div>
+    <div id="nameBox">
+        당신의 이름은 <em>?</em>입니다.
+    </div>
+</div>
+
+<script src="js/jquery.js"></script>
+<script>
+    /*
+    이름 입력 버튼을 클릭 했을때 수행
+    * */
+    $('#inputBtn').click(function () {
+        inputNameWrite();
+    })
+
+    /*
+    글자입력후 엔터 눌렀다 땔때 수행
+    * */
+    $('#name').keyup(function (e) {
+        if (e.keyCode == 13) {
+            inputNameWrite();
+        }
+    });
+
+    /**
+     * 버튼 클릭 혹은 엔터 입력 시
+     * 인풋 박으세 있는 값을 네임 박스 em 요소 안에 표시 하는 함수
+     */
+    function inputNameWrite() {
+        // id 가 name 인 인풋 박스에서 값을 가져온다
+        var value = $('#name').val();
+
+        // 인풋 박스에 값이 있는지 없는지 체크한다
+        if (value == '' || value == 'undefined' || value == null) {
+            // 인풋 박스에 값이 없으면 입력하라는 알럿 표시
+            alert("입력을 입력해주세요!!");
+            // 인풋 박스에 값이 없으면 네임박스 em 자리에 물음표 표시
+            $('#nameBox em').text("?");
+        } else {
+            // 인풋 박스에 값이 있으면 네임박스 em 요소에 인풋 박스 값을 표시
+            $('#nameBox em').text(value);
+        }
+        // 수행후 인풋박스를 리셋하고 포커스한다.
+        $('#name').val('').focus();
+    }
+</script>
+</body>
+</html>
+
+
+
+
+
+

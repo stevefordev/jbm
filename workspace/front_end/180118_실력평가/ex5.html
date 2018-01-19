@@ -1,0 +1,146 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>직사각형큐브</title>
+    <link rel="stylesheet" href="css/reset.css"/>
+    <link rel="stylesheet" href="css/font-awesome.min.css"/>
+    <style>
+        #wrap {
+            width: 1000px;
+            height: 576px;
+
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            margin: -288px 0 0 -500px;
+            /* 전체 공통의 퍼스펙티브*/
+            perspective: 1000px;
+        }
+
+        /*
+        큐브 평면 전체를 감싸는 보더를 삽입하기 위해서
+        가상 요소 사용
+        */
+        body::before {
+            content: "";
+            width: 1404px;
+            height: 808px;
+            border: 10px solid #cccccc;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-top: -414px;
+            margin-left: -712px;
+
+        }
+
+        #friends {
+            width: 1000px;
+            height: 576px;
+            /*자식들을 3D 공간에 배치가능*/
+            transform-style: preserve-3d;
+            transition: 1s linear;
+        }
+
+        img {
+            width: 1000px;
+            height: 576px;
+            position: absolute;
+
+        }
+
+        img:nth-child(1) {
+            transform: translateZ(288px);
+        }
+
+        img:nth-child(2) {
+
+            transform: rotateX(90deg) translateZ(288px);
+        }
+
+        img:nth-child(3) {
+
+            transform: rotateX(180deg) translateZ(288px);
+        }
+
+        img:nth-child(4) {
+
+            transform: rotateX(-90deg) translateZ(288px);
+        }
+
+        #wrap button {
+            width: 80px;
+            height: 80px;
+            background: rgba(0, 0, 0, 0);
+            color: #000;
+            position: fixed;
+            left: 500px;
+            border: 0;
+            border-radius: 40px;
+            font-size: 60px;
+            outline: none;
+        }
+
+        /*
+        버튼 마우스 오버시
+        1. 백그라운드 생성
+        2. 텍스트 컬러변경
+        3. cuㄱsor 변경
+        4. 박스 쉐도우
+        */
+        #wrap button:hover {
+            background: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            cursor: pointer;
+            outline: none;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.8);
+        }
+
+        button.top {
+            top: -60px;
+        }
+
+        button.bottom {
+            bottom: -60px;
+        }
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <div id="friends">
+        <img src="img/b1.png"/>
+        <img src="img/b7.png"/>
+        <img src="img/b2.png"/>
+        <img src="img/b5.png"/>
+    </div>
+    <button class="btn top fa fa-arrow-up"></button>
+    <button class="btn bottom fa fa-arrow-down"></button>
+</div>
+
+
+<script src="js/jquery.js"></script>
+<script>
+
+    // 버튼 클릭시 움직여야하는 각도의 전역 변수
+    var deg = 0;
+
+    // 버튼 클릭시 동작 수행
+    $("button").click(function () {
+
+        // 만약 클릭 한 버튼 요소의 클래스 속성에 top 이 있는지 없는지 판단
+        if ($(this).hasClass("top") == true) {
+            deg += 90;
+        } else {
+            deg -= 90;
+        }
+
+        $("#friends").css({
+            transform: "rotateX(" + deg + "deg)"
+        });
+    });
+
+</script>
+
+</body>
+</html>

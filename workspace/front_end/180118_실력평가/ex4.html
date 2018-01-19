@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Model S | Tesla</title>
+    <link rel="icon" href="img/favicon.ico"/>
+    <link rel="stylesheet" href="css/reset.css"/>
+    <link rel="stylesheet" href="css/notosanskr.css"/>
+    <style>
+        #carBox {
+            width: 1000px;
+            height: 400px;
+            /*브라우저 기준 가운데 정렬*/
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            margin-left: -500px;
+            margin-top: -200px;
+
+            text-align: center;
+
+            outline: 1px solid #cccccc;
+        }
+
+        #car {
+            width: 1000px;
+            height: 235px;
+
+            background-image: url("img/car_body.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+
+            /*타이어 위치를 설정 하기위한 포지셔닝 컨텍스트*/
+            position: relative;
+
+            /*카 몸체 업다운 애니메이션*/
+            animation: upDownCarBody 1s linear infinite alternate-reverse;
+        }
+
+        h1 {
+            font-weight: bold;
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            width: 120px;
+            height: 50px;
+            border: 2px solid #cccccc;
+            outline: none;
+            margin-top: 30px;
+            position: relative;
+            background-color: #fff;
+            padding-left: 40px;
+        }
+
+        .btn:hover {
+            cursor: pointer;
+        }
+
+        .btn.on {
+            border: 2px solid #3399FF;
+        }
+
+        .wheel {
+            width: 110px;
+            height: 110px;
+            background-image: url("img/wheel19.png");
+            background-size: cover;
+            position: absolute;
+            bottom: 6px;
+
+            /*바퀴 전진 회전 애니메이션*/
+            animation: turnWheel 1s linear infinite;
+        }
+
+        .front {
+            left: 191px;
+        }
+
+        .rear {
+            right: 246px;
+        }
+
+        /*
+            버튼 안에 바퀴 이미지 삽입을 위하여 가상요소 생성
+        */
+        .inch19::before {
+            content: "";
+            width: 40px;
+            height: 40px;
+            background-image: url("img/icon-inch19-wheel.svg");
+            background-size: cover;
+            position: absolute;
+            left: 10px;
+            top: 3px;
+        }
+
+        .inch21::before {
+            content: "";
+            width: 40px;
+            height: 40px;
+            background-image: url("img/icon-inch21-wheel.svg");
+            background-size: cover;
+            position: absolute;
+            left: 10px;
+            top: 3px;
+        }
+        /*바퀴 회전 키프레임 저진 회전*/
+        @keyframes turnWheel {
+            0% {
+                transform: rotateZ(0deg);
+            }
+            100% {
+                transform: rotateZ(-360deg);
+            }
+        }
+        /*카 몸체 업타운 키프레임*/
+        @keyframes upDownCarBody {
+            0% {
+                transform: translateY(0px);
+            }
+            100% {
+                transform: translateY(4px);
+            }
+        }
+    </style>
+</head>
+<body>
+<div id="carBox">
+    <h1>테슬라 S</h1>
+    <div id="car">
+        <div class="front wheel"></div>
+        <div class="rear wheel"></div>
+    </div>
+    <button class="btn inch19 on">19&prime;&prime;</button>
+    <button class="btn inch21">21&prime;&prime;</button>
+    <!-- 원래는 radio버튼이어야 합니다.(실력평가 리뷰때) -->
+</div>
+<script src="js/jquery.js"></script>
+<script>
+    // .btn 클릭시 동작 수행
+    $(".btn").click(function () {
+
+        // 버튼 클릭시 버튼의 "on" 클래스를 지우고
+        // 현재 클릭한 버튼에 "on" 클래스 추가 한다
+        $(".btn").removeClass("on")
+        $(this).addClass("on");
+
+        // 클릭한 버튼이 19인치 아닌지 검사 하여
+        // 그에 맞는 바퀴 이미지로 set
+        if ($(this).hasClass("inch19") == true) {
+            $(".wheel").css({
+                "background-image" : 'url("img/wheel19.png")'
+            });
+        } else {
+            $(".wheel").css({
+                "background-image" : 'url("img/wheel21.png")'
+            });
+        }
+    });
+</script>
+</body>
+</html>
