@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>요소의 추가 / 삭제</title>
+    <style>
+
+        ul {
+            width:200px;
+            margin:0;
+            padding: 20px;
+            list-style: none;
+            background: #2196F3;
+            overflow: hidden;
+
+        }
+
+        li {
+            width:160px;
+            height:60px;
+            margin:20px;
+            background: #E91E63;
+            text-align: center;
+            line-height: 60px;
+            cursor: pointer;
+        }
+
+
+    </style>
+</head>
+<body>
+    <p>
+        <input id="name"/>
+        <button id="insertBtn">입력</button>
+        <button id="removeAllBtn">전체 삭제</button>
+    </p>
+    <ul>
+        <li>개미핥기</li>
+    </ul>
+<script src="js/jquery.js"></script>
+<script>
+
+    /*
+    * on 메서드 용법
+    * 1. on(이벤트명, 이벤트핸들러(함수))
+    * 2. 부모.on(이벤트명, 붙일요소선택자, 함수)
+    * */
+
+    //#removeAllBtn을 클릭했을때
+    $("#removeAllBtn").click(function () {
+
+        //자식요소들 전부 비우기
+        $("ul").empty();
+
+    });//#removeAllBtn click() end
+
+    //#insertBtn을 클릭했을때
+    $("#insertBtn").click(function () {
+
+        //input요소의 글자(값)를 얻어온 후 변수 name에 대입
+        var name = $("#name").val();
+
+        //li요소를 생성한 후 name의 값을 글자로 대입한
+        //후 ul에 마지막 자식으로 붙임
+        $("<li>").text(name)
+            .appendTo("ul");
+
+        //유저의 편리를 위해서
+        //input의 값을 비우고 포커스 맞추기
+        $("#name").val("").focus();
+
+    });//#insertBtn click end
+
+    //ul의 요소의 자식들 li를 클릭했을때
+    //나중에 추가되는 요소들에도 이벤트가 붙습니다.
+    $("ul").on("click", "li", function () {
+        $(this).remove();
+    })
+</script>
+</body>
+</html>
