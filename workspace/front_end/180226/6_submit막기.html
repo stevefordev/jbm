@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>submit막기</title>
+</head>
+<body>
+    <form id="form" action="test.do">
+        <button>로그인</button>
+    </form>
+<script src="js/jquery.js"></script>
+<script>
+    $("#form").on("submit",function (e) {
+        //브라우저가 가진 기본기능 막기
+        //e.preventDefault();
+
+        //return true면 submit이고
+
+        alert("submit!!");
+
+        //return false면 막음
+        return false;
+
+    });
+</script>
+</body>
+</html>

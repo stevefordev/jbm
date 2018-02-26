@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>날짜 자동생성</title>
+</head>
+<body>
+    <select id="year" name="year">
+
+    </select>년
+    <select id="month" name="month">
+
+    </select>월
+    <select id="date" name="date">
+
+    </select>일
+    <script src="js/jquery.js"></script>
+    <script src="js/moment-with-locales.js"></script>
+    <script>
+
+        //년,월을 생성하는 함수
+        function createYearMonth() {
+
+            //올해 년 얻어오기
+            var nowYear = moment().year();
+
+
+            //올해년도로 for문 돌리기
+            for(var i = nowYear ; i >= 1897 ; i-- ) {
+
+                //option요소 생성후 id가 year인
+                //select요소에 붙이기
+                var $option = $("<option>");
+
+                if((nowYear-19)==i) {
+                    $option.attr("selected",true);
+                }//if end
+
+                    $option.text(i)
+                             .appendTo("#year");
+
+            }//for end
+
+            //월 생성
+            for(var i = 1 ; i < 13 ; i++ ) {
+
+                $("<option>").text(i).appendTo("#month");
+
+            }//for end
+
+            //일 만드는 함수 호출
+            createDate();
+
+        }//createYearMonth() end
+
+        //페이지가 로딩되었을때 한번 호출
+        createYearMonth();
+
+
+        //유저가 선택한 년과 월을 가지고
+        //마지막 날짜까지 일을 생성하는 함수
+        function createDate() {
+
+            //기존 선택된 일
+            var oldDate = $("#date").val();
+
+            //기존의 option요소를 전부 지우기
+            $("#date").empty();
+
+            //현재 선택된 년도 얻기
+            var year = $("#year").val();
+            //현재 선택된 월 얻기
+            var month =$("#month").val()-1;
+
+            //마지막 날짜 얻기
+            var lastDay = moment([year,month]).endOf("month").date();
+
+            //for문 돌려서 생성
+            for(var i = 1 ; i <= lastDay ; i++ ) {
+
+                var $option = $("<option>");
+
+                if(oldDate==i) {
+                    $option.attr("selected",true);
+                }//if end
+
+                $option.text(i)
+                    .appendTo("#date");
+
+            }//for end
+
+        }//createDate() end
+
+        //년 혹은 월이 변경될때 createDate()함수 호출
+        $("#year,#month").change(createDate);
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>유효성검사</title>
+    <style>
+        .msg.bad {
+            color:#E91E63;
+            display: none;
+        }
+        .msg.good {
+            color:#2196F3;
+            display: none;
+        }
+
+        #idBox.good .good,
+        #pwdBox.good .good {
+            display: inline;
+        }
+
+        #idBox.bad .bad,
+        #pwdBox.bad .bad {
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+    <h1>회원가입 페이지</h1>
+    <form id="joinForm" action="join.jsp" method="post">
+        <fieldset>
+            <legend>회원가입폼</legend>
+            <p id="idBox">
+                <input name="id"
+                       maxlength="16"
+                       id="id" placeholder="아이디">
+                <span class="msg good">좋은 아이디입니다.</span>
+                <span class="msg bad">아이디를 4~16자까지 첫글자는 영어로, 나머지는 영어,숫자,특수기호(_,-)으로 입력해주세요.</span>
+            </p>
+            <p id="pwdBox">
+                <input name="pwd" type="password"
+                       maxlength="20"
+                       id="pwd" placeholder="비밀번호">
+                <span class="msg good">좋은 비밀번호입니다.</span>
+                <span class="msg bad">비밀번호를 6~20자까지 영어,숫자,특수기호(_,-)으로 입력해주세요.</span>
+            </p>
+            <p>
+                <button>회원가입</button>
+            </p>
+        </fieldset>
+    </form>
+<script src="js/jquery.js"></script>
+<script>
+
+    var $id = $("#id"), //id 입력필드
+        $idBox = $("#idBox"), //id입력박스
+        regId = /^[a-z][a-z|_|0-9|\-]{3,15}$/,//id 정규표현식
+        $pwd = $("#pwd"), //pwd 입력필드
+        $pwdBox = $("#pwdBox"), // pwd 입력박스
+        regPwd = /^[\w|\-]{6,20}$/; //pwd 정규표현식
+
+    //비밀번호를 검사하는 함수
+    function validatePwd() {
+
+        var val = $pwd.val();
+
+        if(regPwd.test(val)) {
+            $pwdBox.attr("class","good");
+            return true;
+        }else {
+            $pwdBox.attr("class","bad");
+            return false;
+        }//if~else end
+
+    }//validatePwd() end
+
+    $pwd.keyup(validatePwd);
+
+
+    //아이디를 검사하는 함수
+    function validateId() {
+
+        //유저가 입력한 id값을 얻어옴
+        var val = $id.val();
+
+        if(regId.test(val)) {
+            $idBox.attr("class","good");
+            return true;
+        }else {
+            $idBox.attr("class","bad");
+            return false;
+        }//if~else end
+
+    }//validateId() end
+
+    //키를 입력할때마다 유효성검사
+    $id.keyup(validateId);
+
+
+    $("#joinForm").submit(function () {
+
+        if(!validateId()) {
+            return false;
+        }//if end
+
+        if(!validatePwd()) {
+            return false;
+        }//if end
+
+    });
+
+
+</script>
+</body>
+</html>

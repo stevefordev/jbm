@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>마지막 날짜</title>
+</head>
+<body>
+<script src="js/moment-with-locales.js"></script>
+<script>
+
+
+    var year = 2016;
+    var month = 2;
+
+    //년도와 월을 이용해서 moment객체 생성
+    var birth = moment([year,month-1]);
+
+    //해당월의 마지막 일을 얻어옴
+    var lastDay = birth.endOf("month").date();
+
+    alert(lastDay);
+
+</script>
+</body>
+</html>
