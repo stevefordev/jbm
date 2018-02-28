@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>장르목록</title>
+</head>
+<body>
+    <h1>장르목록</h1>
+    <p>
+        <button>불러오기!</button>
+    </p>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>번호</th>
+                <th>장르명</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td colspan="2">아직 없음</td>
+            </tr>
+        </tbody>
+    </table>
+<script src="js/jquery.js"></script>
+<script>
+    $("button").click(function () {
+
+        $.ajax({
+            url:"ajax/genres.json",
+            dataType:"json",
+            error:function(xhr,error,code){
+                alert("에러!");
+            },
+            success:function(data) {
+                //console.log(data);
+
+                $("tbody").empty();
+
+                $(data).each(function(){
+
+                    var $tr = $("<tr>");
+
+                    var $td1 = $('<td>').text(this.no);
+                    var $td2 = $("<td>").text(this.name);
+
+                    $tr.append($td1,$td2).appendTo("tbody");
+
+                });//each() end
+
+            }
+        });//ajax() end
+
+    });//button click() end
+</script>
+</body>
+</html>
