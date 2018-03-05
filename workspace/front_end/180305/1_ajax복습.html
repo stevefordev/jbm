@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax복습</title>
+    <style>
+        #loader {
+            width:100%;
+            height:100%;
+            position: fixed;
+            left:0;
+            top:0;
+            background: rgba(229,239,241,1);
+            background-image: url(img/loading.gif);
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: .8;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>영화목록</h1>
+    <ul>
+        <li> 영화명 :
+            / 감독 :
+            / 장르 :
+        </li>
+    </ul>
+<button>얻기</button>
+<div id="loader"></div>
+<script src="js/jquery.js"></script>
+<script>
+
+    var $loader = $("#loader");
+
+    //버튼을 클릭했을때
+    $("button").click(function () {
+
+        //로딩이미지 보여주기
+        $loader.show();
+
+        //ajax 수행
+        $.ajax({
+            url:"ajax/movies.json",
+            dataType:"json",
+            error:function(a,b,c){
+                //a 는 XMLHTTPRequest객체
+                //b는 error
+                //c는 error code
+                console.log(a);
+                console.log(b);
+                console.log(c);
+                alert("서비스 점검중입니다~");
+            },
+            success:function(json){
+                //alert("성공!");
+                console.log(json);
+
+                //기존의 li비우기
+                $("ul").empty();
+
+                $(json).each(function () {
+                    //console.log(this.title);
+                    $("<li>").text("영화명 : "+this.title+" / 감독 : " + this.director+" / 장르 : " + this.genre)
+                             .appendTo("ul");
+
+                });//each() end
+
+                //loding이미지 숨기기
+                $loader.fadeOut(300);
+
+            }//success end
+        });//ajax() end
+
+
+    });//click() end
+</script>
+</body>
+</html>

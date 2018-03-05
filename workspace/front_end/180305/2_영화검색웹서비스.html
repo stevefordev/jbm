@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>영화 검색 웹서비스</title>
+    <style>
+        #loader {
+            width:100%;
+            height:100%;
+            position: fixed;
+            left:0;
+            top:0;
+            background: rgba(255,255,255,1);
+            background-image: url(img/ryan.gif);
+            background-position: center;
+            opacity: .8;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>영화 검색 웹서비스</h1>
+
+    <input id="q"/><button id="searchBtn">검색</button>
+
+    <h2>영화목록</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>영화코드</th>
+                <th>이름</th>
+                <th>개봉일</th>
+                <th>장르</th>
+                <th>감독</th>
+                <th>국가</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td colspan="6">검색하세용!</td>
+            </tr>
+        </tbody>
+    </table>
+<div id="loader"></div>
+<script src="js/jquery.js"></script>
+<script>
+
+    var $loader = $("#loader");
+
+    //이전에 입력했던 쿼리
+    var oldQ = "";
+
+    function getMovieList() {
+
+        //유저가 입력한 영화명
+        var q = $("#q").val();
+
+        console.log(q==oldQ);
+
+        if(q!=oldQ) {
+
+            //로딩이미지 보여주기
+            $loader.show();
+
+            //oldQ를 갱신시킴
+            oldQ = q;
+
+            //url : 서버주소
+            //data : 서버로 넘길 파라미터
+            //dataType : 넘어오는 데이터의 타입지정
+            $.ajax({
+                url: "http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieList.json",
+                data: {
+                    "key": "430156241533f1d058c603178cc3ca0e",
+                    "itemPerPage": 20,
+                    "movieNm": q
+                },
+                dataType: "json",
+                error: function () {
+                    alert("서버점검중!");
+                },
+                success: function (json) {
+                    // alert("성공!");
+                    //console.log(json);
+                    //console.log(json.movieListResult);
+
+                    // console.log(json.movieListResult.movieList);
+
+                    $("tbody").empty();
+
+                    var movies = json.movieListResult.movieList;
+
+                    $(movies).each(function () {
+                        //alert(this.movieNm);
+
+                        var $tr = $("<tr>");
+
+                        var $td1 = $("<td>").text(this.movieCd);
+                        var $td2 = $("<td>").text(this.movieNm);
+                        var $td3 = $("<td>").text(this.openDt);
+                        var $td4 = $("<td>").text(this.genreAlt);
+
+                        var directors = "";
+
+                        //각 감독으로 each
+                        $(this.directors).each(function () {
+                            directors += this.peopleNm + ", ";
+                        });
+
+                        //마지막 ',' 지움
+                        directors = directors.substring(0, directors.length - 2);
+
+                        var $td5 = $("<td>").text(directors);
+                        var $td6 = $("<td>").text(this.repNationNm);
+
+                        $tr.append($td1, $td2, $td3, $td4, $td5, $td6)
+                            .appendTo("tbody");
+
+                    });//each() end
+
+                    $loader.hide();
+
+                }//success end
+            });//$.ajax() end
+
+        }//if end
+
+    }//getMovieList() end
+
+    /*
+
+        CJK(중국어,일어,한국어)는
+        input요소에서 실시간으로 keyup이벤트
+        작동안함
+        (크롬은 이제 작동함, 나머지 브라우저는
+        작동하지 않음)
+
+        그래서 focus일때 setInterval로 처리
+        blur일때 clearInterval로
+
+     */
+
+    //interval id
+    var id = -1;
+
+    $("#q").on("focus",function () {
+
+        id = setInterval(getMovieList,500);//setInterval() end
+
+    });//focus() end
+
+    $("#q").on("blur",function () {
+
+        //포커스 맞지 않기 때문에 멈춤
+        clearInterval(id);
+
+    });//blur() end
+
+    $("#searchBtn").click(getMovieList);//click() end
+</script>
+</body>
+</html>

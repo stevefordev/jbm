@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>여러가지 each</title>
+</head>
+<body>
+<script src="js/jquery.js"></script>
+<script src="js/underscore-min.js"></script>
+<script>
+    //0) 배열
+    var animals = [
+        {name:"강아지",age:3},
+        {name:"고양이",age:13},
+        {name:"사자",age:23},
+        {name:"호랑이",age:33},
+        {name:"이구아나",age:43}
+    ];
+
+    //1) jquery each메서드
+    $(animals).each(function (index,animal) {
+        //alert(this.name);
+        //alert(animal.name);
+    });//each() end
+
+
+    //2) jquery의 each함수
+    $.each(animals,function (index,animal) {
+        //alert(this.name);
+       // alert(animal.name);
+    });
+
+    //3) underscore의 each함수
+    _.each(animals,function (animal,index) {
+       alert(animal.name);
+    });
+
+
+
+
+</script>
+</body>
+</html>

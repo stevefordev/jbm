@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>언더스코어 템플릿</title>
+</head>
+<body>
+<script src="js/jquery.js"></script>
+<script src="js/underscore-min.js"></script>
+<script>
+   /*
+    언더스코어의 템플릿
+    var tmp = _.template(템플릿코드(문자열));
+
+    var markup = tmp(데이터);
+
+    markup은 문자열
+
+    */
+
+   //템플릿 코드로 함수를 생성
+   var tmp = _.template("<h1><%=name%>님 환영합니다.</h1>");
+
+   //함수에 데이터를 인자로 넣어줘서 완성된 마크업을
+   //얻어옴
+   var markup = tmp({name:"김필구"});
+
+   //특정요소에 붙임
+   $("body").prepend(markup);
+
+
+</script>
+</body>
+</html>
