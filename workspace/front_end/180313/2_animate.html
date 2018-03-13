@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery의 애니메이션</title>
+    <style>
+        #jquery,#css3 {
+            width:100px;
+            height:100px;
+            border-radius: 50px;
+            position: relative;
+        }
+        #jquery {
+            background: #F44336
+        }
+        #css3 {
+            background: #2196F3;
+            left:0;
+            transition: 500ms ease;
+        }
+    </style>
+</head>
+<body>
+<p>
+<button>작동!</button>
+</p>
+<div id="jquery"></div>
+<div id="css3"></div>
+
+<script src="js/jquery.js"></script>
+<script>
+    var $jquery = $("#jquery"),
+        $css3 = $("#css3");
+
+    //animate(CSS객체[,시간,가속도,함수])
+    $("button").on("click",function () {
+
+        $jquery.animate({left:1000},500,"swing",function () {
+            alert("$jquery 애니메이션끝!");
+        });
+
+        $css3.css("left",1000);
+
+    });//click() end
+
+
+    //css3의 transition은
+    // transitionend 이벤트가 발생
+    $css3.on("transitionend",function () {
+        alert("트랜지션끝!!");
+    });//on() end
+
+
+</script>
+</body>
+</html>
