@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas 복습</title>
+    <style>
+        body {
+            margin:0;
+        }
+        #canvas {
+            border:1px solid #424242;
+            display: block;
+            cursor: crosshair;
+            margin:auto;
+        }
+    </style>
+</head>
+<body>
+<canvas id="canvas"></canvas>
+<script src="js/jquery.js"></script>
+<script>
+    var $canvas = $("#canvas");
+
+    var canvas = $canvas.get(0);
+
+    //$canvas.css({width:800,height:800});
+
+    //$canvas.width(800);   css의 width 변경
+    ///$canvas.height(800);  css의 height 변경
+
+    //canvas.width = 800;
+    //canvas.height = 800;
+
+    $canvas.attr({width:800,height:800});
+
+    var ctx = canvas.getContext("2d");
+
+
+
+    //1) canvas요소에 click이벤트 붙이기
+    $canvas.on("click",function (e) {
+
+        var offset = $canvas.offset();
+
+        var x = e.pageX - offset.left;
+        var y = e.pageY;
+
+        //console.log(x+":"+y);
+
+        ctx.beginPath();
+        ctx.fillStyle = getRandomColor();
+        ctx.arc(x,y,30,0,Math.PI*2,true);
+        ctx.fill();
+
+       // alert("test");
+    });//on() end
+
+    function getRandomColor() {
+        var r = Math.floor(Math.random()*256);
+        var g = Math.floor(Math.random()*256);
+        var b = Math.floor(Math.random()*256);
+
+        return "rgba("+r+","+g+","+b+",.5)";
+    }
+
+</script>
+</body>
+</html>

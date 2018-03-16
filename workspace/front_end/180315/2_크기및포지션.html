@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>크기 및 포지션</title>
+    <style>
+        #parent {
+            width:600px;
+            height:300px;
+            background: silver;
+            margin:200px auto;
+            position: relative;
+        }
+        #child {
+            position: absolute;
+            width:200px;
+            height:100px;
+            background: #651FFF;
+            left:200px;
+            top:100px;
+        }
+    </style>
+</head>
+<body>
+<div id="parent">
+    <div id="child"></div>
+</div>
+<script src="js/jquery.js"></script>
+<script>
+
+    var $child = $("#child");
+
+
+    //width(), height() : px뺀 순수 숫자로
+
+    //position() : 포지셔닝컨텍스트로 부터 떨어진 top,left
+
+    //offset() : 다큐멘트로부터 떨어진 top,left
+
+    $child.click(function () {
+
+        //var width = $child.css("width");
+
+        //var width = $child.width();
+
+        //alert(width+100);
+
+        var position = $child.position();
+
+        console.log(position.top);
+        console.log(position.left);
+
+        var offset = $child.offset();
+
+        console.log(offset);
+
+    });
+
+
+
+</script>
+</body>
+</html>
