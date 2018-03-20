@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>쿠팡의 기본</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <style>
+        body {
+            height:20000px;
+        }
+        #wrap {
+            width:800px;
+            margin:auto;
+        }
+        #wrap>div {
+            width:800px;
+            height:1000px;
+            border:1px solid #424242;
+        }
+
+
+        img {
+            position: fixed;
+            left:0;
+            top:0;
+            transform:scale(0);
+            opacity: 0;
+            transition: .3s cubic-bezier(.65,.19,.69,1.47);
+        }
+        img.show {
+            opacity: 1;
+            transform:scale(1);
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="red"></div>
+        <div id="green"></div>
+        <div id="blue"></div>
+        <div id="yellow"></div>
+    </div>
+    <img src="img/niniz.gif" />
+<script src="js/jquery.js"></script>
+<script>
+    var $window = $(window),
+        $img = $("img"),
+        tops = [0,1000,2000,3000];
+
+
+
+    $window.on("scroll",function () {
+        var sTop = $window.scrollTop();
+
+
+        if(sTop>=500) {
+            $img.addClass("show");
+        }else {
+            $img.removeClass("show");
+        }//if~else end
+
+        
+
+    });//on() end
+</script>
+</body>
+</html>

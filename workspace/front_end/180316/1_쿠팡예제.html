@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>쿠팡!</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/notosanskr.css"/>
+    <link rel="shortcut icon" href="img/coupang.ico"/>
+    <style>
+
+        body {
+            height:14000px;
+        }
+
+        #categoryBestMenu{
+            width: 1068px;
+            padding:0 0 0 48px;
+            /*background-color: yellow;*/
+            position: relative;
+            left: 50%;
+            margin-left: -582px;
+
+        }
+        #categorySidebar{
+            width: 34px;
+            height: 667px;
+            border: 1px solid #ddd;
+            margin-right: 10px;
+            background-color: #fff;
+            position: fixed;
+            top:0;
+            margin-left: -48px;
+            z-index: 10;
+            margin-top: 10px;
+            display: none;
+        }
+        #categorySidebar.show{
+            display: block;
+        }
+        #categorySidebar a{
+            display: block;
+            width: 34px;
+            height: 34px;
+            text-indent: -999999px;
+            overflow: hidden;
+            background-image: url("img/sidebar.png");
+            background-repeat: no-repeat;
+            line-height:34px;
+            color:#fff;
+            text-decoration: none;
+        }
+        #categorySidebar a:hover {
+            width:200px;
+            text-indent: 42px;
+        }
+
+        #categorySidebar a.womanclothe{
+            background-position: 0px 0px;
+        }
+        #categorySidebar a.womanclothe.on{
+            background-position: -50px 0px;
+            background-color: #f6699e;
+        }
+        #categorySidebar a.womanclothe:hover{
+            background-position: -50px 0px;
+            background-color: #f6699e;
+        }
+
+        #categoryBestMenu>#categorySidebar a.manclothe{
+            background-position: 0px -50px;
+        }
+        #categoryBestMenu>#categorySidebar a.manclothe:hover{
+            background-position: -50px -50px;
+            background-color: #1992df;
+
+        }
+        #categoryBestMenu>#categorySidebar a.manclothe.on{
+            background-position: -50px -50px;
+            background-color: #1992df;
+
+        }
+        #categoryBestMenu>#categorySidebar a.beauty{
+            background-position: 0px -100px;
+        }
+        #categoryBestMenu>#categorySidebar a.beauty:hover{
+            background-position: -50px -100px;
+            background-color: #7e57c2;
+        }
+        #categoryBestMenu>#categorySidebar a.beauty.on{
+            background-position: -50px -100px;
+            background-color: #7e57c2;
+        }
+        #categoryBestMenu>#categorySidebar a.baby{
+            background-position: 0px -150px;
+        }
+        #categoryBestMenu>#categorySidebar a.baby:hover{
+            background-position: -50px -150px;
+            background-color: #00aad4;
+        }
+        #categoryBestMenu>#categorySidebar a.baby.on{
+            background-position: -50px -150px;
+            background-color: #00aad4;
+        }
+        #categoryBestMenu>#categorySidebar a.food{
+            background-position: 0px -200px;
+        }
+        #categoryBestMenu>#categorySidebar a.food:hover{
+            background-position: -50px -200px;
+            background-color: #ee9200;
+        }
+        #categoryBestMenu>#categorySidebar a.food.on{
+            background-position: -50px -200px;
+            background-color: #ee9200;
+        }
+
+        #categoryBestMenu>#categorySidebar a.kitchen{
+            background-position: 0px -250px;
+        }
+        #categoryBestMenu>#categorySidebar a.kitchen:hover{
+            background-position: -50px -250px;
+            background-color: #62ab66;
+        }
+        #categoryBestMenu>#categorySidebar a.kitchen.on{
+            background-position: -50px -250px;
+            background-color: #62ab66;
+        }
+
+        #categoryBestMenu>#categorySidebar a.living{
+            background-position: 0px -300px;
+        }
+        #categoryBestMenu>#categorySidebar a.living:hover{
+            background-position: -50px -300px;
+            background-color: #9d7a6d;
+        }
+        #categoryBestMenu>#categorySidebar a.living.on{
+            background-position: -50px -300px;
+            background-color: #9d7a6d;
+        }
+
+        #categoryBestMenu>#categorySidebar a.home_decoration{
+            background-position: 0px -350px;
+        }
+        #categoryBestMenu>#categorySidebar a.home_decoration:hover{
+            background-position: -50px -350px;
+            background-color: #dd6641;
+        }
+        #categoryBestMenu>#categorySidebar a.home_decoration.on{
+            background-position: -50px -350px;
+            background-color: #dd6641;
+        }
+        #categoryBestMenu>#categorySidebar a.digital{
+            background-position: 0px -400px;
+        }
+        #categoryBestMenu>#categorySidebar a.digital:hover{
+            background-position: -50px -400px;
+            background-color: #5868be;
+        }
+        #categoryBestMenu>#categorySidebar a.digital.on{
+            background-position: -50px -400px;
+            background-color: #5868be;
+        }
+        #categoryBestMenu>#categorySidebar a.sports{
+            background-position: 0px -450px;
+        }
+        #categoryBestMenu>#categorySidebar a.sports:hover{
+            background-position: -50px -450px;
+            background-color: #83be41;
+        }
+        #categoryBestMenu>#categorySidebar a.sports.on{
+            background-position: -50px -450px;
+            background-color: #83be41;
+        }
+        #categoryBestMenu>#categorySidebar a.car{
+            background-position: 0px -750px;
+        }
+        #categoryBestMenu>#categorySidebar a.car:hover{
+            background-position: -50px -750px;
+            background-color: #254e98;
+        }
+        #categoryBestMenu>#categorySidebar a.car.on{
+            background-position: -50px -750px;
+            background-color: #254e98;
+        }
+        #categoryBestMenu>#categorySidebar a.hobby{
+            background-position: 0px -700px;
+        }
+        #categoryBestMenu>#categorySidebar a.hobby:hover{
+            background-position: -50px -700px;
+            background-color: #3e8d86;
+        }
+        #categoryBestMenu>#categorySidebar a.hobby.on{
+            background-position: -50px -700px;
+            background-color: #3e8d86;
+        }
+        #categoryBestMenu>#categorySidebar a.office{
+            background-position: 0px -500px;
+        }
+        #categoryBestMenu>#categorySidebar a.office:hover{
+            background-position: -50px -500px;
+            background-color: #97563e;
+        }
+        #categoryBestMenu>#categorySidebar a.office.on{
+            background-position: -50px -500px;
+            background-color: #97563e;
+        }
+        #categoryBestMenu>#categorySidebar a.book{
+            background-position: 0px -600px;
+        }
+        #categoryBestMenu>#categorySidebar a.book:hover{
+            background-position: -50px -600px;
+            background-color: #b74b4b;
+
+        }
+        #categoryBestMenu>#categorySidebar a.book.on{
+            background-position: -50px -600px;
+            background-color: #b74b4b;
+        }
+        #categoryBestMenu>#categorySidebar a.pets{
+            background-position: 0px -550px;
+        }
+        #categoryBestMenu>#categorySidebar a.pets:hover{
+            background-position: -50px -550px;
+            background-color: #ab47bc;
+        }
+        #categoryBestMenu>#categorySidebar a.pets.on{
+            background-position: -50px -550px;
+            background-color: #ab47bc;
+        }
+        #categoryBestMenu>#categorySidebar a.trip{
+              background-position: 0px -650px;
+          }
+        #categoryBestMenu>#categorySidebar a.trip:hover{
+            background-position: -50px -650px;
+            background-color: #00b599;
+        }
+        #categoryBestMenu>#categorySidebar a.trip.on{
+            background-position: -50px -650px;
+            background-color: #00b599;
+        }
+        #categoryBestMenu>#categorySidebar a.baby_fashion{
+            background-position: 0px -800px;
+        }
+        #categoryBestMenu>#categorySidebar a.baby_fashion:hover{
+            background-position: -50px -800px;
+            background-color: #00AAB4
+        }
+        #categoryBestMenu>#categorySidebar a.baby_fashion.on{
+            background-position: -50px -800px;
+            background-color: #00AAB4
+        }
+        #categoryBestMenu>#categorySidebar a.health{
+            background-position: 0px -850px;
+        }
+        #categoryBestMenu>#categorySidebar a.health:hover{
+            background-position: -50px -850px;
+            background-color: #d22e60;
+        }
+        #categoryBestMenu>#categorySidebar a.health.on{
+            background-position: -50px -850px;
+            background-color: #d22e60;
+        }
+        #categoryBox>h2{
+            width:230px;
+            height: 52px;
+            background-image: url("img/title.png");
+            text-indent: -999999px;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+        #categoryBestMenu>#categorySidebar a.setting{
+            display: block;
+            width: 34px;
+            height: 54px;
+            border-top:1px solid #dddddd;
+            background-color:#fafafa;
+            cursor: pointer;
+            background-image: url("img/cupang_setting.png");
+            background-repeat: no-repeat;
+            background-position: 0px -265px;
+
+        }
+        #categoryBestMenu>#categoryBox{
+            width: 1068px;
+            min-height: 1000px;
+            /*background-color: hotpink;*/
+        }
+        #categoryBestMenu>#categoryBox li{
+            width: 1020px;
+            height: 601px;
+            border-top: 2px solid #333333;
+            margin-bottom: 20px;
+        }
+        #categoryBestMenu>#categoryBox li:nth-of-type(1){
+            border-top: 2px solid #f6699e;
+        }
+        #categoryBestMenu>#categoryBox li:nth-of-type(2){
+             border-top: 2px solid #1992df;
+        }
+        #categoryBestMenu>#categoryBox li:nth-of-type(3){
+            border-top: 2px solid #7e57c2;
+        }
+        #categoryBestMenu>#categoryBox li:nth-of-type(4){
+            border-top: 2px solid #00aad4;
+        }
+        #categoryBestMenu>#categoryBox li:nth-of-type(5){
+              border-top: 2px solid #ee9200;
+          }
+        #categoryBestMenu>#categoryBox li:nth-of-type(6){
+            border-top: 2px solid #62ab66;
+        }
+        #categoryBestMenu>#categoryBox li:nth-of-type(7){
+            border-top: 2px solid #9d7a6d;
+        }
+        #categoryBestMenu>#categoryBox li:nth-of-type(8){
+            border-top: 2px solid #dd6641;
+        }
+        #categoryBestMenu>#categoryBox li:nth-of-type(9){
+            border-top: 2px solid #5868be;
+        }
+        #categoryBestMenu>#categoryBox li:nth-of-type(10){
+            border-top: 2px solid #83be41;
+        }
+        #categoryBestMenu>#categoryBox li:nth-of-type(11){
+               border-top: 2px solid #254e98;
+        }
+        #categoryBestMenu>#categoryBox li:nth-of-type(12){
+            border-top: 2px solid #3e8d86;
+        }
+        #categoryBestMenu>#categoryBox li:nth-of-type(13){
+            border-top: 2px solid #97563e;
+        }
+        #categoryBestMenu>#categoryBox li:nth-of-type(14){
+            border-top: 2px solid #b74b4b;
+        }
+        #categoryBestMenu>#categoryBox li:nth-of-type(15){
+            border-top: 2px solid #ab47bc;
+        }
+
+        #categoryBestMenu>#categoryBox li:nth-of-type(16){
+             border-top: 2px solid #00b599;
+         }
+        #categoryBestMenu>#categoryBox li:nth-of-type(17){
+            border-top: 2px solid #00AAB4;
+        }
+        #categoryBestMenu>#categoryBox li:nth-of-type(18){
+            border-top: 2px solid #d22e60;
+        }
+        #categoryBestMenu>#categoryBox img{
+            width: 1020px;
+            height: 601px;
+        }
+        #content {
+            width:100%;
+            height:1659px;
+            margin:auto;
+            background-image:url(img/bg.png);
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="content"></div>
+    <div id="categoryBestMenu">
+        <div id="categorySidebar" class="">
+            <a href="#womanCategory" class="category_sidebar womanclothe">여성패션</a>
+            <a href="#manCategory" class="category_sidebar manclothe">남성패션</a>
+            <a href="#beautyCategory" class="category_sidebar beauty">뷰티</a>
+            <a href="#babayCategory" class="category_sidebar baby">출산/유아동</a>
+            <a href="#foodCategory" class="category_sidebar food">식품</a>
+            <a href="#kitchenCategory" class="category_sidebar kitchen">주방용품</a>
+            <a href="#livingCategory" class="category_sidebar living">생활용품</a>
+            <a href="#homeCategory" class="category_sidebar home_decoration">가구/홈인테리어</a>
+            <a href="#digitalCategory" class="category_sidebar digital">가전/디지털</a>
+            <a href="#sportCategory" class="category_sidebar sports">스포츠/레저</a>
+            <a href="#carCategory" class="category_sidebar car">자동차용품</a>
+            <a href="#hobbyCategory" class="category_sidebar hobby">완구/취미</a>
+            <a href="#officeCategory" class="category_sidebar office">문구/오피스</a>
+            <a href="#bookCategory" class="category_sidebar book">도서/cd/dvd</a>
+            <a href="#petsCategory" class="category_sidebar pets">반려동물용품</a>
+            <a href="#tripCategory" class="category_sidebar trip">여행</a>
+            <a href="#babyFashionCategory" class="category_sidebar baby_fashion">유아동패션</a>
+            <a href="#heathCategory" class="category_sidebar health">헬스/건강식품</a>
+            <a class="#category_sidebar setting">설정</a>
+        </div><!--//#categorySidebar -->
+        <div id="categoryBox">
+            <h2>카테고리별 인기상품</h2>
+            <ul id="categoryList">
+                <li id="womanCategory" class="list">
+                    <img src="img/cb1.png" alt="" />
+                </li>
+                <li id="manCategory" class="list">
+                    <img src="img/cb2.png" alt="" />
+                </li>
+                <li  id="beautyCategory" class="list">
+                    <img src="img/cb3.png" alt="" />
+                </li>
+                <li id="babayCategory" class="list">
+                    <img src="img/cb4.png" alt="" />
+                </li>
+                <li id="foodCategory"   class="list">
+                    <img src="img/cb5.png" alt="" />
+                </li>
+                <li id="kitchenCategory" class="list">
+                    <img src="img/cb6.png" alt="" />
+                </li>
+                <li id="livingCategory" class="list">
+                    <img src="img/cb7.png" alt="" />
+                </li>
+                <li id="homeCategory" class="list">
+                    <img src="img/cb8.png" alt="" />
+                </li>
+                <li id="digitalCategory" class="list">
+                    <img src="img/cb9.png" alt="" />
+                </li>
+                <li id="sportCategory" class="list">
+                    <img src="img/cb10.png" alt="" />
+                </li>
+                <li id="carCategory" class="list">
+                    <img src="img/cb11.png" alt="" />
+                </li>
+                <li id="hobbyCategory" class="list">
+                    <img src="img/cb12.png" alt="" />
+                </li>
+                <li id="officeCategory" class="list">
+                    <img src="img/cb13.png" alt="" />
+                </li>
+                <li id="bookCategory" class="list">
+                    <img src="img/cb14.png" alt="" />
+                </li>
+                <li id="petsCategory" class="list">
+                    <img src="img/cb15.png" alt="" />
+                </li>
+                <li id="tripCategory" class="list">
+                    <img src="img/cb16.png" alt="" />
+                </li>
+                <li id="babyFashionCategory" class="list">
+                    <img src="img/cb17.png" alt="" />
+                </li>
+                <li id="heathCategory" class="list">
+                    <img src="img/cb18.png" alt="" />
+                </li>
+            </ul>
+        </div><!--//#categoryBox -->
+    </div><!--#categoryBestMenu -->
+</body>
+</html>

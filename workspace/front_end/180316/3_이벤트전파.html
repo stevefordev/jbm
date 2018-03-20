@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>이벤트 전파</title>
+    <style>
+        div {
+            width:300px;
+            height:200px;
+            background: silver;
+        }
+    </style>
+</head>
+<body>
+<div>나 div</div>
+<script src="js/jquery.js"></script>
+<script>
+    $("body").click(function () {
+        alert("body를 클릭했어요!");
+    });
+
+    $("div").click(function (e) {
+       alert("난 div클릭했어요!!");
+
+        /*
+            자식->부모로 이벤트가 전파됩니다.
+            이벤트 전파를 막을때는
+            이벤트.stopPropagation()
+            혹은
+            return false;
+         */
+
+       //e.stopPropagation();
+       return false;
+    });
+</script>
+</body>
+</html>

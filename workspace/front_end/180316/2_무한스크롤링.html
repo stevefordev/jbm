@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>밴드</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/notosanskr.css"/>
+    <link rel="stylesheet" href="css/fontawesome-all.css" />
+    <style>
+
+        body{
+            font-family: 'Noto Sans KR', sans-serif;
+            color: #424242;
+            margin: 0;
+            padding: 0;
+            background-color: #EEF0F3;
+        }
+        #header{
+            width: 100%;
+            height:50px;
+            background-color: #ffffff;
+            border-bottom: 2px solid #e6e8ed;
+
+        }
+        #header>#wrap{
+            width:1000px;
+            margin: auto;
+            position: relative;
+        }
+        #header h1{
+            width: 70px;
+            height: 50px;
+            background-image: url("img/band_logo.png");
+            background-size: 70px 26px;
+            background-repeat: no-repeat;
+            /*이미지 대치 기법*/
+            text-indent: -9999px;/*텍스트를 옆으로 쭉 보냄*/
+            overflow: hidden;/*숨김*/
+            margin: 0;
+            position: absolute;
+            left: 0;
+            top: 12px;
+        }
+        #header #searchBox{
+            width: 280px;
+            height: 28px;
+            position: absolute;
+            left: 84px;
+            top: 11px;
+        }
+
+        #header #searchBox input{
+            font-size: 12px;
+            width: 226px;
+            height: 26px;
+            background: 0 0;
+            outline: 0;
+            color: #333;
+            padding: 0;
+            outline: 0;
+            padding: 0 36px 0 12px;
+            border-radius: 28px;
+            position: absolute;
+            left:0;
+            /*top: 11px;*/
+            background-color: #F7F7F7;
+            border: 1px solid rgba(0,0,0,.05);
+            line-height: 26px;
+        }
+        #header #searchBox input:focus{
+            border: 1px solid rgba(0,0,0,.3);
+        }
+        #header #searchBox input:focus+button.btn_search::before{
+            opacity: 1;
+        }
+        #header #searchBox input:focus::placeholder{
+            color: rgba(0,0,0,.3);
+        }
+
+        #header #searchBox button.btn_search{
+            position: absolute;
+            right: 10px;
+            top: 5px;
+            font-size: 0;
+            border: 0;
+            background-color: transparent;
+            border-radius: 0;
+            cursor: pointer;
+        }
+        #header #searchBox button.btn_search::before{
+            opacity: .6;
+            width: 15px;
+            height: 15px;
+            overflow: hidden;
+            display: inline-block;
+            background-repeat: no-repeat;
+            content: '';
+            background-size: 603px auto;
+            background-image: url("img/band.png");
+            background-position: -266px -255px;
+            position: absolute;
+            right: 0;
+        }
+        #header #widget{
+            position: absolute;
+            top: 14px;
+            right: 0;
+            /*background-color: yellow;*/
+        }
+        #header #widget>li{
+            position: relative;
+            line-height: 20px;
+            float: left;
+            font-size: 13px;
+        }
+        #header #widget>li>a{
+            text-decoration: none;
+            color: #333;
+        }
+        #header #widget>li.new_feed_link a, #header #widget>li.band_find_link a{
+            position: relative;
+            display: inline-block;
+            top: -4px;
+            font-size: 13px;
+            padding: 0 11px;
+            height: 31px;
+            line-height: 30px;
+            text-decoration: none;
+            border: 1px solid transparent;
+        }
+        #header #widget>li.new_feed_link a:hover{
+            background-color: #F5F5F5;
+            border: 1px solid #EEEEEE;
+        }
+        #header #widget>li.band_find_link a:hover{
+            background-color: #F5F5F5;
+            border: 1px solid #EEEEEE;
+        }
+        #header #widget>li.push,#header #widget>li.chat,#header #widget>li.setting{
+            position: relative;
+            display: inline-block;
+            top: 4px;
+            margin-left: 28px;
+
+            cursor: pointer;
+
+        }
+        #header #widget>li.push{
+            width: 20px;
+            height: 20px;
+            background-size: 603px auto;
+            background-image: url("img/band.png");
+            background-position: -287px -282px;
+            text-indent: -99999999px;/*텍스트를 옆으로 쭉 보냄*/
+            overflow: hidden;/*숨김*/
+            opacity: .55;
+
+        }
+        #header #widget>li.push:hover{
+            opacity: .8;
+        }
+        #header #widget>li.chat{
+            width: 20px;
+            height: 20px;
+            background-size: 603px auto;
+            background-image: url("img/band.png");
+            background-position: -562px -161px;
+            text-indent: -99999999px;/*텍스트를 옆으로 쭉 보냄*/
+            overflow: hidden;/*숨김*/
+            opacity: .55;
+        }
+        #header #widget>li.chat:hover{
+            opacity: .8;
+        }
+        #header #widget>li.band_find_link:before{
+            position: absolute;
+            left: -1px;
+            top: 7px;
+            content: '';
+            width: 1px;
+            height: 15px;
+            background: rgba(0,0,0,.1);
+        }
+        #header #widget>li.setting{
+            position: relative;
+            padding-right: 17px;
+            top:0;
+        }
+
+        #header #widget>li.setting span.bu{
+            width: 7px;
+            height: 7px;
+            display: inline-block;
+            background-size: 603px auto;
+            background-image: url("img/band.png");
+            background-position: -492px -451px;
+            position: absolute;
+            right: 2px;
+            opacity: .55;
+            position: absolute;
+            top:40%;
+        }
+        #header #widget>li.setting:hover span.bu{
+
+            opacity: 1;
+        }
+
+        #header #widget>li.setting img.face_img{
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            vertical-align: top;
+        }
+        #content{
+            width: 1000px;
+            margin: auto;
+            /*background-color: yellow;*/
+        }
+        #content>h2{
+            font-size: 20px;
+            font-weight: 500;
+            margin-top: 50px;
+            font-weight: 500;
+
+        }
+        #content>#bandList{
+            width: 1000px;
+            /*background-color: red;*/
+            overflow: hidden;
+
+        }
+
+        #bandList>li.band{
+            width: 180px;
+            height: 200px;
+            background-color: #ffffff;
+            border-radius: 2px;
+            float: left;
+            margin: 20px 10px 0 10px;
+            box-shadow: 0 1px 3px 0 rgba(0,0,0,.1);
+            transition: all .1s ease-in-out;
+            cursor: pointer;
+        }
+        #bandList>li.band:hover {
+            transform: translateY(-2px);
+            box-shadow:0 3px 8px 0 rgba(0,0,0,.16);
+        }
+        /*#bandList>li.band+li.band{*/
+        /*margin: 0 0 25px 25px;*/
+        /*}*/
+        #bandList div.band_img>img{
+            width: 180px;
+            height: 125px;
+            border-radius: 2px 2px 0 0;
+        }
+        #bandList div.band_title{
+            width: 180px;
+            height: 75px;
+            margin-left: 10px;
+            margin-top: 5px;
+        }
+        #bandList div.band_title>strong{
+            width: 180px;
+            height: 19.2px;
+            display: inline-block;
+            font-size: 15px;
+
+        }
+        #bandList div.band_title>span{
+            width: 180px;
+            height: 16.8px;
+            display: inline-block;
+            font-size: 12px;
+            color: #757575;
+
+        }
+        li.setting>div.main{
+            width: 160px;
+            height: 216px;
+            position: absolute;
+            top: 40px;
+            right: 0;
+            border-radius: 2px;
+            border: 1px solid #777;
+            background: #ffffff;
+            box-shadow: 0 3px 8px 0 rgba(0,0,0,.16);
+            display: none;
+            z-index: 99;
+        }
+		
+        .show li.setting>div.main{
+            display: block;
+
+        }
+		
+        .show #widget>li.setting span.bu{
+            position: absolute;
+            top:0;
+            transform: rotate(180deg);
+        }
+		
+        li.setting>div.main::before{
+            content: "";
+            display: block;
+            border-left: 10px solid transparent;
+            border-right: 10px solid  transparent;
+            border-bottom: 10px solid #777;
+            position: absolute;
+            width: 0;
+            height: 0;
+            top: -9.4px;
+            right: 20px;
+
+        }
+        li.setting>div.main::after{
+            content: "";
+            display: block;
+            border-left: 9px solid transparent;
+            border-right: 9px solid  transparent;
+            border-bottom: 9px solid #ffffff;
+            position: absolute;
+            width: 0;
+            height: 0;
+            top: -8.4px;
+            right: 21px;
+        }
+        li.setting li{
+            width: 158px;
+            /*background-color: red;*/
+        }
+        li.setting div.main>ul{
+            padding:9px 0 0 1px;
+        }
+        li.setting div.main a{
+            display: block;
+            height: 16px;
+            width: 122px;
+            padding: 8px 18px 8px 18px;
+            font-size: 13px;
+            color: #333;
+            line-height: 16px;
+            text-decoration: none;
+
+        }
+        li.setting div.main ul li a:hover{
+            background-color: #F5F5F5;
+        }
+        li.setting div.sub{
+            margin:9px 0;
+            padding:9px 0;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+        }
+
+    </style>
+</head>
+<body>
+<div id="header" class="">
+    <div id="wrap" >
+        <h1>band</h1>
+        <div id="searchBox">
+            <form action="" method="get">
+                <input name="" placeholder="밴드, 게시글을 검색해보세요" />
+                <button type="submit" class="btn_search">
+                    <span>검색</span>
+                </button>
+            </form>
+        </div><!--//#searchBox -->
+        <ul id="widget">
+            <li class="new_feed_link">
+                <a href="#">새글 피드</a>
+                <div></div>
+            </li>
+            <li class="band_find_link">
+                <a href="#">밴드 찾기</a>
+            </li>
+            <li class="push">
+                <button>알람</button>
+            </li>
+            <li class="chat">
+                <button>채팅</button>
+            </li>
+            <li class="setting">
+                <a>
+                    <img src="img/profile_60x60.png" class="face_img">
+                    <span class="bu"></span>
+                </a>
+                <div class="main">
+                    <ul id="mainList">
+                        <li><a href="#">내정보</a></li>
+                        <li>
+                            <div class="sub">
+                                <ul>
+                                    <li><a href="#">초대 코드 입력</a></li>
+                                    <li><a href="#">공지사항</a></li>
+                                    <li><a href="#">설정</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="logout"><a href="#">로그아웃</a></li>
+                    </ul>
+                </div><!--//.main -->
+            </li>
+        </ul><!--//#widget -->
+    </div>
+</div><!--//#header -->
+<div id="content">
+    <h2>내 밴드</h2>
+    <ul id="bandList">
+        <li class="band">
+            <div class="band_img">
+                <img src="img/bicycle.jpg" alt="자전거" />
+            </div><!--//.band_img -->
+            <div class="band_title">
+                <strong>자전거 동호회</strong>
+                <span>멤버
+                        <em>30</em>
+                    </span>
+            </div><!--//.band_title -->
+        </li><!--//.band -->
+        <li class="band">
+            <div class="band_img">
+                <img src="img/bottle.jpg" alt="병" />
+            </div><!--//.band_img -->
+            <div class="band_title">
+                <strong>보틀 동호회</strong>
+                <span>멤버
+                        <em>15</em>
+                    </span>
+            </div><!--//.band_title -->
+        </li><!--//.band -->
+        <li class="band">
+            <div class="band_img">
+                <img src="img/car.jpg" alt="차" />
+            </div><!--//.band_img -->
+            <div class="band_title">
+                <strong>자동차 동호회</strong>
+                <span>멤버
+                        <em>60</em>
+                    </span>
+            </div><!--//.band_title -->
+        </li><!--//.band -->
+        <li class="band">
+            <div class="band_img">
+                <img src="img/cat.jpg" alt="고양이" />
+            </div><!--//.band_img -->
+            <div class="band_title">
+                <strong>고양이 동호회</strong>
+                <span>멤버
+                        <em>100</em>
+                    </span>
+            </div><!--//.band_title -->
+        </li><!--//.band -->
+
+        <li class="band">
+            <div class="band_img">
+                <img src="img/cat.jpg" alt="고양이" />
+            </div><!--//.band_img -->
+            <div class="band_title">
+                <strong>고양이 동호회</strong>
+                <span>멤버
+                        <em>100</em>
+                    </span>
+            </div><!--//.band_title -->
+        </li><!--//.band -->
+        <li class="band">
+            <div class="band_img">
+                <img src="img/bicycle.jpg" alt="자전거" />
+            </div><!--//.band_img -->
+            <div class="band_title">
+                <strong>자전거 동호회</strong>
+                <span>멤버
+                        <em>30</em>
+                    </span>
+            </div><!--//.band_title -->
+        </li><!--//.band -->
+        <li class="band">
+            <div class="band_img">
+                <img src="img/bottle.jpg" alt="병" />
+            </div><!--//.band_img -->
+            <div class="band_title">
+                <strong>보틀 동호회</strong>
+                <span>멤버
+                        <em>15</em>
+                    </span>
+            </div><!--//.band_title -->
+        </li><!--//.band -->
+        <li class="band">
+            <div class="band_img">
+                <img src="img/car.jpg" alt="차" />
+            </div><!--//.band_img -->
+            <div class="band_title">
+                <strong>자동차 동호회</strong>
+                <span>멤버
+                        <em>60</em>
+                    </span>
+            </div><!--//.band_title -->
+        </li><!--//.band -->
+        <li class="band">
+            <div class="band_img">
+                <img src="img/cat.jpg" alt="고양이" />
+            </div><!--//.band_img -->
+            <div class="band_title">
+                <strong>고양이 동호회</strong>
+                <span>멤버
+                        <em>100</em>
+                    </span>
+            </div><!--//.band_title -->
+        </li><!--//.band -->
+        <li class="band">
+            <div class="band_img">
+                <img src="img/cat.jpg" alt="고양이" />
+            </div><!--//.band_img -->
+            <div class="band_title">
+                <strong>고양이 동호회</strong>
+                <span>멤버
+                        <em>100</em>
+                    </span>
+            </div><!--//.band_title -->
+        </li><!--//.band -->
+        <li class="band">
+            <div class="band_img">
+                <img src="img/bicycle.jpg" alt="자전거" />
+            </div><!--//.band_img -->
+            <div class="band_title">
+                <strong>자전거 동호회</strong>
+                <span>멤버
+                        <em>30</em>
+                    </span>
+            </div><!--//.band_title -->
+        </li><!--//.band -->
+        <li class="band">
+            <div class="band_img">
+                <img src="img/bottle.jpg" alt="병" />
+            </div><!--//.band_img -->
+            <div class="band_title">
+                <strong>보틀 동호회</strong>
+                <span>멤버
+                        <em>15</em>
+                    </span>
+            </div><!--//.band_title -->
+        </li><!--//.band -->
+        <li class="band">
+            <div class="band_img">
+                <img src="img/car.jpg" alt="차" />
+            </div><!--//.band_img -->
+            <div class="band_title">
+                <strong>자동차 동호회</strong>
+                <span>멤버
+                        <em>60</em>
+                    </span>
+            </div><!--//.band_title -->
+        </li><!--//.band -->
+        <li class="band">
+            <div class="band_img">
+                <img src="img/cat.jpg" alt="고양이" />
+            </div><!--//.band_img -->
+            <div class="band_title">
+                <strong>고양이 동호회</strong>
+                <span>멤버
+                        <em>100</em>
+                    </span>
+            </div><!--//.band_title -->
+        </li><!--//.band -->
+
+        <li class="band">
+            <div class="band_img">
+                <img src="img/cat.jpg" alt="고양이" />
+            </div><!--//.band_img -->
+            <div class="band_title">
+                <strong>고양이 동호회</strong>
+                <span>멤버
+                        <em>100</em>
+                    </span>
+            </div><!--//.band_title -->
+        </li><!--//.band -->
+        <li class="band">
+            <div class="band_img">
+                <img src="img/bicycle.jpg" alt="자전거" />
+            </div><!--//.band_img -->
+            <div class="band_title">
+                <strong>자전거 동호회</strong>
+                <span>멤버
+                        <em>30</em>
+                    </span>
+            </div><!--//.band_title -->
+        </li><!--//.band -->
+        <li class="band">
+            <div class="band_img">
+                <img src="img/bottle.jpg" alt="병" />
+            </div><!--//.band_img -->
+            <div class="band_title">
+                <strong>보틀 동호회</strong>
+                <span>멤버
+                        <em>15</em>
+                    </span>
+            </div><!--//.band_title -->
+        </li><!--//.band -->
+        <li class="band">
+            <div class="band_img">
+                <img src="img/car.jpg" alt="차" />
+            </div><!--//.band_img -->
+            <div class="band_title">
+                <strong>자동차 동호회</strong>
+                <span>멤버
+                        <em>60</em>
+                    </span>
+            </div><!--//.band_title -->
+        </li><!--//.band -->
+        <li class="band">
+            <div class="band_img">
+                <img src="img/cat.jpg" alt="고양이" />
+            </div><!--//.band_img -->
+            <div class="band_title">
+                <strong>고양이 동호회</strong>
+                <span>멤버
+                        <em>100</em>
+                    </span>
+            </div><!--//.band_title -->
+        </li><!--//.band -->
+        <li class="band">
+            <div class="band_img">
+                <img src="img/bicycle.jpg" alt="자전거" />
+            </div><!--//.band_img -->
+            <div class="band_title">
+                <strong>자전거 동호회</strong>
+                <span>멤버
+                        <em>30</em>
+                    </span>
+            </div><!--//.band_title -->
+        </li><!--//.band -->
+        <li class="band">
+            <div class="band_img">
+                <img src="img/bottle.jpg" alt="병" />
+            </div><!--//.band_img -->
+            <div class="band_title">
+                <strong>보틀 동호회</strong>
+                <span>멤버
+                        <em>15</em>
+                    </span>
+            </div><!--//.band_title -->
+        </li><!--//.band -->
+        <li class="band">
+            <div class="band_img">
+                <img src="img/car.jpg" alt="차" />
+            </div><!--//.band_img -->
+            <div class="band_title">
+                <strong>자동차 동호회</strong>
+                <span>멤버
+                        <em>60</em>
+                    </span>
+            </div><!--//.band_title -->
+        </li><!--//.band -->
+        <li class="band">
+            <div class="band_img">
+                <img src="img/cat.jpg" alt="고양이" />
+            </div><!--//.band_img -->
+            <div class="band_title">
+                <strong>고양이 동호회</strong>
+                <span>멤버
+                        <em>100</em>
+                    </span>
+            </div><!--//.band_title -->
+        </li><!--//.band -->
+        <li class="band">
+            <div class="band_img">
+                <img src="img/bicycle.jpg" alt="자전거" />
+            </div><!--//.band_img -->
+            <div class="band_title">
+                <strong>자전거 동호회</strong>
+                <span>멤버
+                        <em>30</em>
+                    </span>
+            </div><!--//.band_title -->
+        </li><!--//.band -->
+        <li class="band">
+            <div class="band_img">
+                <img src="img/bottle.jpg" alt="병" />
+            </div><!--//.band_img -->
+            <div class="band_title">
+                <strong>보틀 동호회</strong>
+                <span>멤버
+                        <em>15</em>
+                    </span>
+            </div><!--//.band_title -->
+        </li><!--//.band -->
+    </ul><!--//#bandList -->
+</div><!--//#content -->
+
+<script type="text/template" id="bandTmp">
+    <% for(var i = 0; i < 10 ; i++) { %>
+    <li class="band">
+        <div class="band_img">
+            <img src="img/bicycle.jpg" alt="자전거" />
+        </div><!--//.band_img -->
+        <div class="band_title">
+            <strong>자전거 동호회</strong>
+            <span>멤버
+                <em>30</em>
+            </span>
+        </div><!--//.band_title -->
+    </li><!--//.band -->
+    <%}%>
+</script>
+
+<script src="js/jquery.js"></script>
+<script src="js/underscore-min.js"></script>
+<script>
+
+    var $header = $("#header"),
+        $body = $("body"),
+        $window = $(window),
+        $document = $(document),
+        tmp = _.template($("#bandTmp").html());
+
+    $window.scroll(function () {
+
+        //현재 스크롤높이를 얻어옴
+        var sTop = $window.scrollTop();
+        //윈도우 높이
+        var wHeight = $window.height();
+        //다큐먼트 높이
+        var dHeight = $document.height();
+
+        console.log("다:"+dHeight+"/윈:"+wHeight+"/스:"+sTop);
+
+        if((wHeight+sTop+30)>=dHeight) {
+
+            $("#bandList").append(tmp());
+
+        }//if end
+
+    });//scroll() end
+
+
+    $body.click(function () {
+
+        $header.removeClass("show");
+
+    });//click() end
+
+    // 내정보창을 보여줬다 숨겼다
+    $(".setting").on("click",function () {
+
+        $header.toggleClass("show");
+
+        // if($header.hasClass("show")) {
+        //     $header.removeClass("show");
+        // }else {
+        //     $header.addClass("show");
+        // }//if~else end
+        return false;
+    });//on() end
+
+
+
+
+
+</script>
+</body>
+</html>
