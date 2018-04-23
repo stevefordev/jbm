@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>에디터 예제</title>
+
+    <link rel="stylesheet" href="css/codemirror.css">
+    <link rel="stylesheet" href="css/github.css">
+    <link rel="stylesheet" href="css/tui-editor.min.css">
+    <link rel="stylesheet" href="css/tui-editor-contents.min.css">
+    <link rel="stylesheet" href="css/tui-color-picker.min.css">
+    <style>
+        #editSection {
+            width:700px;
+        }
+
+        /* textarea를 숨겨놓음 */
+        #contents {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<h2>에디터 submit 예제</h2>
+<div id="editSection"></div>
+
+<form id="form" action="test" method="get">
+    <textarea id="contents" name="contents"></textarea>
+    <button>입력</button>
+</form>
+<script src="js/jquery.js"></script>
+<script src="js/tui-code-snippet.min.js"></script>
+<script src='js/markdown-it.js'></script>
+<script src="js/to-mark.min.js"></script>
+<script src="js/codemirror.js"></script>
+<script src="js/highlight.js"></script>
+<script src="js/squire-raw.js"></script>
+<script src="js/tui-editor-Editor.js"></script>
+<script>
+    $('#editSection').tuiEditor({
+        initialEditType: 'wysiwyg',
+        previewStyle: 'vertical',
+        height: 600
+    });
+
+    $("#form").submit(function() {
+
+        //에디터에 입력한 모든 내용을 얻어옴
+        var contents =   $('#editSection').tuiEditor("getValue");
+
+        //얻어온 에디터의 내용을 숨겨진 textarea에 값으로 저장후 submit
+        $("#contents").val(contents);
+
+    });
+
+</script>
+</body>
+</html>
